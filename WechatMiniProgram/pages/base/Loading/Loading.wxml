@@ -1,0 +1,75 @@
+<view class="page moui-space-b">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Loading</view>
+        <view class="page__desc">加载</view>
+    </view>
+    
+    <view>
+        <view class="page__flex">
+            <view class="moui-loading"/>
+            <image src="{{loading_svg}}" class="moui-icon-S"/>
+        </view>
+
+        <view class="page__flex">
+            <view>Loading-CSS</view>            
+            <view>Loading-SVG</view>
+        </view>
+
+        <view class="moui-cells__title">Loading</view>
+        <view class="moui-cells">
+            <view class="moui-cell">
+                <image src="{{icon.pdf}}" class="moui-cell__icon"/>
+                <view class="moui-cell__name">PDF File</view>
+                <view>
+                    <button id="A" class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="bindLoading" wx:if="{{!loading.A}}">Start</button>
+                    <view class="moui-loading" wx:if="{{loading.A=='LOADING'}}"/>
+                    <icon type="success_no_circle" class="moui-icon-radio" color="#1890ff" wx:if="{{loading.A=='SUCCESS'}}"/>
+                </view>
+            </view>
+            <view class="moui-cell">
+                <image src="{{icon.word}}" class="moui-cell__icon"/>
+                <view class="moui-cell__name">Word File</view>
+                <view>
+                    <button id="B" class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="bindLoading" wx:if="{{!loading.B}}">Start</button>
+                    <view class="moui-loading" wx:if="{{loading.B=='LOADING'}}"/>
+                    <icon type="success_no_circle" class="moui-icon-radio" color="#1890ff" wx:if="{{loading.B=='SUCCESS'}}"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="moui-cells">
+            <view class="moui-cell-L">
+                <image src="{{icon.pdf}}" class="moui-cell-L__icon"/>
+                <view class="moui-cell-L__name">PDF File
+                    <view>0.6Mb</view>
+                    <view>Information</view>
+                </view>
+                <view>
+                    <button id="C" class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="bindLoading" wx:if="{{!loading.C}}">Start</button>
+                    <image src="{{loading_svg}}" class="moui-icon-S" wx:if="{{loading.C=='LOADING'}}"/>
+                    <icon type="success_no_circle" class="moui-icon-radio" color="#1890ff" wx:if="{{loading.C=='SUCCESS'}}"/>
+                </view>
+            </view>
+            <view class="moui-cell-L">
+                <image src="{{icon.word}}" class="moui-cell-L__icon"/>
+                <view class="moui-cell-L__name">Word File
+                    <view>1.3Mb</view>
+                    <view>Information</view>
+                </view>
+                <view>
+                    <button id="D" class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="bindLoading" wx:if="{{!loading.D}}">Start</button>
+                    <image src="{{loading_svg}}" class="moui-icon-S" wx:if="{{loading.D=='LOADING'}}"/>
+                    <icon type="success_no_circle" class="moui-icon-radio" color="#1890ff" wx:if="{{loading.D=='SUCCESS'}}"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="moui-cells__tips">Tips: 从moui.js中引用的SVG支持自定义主题颜色，也可以在设置好SVG Loading的主题颜色后，从Console中获得base64编码的SVG，直接本地引用，或添加到CSS的background-image属性中使用，以进一步减少SVG耗能</view>
+
+    </view>
+</view>
+
+<view class="moui-menu">
+    <view class="moui-btn moui-btn-primary {{load_all?'moui-disabled':''}}" hover-class="moui-hover" bindtap="{{load_all?'':'bindLoadAll'}}">{{load_all?"Loading...":"Load All"}}</view>
+</view>

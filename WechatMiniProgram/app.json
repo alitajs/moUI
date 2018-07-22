@@ -1,0 +1,26 @@
+{
+  "pages":[
+    "pages/index",
+    "pages/base/index",
+    "pages/base/List/List",
+    "pages/base/Flex/Flex",
+    "pages/base/Menu/Menu",
+    "pages/base/Input/Input",
+    "pages/base/Batch/Batch",
+    "pages/base/Button/Button",
+    "pages/base/Switch/Switch",
+    "pages/base/Footer/Footer",
+    "pages/base/Navbar/Navbar",
+    "pages/base/Loading/Loading",
+    "pages/base/Preview/Preview",
+    "pages/base/Toptips/Toptips",
+    "pages/base/Progress/Progress",
+    "pages/base/Searchbar/Searchbar"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "moUI",
+    "navigationBarTextStyle":"black"
+  }
+}

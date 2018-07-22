@@ -1,0 +1,72 @@
+<view class="page moui-space-b">
+<!--由于Menu使用fixed定位，需使用moui-space-b校准页面内容的位置--> 
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Progress</view>
+        <view class="page__desc">进度条</view>
+    </view>
+
+    <view>
+    
+        <view class="moui-cells__title">Menu Progress</view>
+        <view class="moui-cells">
+            <view class="moui-cell">
+                <view class="moui-cell__icon icon-info"/>
+                <view class="moui-cell-L__name">菜单栏进度条
+                    <view>点击进度条可暂停与取消</view>
+                </view>
+                <view class="moui-switch-box {{menu_progress_mode?'active-fill':''}}" bindtouchend="bindChangeMenuMode">
+                    <view class="moui-switch {{menu_progress_mode?'active-fill':''}}"/>
+                </view>
+            </view>
+            <view class="moui-cell">
+                <view class="moui-cell__icon icon-info"/>
+                <view class="moui-cell-L__name">小型进度条
+                    <view>在progress组件class后添加mini即可</view>
+                </view>
+                <view class="moui-switch-box {{mini_progress?'active-fill':''}}" bindtouchend="bindChangeSize">
+                    <view class="moui-switch {{mini_progress?'active-fill':''}}"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="moui-cells__title">Progressing</view>
+        <view class="moui-cells" style="--miniBtnWidth:64px;">
+            <view class="moui-cell-L">
+                <image src="{{icon.zip}}" class="moui-cell-L__icon"/>
+                <view class="moui-cell-L__name">压缩文件
+                    <view>1.2Mb</view>
+                    <view>Information</view>
+                </view>
+                <view>
+                    <button class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="bindProgressCircle_A" wx:if="{{!progress_circle_A}}">下载</button>
+                    <image src="{{progressing_img_A}}" class="moui-icon-S" wx:if="{{progress_circle_A&&progress_A<100}}"/>
+                    <icon type="success_no_circle" class="moui-icon-radio" color="#1890ff" wx:if="{{progress_A>=100}}"/>
+                </view>
+            </view>
+            <view class="moui-cell-L">
+                <image src="{{icon.movie}}" class="moui-cell-L__icon"/>
+                <view class="moui-cell-L__name">媒体文件
+                    <view>2.4Mb</view>
+                    <view>Information</view>
+                </view>
+                <view>
+                    <button class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="bindProgressCircle_B" wx:if="{{!progress_circle_B}}">下载</button>
+                    <image src="{{progressing_img_B}}" class="moui-icon-S" wx:if="{{progress_circle_B&&progress_B<100}}"/>
+                    <icon type="success_no_circle" class="moui-icon-radio" color="#1890ff" wx:if="{{progress_B>=100}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="moui-menu {{menu_progress_mode?'moui-hide-b':'moui-show'}}">
+    <view class="moui-btn moui-btn-primary {{download_all?'moui-disabled':''}}" hover-class="moui-hover" bindtap="{{download_all?'':'bindDownloadAll'}}">{{download_all?"Downloading...":"Download All"}}</view>
+</view>
+
+<view class="moui-menu {{menu_progress_mode?'moui-show':'moui-hide-b'}}">
+    <view class="moui-progress-box {{mini_progress?'mini':''}}" hover-class="{{menu_progressing&&menu_progress>=100?'':'moui-hover'}}" hover-start-time="0" hover-stay-time="100" bindtap="{{menu_progress?menu_progress>=100?'':'bindMenuSelect':'bindProgress'}}">
+        <view class="moui-progress {{mini_progress?'mini':''}}">{{menu_progressing?menu_progress>=100?"Finished":"Progressing":menu_progress?"Continue":"Progress"}}</view>
+        <view class="moui-progress {{mini_progress?'mini':''}}" style="width:{{menu_progress?menu_progress:100}}%;"/>
+    </view>
+</view>

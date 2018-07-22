@@ -1,0 +1,138 @@
+<view class="page">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">List</view>
+        <view class="page__desc">列表</view>
+    </view>
+
+    <view>
+        <view class="moui-cells__title">带说明的列表项</view>
+        <view class="moui-cells">
+            <view class="moui-cell">
+                <view class="moui-cell__name">标题文字</view>
+                <view class="moui-cell__info">说明文字</view>
+            </view>
+        </view>
+
+        <view class="moui-cells__title">带图标、说明的列表项</view>
+        <view class="moui-cells">
+            <view class="moui-cell">
+                <view class="icon-info moui-cell__icon"></view>
+                <view class="moui-cell__name">标题文字</view>
+                <view class="moui-cell__info moui-loading__after">说明文字</view>
+            </view>
+            <view class="moui-cell">
+                <view class="icon-info moui-cell__icon"></view>
+                <view class="moui-cell__name">标题文字</view>
+                <view class="moui-cell__info">说明文字</view>
+            </view>
+        </view>
+
+        <view class="moui-cells__title">带跳转的列表项</view>
+        <view class="moui-cells">
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="moui-cell__name">Cell</view>
+                <view class="moui-cell__info moui-cell__navigate"></view>
+            </navigator>
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="moui-cell__name">Cell</view>
+                <view class="moui-cell__info moui-cell__navigate"></view>
+            </navigator>
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="moui-cell__name moui-loading__before">Cell with loading</view>
+                <view class="moui-cell__info moui-cell__navigate"></view>
+            </navigator>
+        </view>
+
+        <view class="moui-cells__title">带说明、跳转的列表项</view>
+        <view class="moui-cells">
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="moui-cell__name">Cell</view>
+                <view class="moui-cell__info moui-cell__navigate">说明文字</view>
+            </navigator>
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="moui-cell__name">Cell</view>
+                <view class="moui-cell__info moui-cell__navigate">说明文字</view>
+            </navigator>
+        </view>
+
+        <view class="moui-cells__title">带图标、说明、跳转的列表项</view>
+        <view class="moui-cells">
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="icon-info moui-cell__icon"></view>
+                <view class="moui-cell__name">Cell</view>
+                <view class="moui-cell__info moui-cell__navigate">说明文字</view>
+            </navigator>
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="icon-info moui-cell__icon"></view>
+                <view class="moui-cell__name">Cell</view>
+                <view class="moui-cell__info moui-cell__navigate">说明文字</view>
+            </navigator>
+        </view>
+
+        <view class="moui-cells__title">Larger</view>
+        <view class="moui-cells">
+            <view class="moui-cell-L">
+                <view class="icon-info moui-cell-L__icon"></view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view class="moui-cell__info">Info</view>
+            </view>
+            <view class="moui-cell-L">
+                <view class="icon-info moui-cell-L__icon"></view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view class="moui-cell__info moui-loading__after">Info</view>
+            </view>
+        </view>
+
+        <view class="moui-cells">
+            <view class="moui-cell-L">
+                <view class="icon-info moui-cell-L__icon"></view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view>
+                    <button class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="loading_A" wx:if="{{!loading_A}}">Start</button>
+                    <view class="moui-loading__after" wx:else/>
+                </view>
+            </view>
+            <view class="moui-cell-L">
+                <view class="icon-info moui-cell-L__icon"></view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view>
+                    <button class="moui-btn moui-btn-primary mini" hover-class="moui-hover" bindtap="loading_B" wx:if="{{!loading_B}}">Start</button>
+                    <view class="moui-loading__after" wx:else/>
+                </view>
+            </view>
+        </view>
+
+        <view class="moui-cells">
+            <navigator url="" class="moui-cell-L" hover-class="moui-hover">
+                <view class="icon-info moui-cell-L__icon"></view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view class="moui-cell__info moui-cell__navigate">Info</view>
+            </navigator>
+            <navigator url="" class="moui-cell-L" hover-class="moui-hover">
+                <view class="icon-info moui-cell-L__icon"></view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view class="moui-cell__info moui-cell__navigate">Info</view>
+            </navigator>
+        </view>
+        
+    </view>
+</view>

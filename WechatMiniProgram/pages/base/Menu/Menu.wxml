@@ -1,0 +1,18 @@
+<view class="page">
+<!--由于Menu使用fixed定位，需使用moui-space-b校准页面内容的位置，示例请查看Batch与Progress--> 
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Menu</view>
+        <view class="page__desc">菜单栏</view>
+    </view>
+
+    <view>
+
+        <view class="moui-cells__tips">Tips: Menu的内容支持button与icon，前往<navigator url="../Batch/Batch" class="moui-cell__link" hover-class="moui-link-hover">Batch</navigator>查看示例。前往<navigator url="../Progress/Progress" class="moui-cell__link" hover-class="moui-link-hover">Progress</navigator>查看Menu显示、隐藏与切换的动画示例。</view>
+        
+    </view>
+</view>
+
+<view class="moui-menu">
+    <navigator open-type="navigateBack" delta="1" class="moui-btn moui-btn-primary" hover-class="moui-hover">返回</navigator>
+</view>

@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">moUI</view>
+        <view class="page__desc">——</view>
+        <view class="page__desc">moUI是一个CSS组件库，你可以从GitHub上获取到样式源码来使用，也可以提交你设计的样式库，或指出已有样式库的Bug，欢迎Pull Request！</view>
+    </view>
+    <view class="page__bd">
+        <navigator url="base/index" class="card" hover-class="moui-hover">
+            <view class="moui-cell-L__icon icon-app-store-fill" />
+            <view class="title">Base</view>
+            <view class="moui-cell__info">V 1.0.0</view>
+        </navigator>
+    </view>
+</view>

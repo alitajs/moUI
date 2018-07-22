@@ -1,0 +1,32 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Switch</view>
+        <view class="page__desc">开关</view>
+    </view>
+
+    <view>
+
+        <view class="moui-cells__title">Switch</view>
+        <view class="moui-cells">
+            <view class="moui-cell">
+                <view class="moui-cell__name">开关</view>
+                <view class="moui-switch-box {{switch_A_disabled?'moui-disabled':''}}" id='A' bindtouchend="{{switch_A_disabled?'':'bindSwitch'}}">
+                    <view class="moui-switch {{switch_A?'active':''}}"/>
+                </view>
+            </view>
+            <view class="moui-cell">
+                <view class="moui-cell__name">开关 - 填充</view>
+                <view class="moui-switch-box {{switch_B?'active-fill':''}} {{switch_B_disabled?'moui-disabled':''}}" id='B' bindtouchend="{{switch_B_disabled?'':'bindSwitch'}}">
+                    <view class="moui-switch {{switch_B?'active-fill':''}}"/>
+                </view>
+            </view>
+            <view class="moui-cell">
+                <view class="moui-cell__name">设置开关Disabled</view>
+                <view class="moui-switch-box" bindtouchend="bindSwitchDisabled">
+                    <view class="moui-switch {{switch_C?'active':''}}"/>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+</view>

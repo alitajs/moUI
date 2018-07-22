@@ -1,0 +1,41 @@
+<view class="page moui-space-b">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Toptips</view>
+        <view class="page__desc">顶部提示</view>
+    </view>
+    
+    <view>
+        <view class="moui-toptips {{tips_primary?'moui-show':'moui-hide-t'}}">成功提示</view>
+        <view class="moui-toptips moui-toptips__warn {{tips_warn?'moui-show':'moui-hide-t'}}">错误提示</view>
+        <view class="moui-toptips-L {{tips_with_cancel?'moui-show':'moui-hide-t'}}">
+            <icon class="moui-toptips__icon" type="cancel" color="#fff" size="18" bindtap="bindSwitchTipsWithCancel" />
+            需要手动取消的提示
+        </view>
+        <view class="moui-toptips-L {{tips_with_handle?'moui-show':'moui-hide-t'}}">
+            <icon class="moui-toptips__icon" type="cancel" color="#fff" size="18" bindtap="bindSwitchTipsWithHandle" />
+            带事件处理的提示
+            <view class="moui-toptips__handle" hover-class="moui-toptips__handle-active">操作</view>
+        </view>
+
+        <view style="display:flex;padding:0 90rpx 24px 90rpx;width:570rpx;justify-content:space-between;">
+            <view id="tips_primary" class="moui-btn moui-btn-default" style="width:240rpx;" hover-class="moui-hover" bindtap="bindShowTopTips">成功提示</view>
+            <view id="tips_warn" class="moui-btn moui-btn-warn" style="width:240rpx;" hover-class="moui-hover" bindtap="bindShowTopTips">错误提示</view>
+        </view>
+        <view class="moui-cells">
+            <view class="moui-cell">
+                <view class="moui-cell__name">需手动取消的提示</view>
+                <view class="moui-switch-box" bindtouchend="bindSwitchTipsWithCancel">
+                    <view class="moui-switch {{tips_with_cancel?'active':''}}"/>
+                </view>
+            </view>
+            <view class="moui-cell">
+                <view class="moui-cell__name">带事件处理的提示</view>
+                <view class="moui-switch-box" bindtouchend="bindSwitchTipsWithHandle">
+                    <view class="moui-switch {{tips_with_handle?'active':''}}"/>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>

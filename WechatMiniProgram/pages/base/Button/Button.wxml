@@ -1,0 +1,57 @@
+<view class="page moui-space-b">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Button</view>
+        <view class="page__desc">按钮</view>
+    </view>
+    
+    <view class="page__bd">
+        <button class="moui-btn moui-btn-primary" hover-class="moui-hover">Primary Normal</button>
+        <button class="moui-btn moui-btn-primary moui-disabled">Primary Disabled</button>
+
+        <button class="moui-btn moui-btn-default" hover-class="moui-hover">Default Normal</button>
+        <button class="moui-btn moui-btn-default moui-disabled">Default Disabled</button>
+
+        <button class="moui-btn moui-btn-warn" hover-class="moui-hover">Warn Normal</button>
+        <button class="moui-btn moui-btn-warn moui-disabled">Warn Disabled</button>
+
+        <view style="display:flex;padding:0 90rpx 12px 90rpx;">
+            <button class="moui-btn moui-btn-primary" style="width:240rpx;" hover-class="moui-hover">Primary</button>
+            <button class="moui-btn moui-btn-primary moui-disabled" style="width:240rpx;">PrimaryDisabled</button>
+        </view>
+        <view style="display:flex;padding:0 90rpx 12px 90rpx;">
+            <button class="moui-btn moui-btn-default" style="width:240rpx;" hover-class="moui-hover">Default</button>
+            <button class="moui-btn moui-btn-default moui-disabled" style="width:240rpx;">DefaultDisabled</button>
+        </view>
+        <view style="display:flex;padding:0 90rpx 12px 90rpx;">
+            <button class="moui-btn moui-btn-warn" style="width:240rpx;" hover-class="moui-hover">Warn</button>
+            <button class="moui-btn moui-btn-warn moui-disabled" style="width:240rpx;">WarnDisabled</button>
+        </view>
+
+        <view style="display:flex;padding:0 106rpx 12px 106rpx;">
+            <button class="moui-btn moui-btn-primary mini" hover-class="moui-hover">按钮</button>
+            <button class="moui-btn moui-btn-default mini" hover-class="moui-hover">按钮</button>
+            <button class="moui-btn moui-btn-warn mini" hover-class="moui-hover">按钮</button>
+        </view>
+
+        <view style="display:flex;padding:0 96rpx 12px 96rpx;--miniBtnWidth:64px;">
+            <button class="moui-btn moui-btn-primary mini" hover-class="moui-hover">按钮</button>
+            <button class="moui-btn moui-btn-default mini" hover-class="moui-hover">按钮</button>
+            <button class="moui-btn moui-btn-warn mini" hover-class="moui-hover">按钮</button>
+        </view>
+
+        <view style="display:flex;padding:0 72rpx 12px 72rpx;--miniBtnWidth:48px;">
+            <button class="moui-btn moui-btn-primary mini" hover-class="moui-hover">P</button>
+            <button class="moui-btn moui-btn-default mini" hover-class="moui-hover">D</button>
+            <button class="moui-btn moui-btn-warn mini" hover-class="moui-hover">W</button>
+        </view>
+
+        <view class="moui-cell-L__name" style="margin:16px 90rpx 16px 90rpx;">
+            <view>Tips: 在某一级父元素的style设置局部变量--miniBtnWidth的值，即可控制所有mini子元素的宽度。--miniBtnWidth建议值为72px(默认)，64px，48px。</view>
+        </view>
+        
+    </view>
+</view>
+<view class="moui-menu">
+    <navigator open-type="navigateBack" delta="1" class="moui-btn moui-btn-primary" hover-class="moui-hover">Back</navigator>
+</view>

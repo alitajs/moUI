@@ -1,0 +1,64 @@
+<view class="page">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Preview</view>
+        <view class="page__desc">表单预览</view>
+    </view>
+
+    <view>
+        <view class="moui-form-preview">
+            <view class="moui-form-preview__title-box">
+                <view class="moui-form-preview__item">
+                    <view class="moui-form-preview__title">付款</view>
+                    <view class="moui-form-preview__date">07月20日</view>
+                </view>
+                <view class="moui-form-preview__item">
+                    <view class="moui-form-preview__value-L">¥555.55</view>
+                </view>
+            </view>
+            <view class="moui-form-preview__desc-box">
+                <view class="moui-form-preview__item">
+                    <view class="moui-label">商品</view>
+                    <view class="moui-form-preview__value">商品名称</view>
+                </view>
+                <view class="moui-form-preview__item">
+                    <view class="moui-label">标题标题</view>
+                    <view class="moui-form-preview__value">说明说明</view>
+                </view>
+                <view class="moui-form-preview__item">
+                    <view class="moui-label">标题标题</view>
+                    <view class="moui-form-preview__value">描述描述描述描述描述描述描述描述描述描述描述描述描述描述</view>
+                </view>
+            </view>
+            <view class="moui-form-preview__handle-box">
+                <navigator url="" class="moui-form-preview__handle"  hover-class="moui-link-hover">推荐操作</navigator>
+            </view>
+        </view>
+        <view class="moui-form-preview">
+            <view class="moui-form-preview__title-box">
+                <view class="moui-form-preview__item">
+                    <view class="moui-form-preview__title">订单完成</view>
+                    <view class="moui-form-preview__date">07月20日</view>
+                </view>
+            </view>
+            <view class="moui-form-preview__desc-box">
+                <view class="moui-form-preview__item">
+                    <view class="moui-label">服务</view>
+                    <view class="moui-form-preview__value">服务名称</view>
+                </view>
+                <view class="moui-form-preview__item">
+                    <view class="moui-label">标题标题</view>
+                    <view class="moui-form-preview__value">说明说明</view>
+                </view>
+                <view class="moui-form-preview__item">
+                    <view class="moui-label">标题标题</view>
+                    <view class="moui-form-preview__value">描述描述描述描述描述描述描述描述描述描述描述描述描述描述</view>
+                </view>
+            </view>
+            <view class="moui-form-preview__handle-box">
+                <navigator class="moui-form-preview__handle default"  hover-class="moui-link-hover">辅助操作</navigator>
+                <navigator class="moui-form-preview__handle"  hover-class="moui-link-hover">推荐操作</navigator>
+            </view>
+        </view>
+    </view>
+</view>

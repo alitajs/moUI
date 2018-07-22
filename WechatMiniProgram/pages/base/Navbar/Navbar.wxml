@@ -1,0 +1,23 @@
+<view class="page moui-space-t">
+<!--由于navbar使用fixed定位，需使用moui-space-t校准选项内容的位置-->    
+    <view class="moui-navbar" style="--items:3;--activeIndex:{{activeIndex}};"><!--在此设置选项数量与当前选项-->
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="moui-navbar__item {{activeIndex==index?'active':''}}" bindtap="bindChange">
+                {{item}}
+            </view>
+        </block>
+        <view class="moui-navbar__slider"></view>
+    </view>
+
+    <view class="moui-tab__content" hidden="{{activeIndex != 0}}">
+        <view class="moui-cells__tips">选项一的内容</view>
+    </view>
+
+    <view class="moui-tab__content" hidden="{{activeIndex != 1}}">
+        <view class="moui-cells__tips">选项二的内容</view>
+    </view>
+
+    <view class="moui-tab__content" hidden="{{activeIndex != 2}}">
+        <view class="moui-cells__tips">选项三的内容</view>
+    </view>
+</view>

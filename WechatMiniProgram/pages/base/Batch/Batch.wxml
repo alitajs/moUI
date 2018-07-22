@@ -1,0 +1,80 @@
+<view class="page moui-space-b">
+<!--由于Menu使用fixed定位，需使用moui-space-b校准页面内容的位置--> 
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Batch</view>
+        <view class="page__desc">批量操作</view>
+    </view>
+
+    <view>
+        <view class="moui-toptips {{tips_primary?'moui-show':'moui-hide-t'}}" bindtap="bindUndo">点击恢复所有图片</view>
+
+        <view class="moui-cells__title">轻触预览，长按批量操作，支持手指滑动选择</view>
+        <view class="moui-gallery" bindlongpress="bindSelectMode" bindtap="bindGallery" bindtouchstart="bindSelectStart" bindtouchmove="bindSelectGallery">
+            <block wx:for="{{image}}" wx:key="id">
+                <view id="{{index}}" hidden="{{item.hide}}">
+                    <image id="{{index}}" src="{{item.src}}" mode="aspectFill" class="moui-gallery__image {{item.active?'active':''}} {{item.deleted?'deleted':''}}" bindtransitionend="bindImageDeleted"/>
+                    <icon class="moui-gallery__icon" wx:if="{{item.active&&!item.deleted}}" size="20" type="success" color="#1890ff"/>
+                </view>
+            </block>
+        </view>
+
+        <view class="moui-cells__tips">Tips: 图片较多时，可配合wx.pageScrollTo实现页面滑动。这里借用一句AntDesign的设计语言:“应该勇敢的让用户去尝试，给用户机会『撤消』即可”</view>
+
+        <view class="moui-cells__title">列表批量操作</view>
+        <view class="moui-cells">
+            <view id="A" class="moui-cell {{list_active.A?'moui-cell__active':''}} {{list_deleted.A?'moui-cell__deleted':''}}" hover-stay-time="0" bindlongpress="bindListSelectStart" bindtap="bindListSelect">
+                <image src="{{icon.pdf}}" class="moui-cell__icon"/>
+                <view class="moui-cell__name">PDF File</view>
+                <view>
+                    <icon type="circle" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||list_active.A}}"/>
+                    <icon type="success" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||!list_active.A}}"/>
+                </view>
+            </view>
+            <view id="B" class="moui-cell {{list_active.B?'moui-cell__active':''}} {{list_deleted.B?'moui-cell__deleted':''}}" hover-stay-time="0" bindlongpress="bindListSelectStart" bindtap="bindListSelect">
+                <image src="{{icon.word}}" class="moui-cell__icon"/>
+                <view class="moui-cell__name">Word File</view>
+                <view>
+                    <icon type="circle" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||list_active.B}}"/>
+                    <icon type="success" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||!list_active.B}}"/>
+                </view>
+            </view>
+            <view id="C" class="moui-cell {{list_active.C?'moui-cell__active':''}} {{list_deleted.C?'moui-cell__deleted':''}}" hover-stay-time="0" bindlongpress="bindListSelectStart" bindtap="bindListSelect">
+                <image src="{{icon.zip}}" class="moui-cell__icon"/>
+                <view class="moui-cell__name">ZIP File</view>
+                <view>
+                    <icon type="circle" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||list_active.C}}"/>
+                    <icon type="success" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||!list_active.C}}"/>
+                </view>
+            </view>
+            <view id="D" class="moui-cell {{list_active.D?'moui-cell__active':''}} {{list_deleted.D?'moui-cell__deleted':''}}" hover-stay-time="0" bindlongpress="bindListSelectStart" bindtap="bindListSelect">
+                <image src="{{icon.movie}}" class="moui-cell__icon"/>
+                <view class="moui-cell__name">Movie File</view>
+                <view>
+                    <icon type="circle" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||list_active.D}}"/>
+                    <icon type="success" class="moui-icon-radio" color="#1890ff" hidden="{{!list_selecting||!list_active.D}}"/>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>
+
+<view class="moui-menu {{list_selecting||gallery_selecting?'moui-show':'moui-hide-b'}}">
+    <view class="moui-menu__item" hover-class="moui-hover" bindtap="bindDelete">
+        <view class="moui-menu__icon icon-delete"/>
+        删除
+    </view>
+    <view class="moui-menu__item" hover-class="moui-hover">
+        <view class="moui-menu__icon icon-share"/>
+        分享
+    </view>
+    <view class="moui-menu__item" hover-class="moui-hover">
+        <view class="moui-menu__icon icon-download"/>
+        下载
+    </view>
+    <view class="moui-menu__item" hover-class="moui-hover" bindtap="bindCancel">
+        <view class="moui-menu__icon icon-close-circle"/>
+        取消
+    </view>
+</view>

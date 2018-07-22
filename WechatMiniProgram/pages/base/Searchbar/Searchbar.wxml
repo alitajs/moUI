@@ -1,0 +1,27 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Searchbar</view>
+        <view class="page__desc">搜索栏</view>
+    </view>
+    <view>
+
+        <view class="moui-cells__title" style="margin-bottom:-6px;">滑动设置搜索栏宽度</view>
+        <slider bindchanging="changeWidth" activeColor="#1890ff" block-size="14" min="40" value="{{width}}"/>
+
+        <view class="moui-search-bar" style="--searchBarWidth:{{width}}%;"><!--如需修改宽度，请注意结尾的%单位-->
+            <icon class="moui-search-bar__icon-l" type="search" size="14"></icon>
+            <input class="moui-search-bar__input" placeholder="搜索" value="{{input}}" bindinput="bindInput" />
+            <icon class="moui-search-bar__icon-r" wx:if="{{input.length > 0}}" bindtap="bindClear" type="clear" size="14"/>
+            <view class="moui-cells moui-search-bar__result" wx:if="{{input.length > 0}}">
+                <block wx:for="{{search_result}}" wx:key="*this">
+                    <navigator id="{{index}}" url="" class="moui-cell" hover-class="moui-hover">
+                        <view class="moui-cell__name">实时搜索文本</view>
+                    </navigator>
+                </block>
+            </view>
+        </view>
+
+        <view class="moui-cells__tips">Tips: 实时搜索文本为悬浮层，z-index值为9</view>
+
+    </view>
+</view>
