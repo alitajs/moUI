@@ -6,7 +6,7 @@
     <view>
 
         <view class="moui-cells__title" style="margin-bottom:-6px;">滑动设置搜索栏宽度</view>
-        <slider bindchanging="changeWidth" activeColor="#1890ff" block-size="14" min="40" value="{{width}}"/>
+        <slider bindchanging="changeWidth" activeColor="#1890ff" block-size="14" min="32" value="{{width}}"/>
 
         <view class="moui-search-bar" style="--searchBarWidth:{{width}}%;"><!--如需修改宽度，请注意结尾的%单位-->
             <icon class="moui-search-bar__icon-l" type="search" size="14"></icon>

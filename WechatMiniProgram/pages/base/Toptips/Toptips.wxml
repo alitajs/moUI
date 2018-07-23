@@ -25,14 +25,14 @@
         <view class="moui-cells">
             <view class="moui-cell">
                 <view class="moui-cell__name">需手动取消的提示</view>
-                <view class="moui-switch-box" bindtouchend="bindSwitchTipsWithCancel">
-                    <view class="moui-switch {{tips_with_cancel?'active':''}}"/>
+                <view class="moui-switch-box {{tips_with_cancel?'active-fill':''}}" bindtouchend="bindSwitchTipsWithCancel">
+                    <view class="moui-switch {{tips_with_cancel?'active-fill':''}}"/>
                 </view>
             </view>
             <view class="moui-cell">
                 <view class="moui-cell__name">带事件处理的提示</view>
-                <view class="moui-switch-box" bindtouchend="bindSwitchTipsWithHandle">
-                    <view class="moui-switch {{tips_with_handle?'active':''}}"/>
+                <view class="moui-switch-box {{tips_with_handle?'active-fill':''}}" bindtouchend="bindSwitchTipsWithHandle">
+                    <view class="moui-switch {{tips_with_handle?'active-fill':''}}"/>
                 </view>
             </view>
         </view>
