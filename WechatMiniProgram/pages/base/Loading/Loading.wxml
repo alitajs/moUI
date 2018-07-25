@@ -65,7 +65,7 @@
             </view>
         </view>
 
-        <view class="moui-cells__tips">Tips: 从moui.js中引用的SVG支持自定义主题颜色，也可以在设置好SVG Loading的主题颜色后，从Console中获得base64编码的SVG，直接本地引用，或添加到CSS的background-image属性中使用，以进一步减少SVG耗能</view>
+        <view class="moui-cells__tips">Tips: 从moui.js中引用的SVG支持自定义主题颜色，也可以在设置好SVG Loading的主题颜色后，从Console中获得base64编码的SVG，直接本地引用，或添加到CSS的『background-image』属性中使用，以进一步减少SVG耗能</view>
 
     </view>
 </view>

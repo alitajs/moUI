@@ -13,7 +13,7 @@
                     <view class="moui-form-preview__date">07月20日</view>
                 </view>
                 <view class="moui-form-preview__item">
-                    <view class="moui-form-preview__value-L">¥555.55</view>
+                    <view class="moui-form-preview__value-L number">¥123.45</view>
                 </view>
             </view>
             <view class="moui-form-preview__desc-box">
@@ -34,6 +34,7 @@
                 <navigator url="" class="moui-form-preview__handle"  hover-class="moui-link-hover">推荐操作</navigator>
             </view>
         </view>
+        
         <view class="moui-form-preview">
             <view class="moui-form-preview__title-box">
                 <view class="moui-form-preview__item">
@@ -60,5 +61,6 @@
                 <navigator class="moui-form-preview__handle"  hover-class="moui-link-hover">推荐操作</navigator>
             </view>
         </view>
+        <view class="moui-cells__tips">Tips: 数字通常使用Tahoma等宽字体，在class属性添加『number』即可</view>
     </view>
 </view>

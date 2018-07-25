@@ -1,0 +1,29 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">List</view>
+    <view class="page__desc">列表</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-collapse__title">输入框</view>
+      <view class="card-input-box {{focus[0]?'focus':''}}">
+        <input id="0" bindfocus="bindFocus" bindblur="bindBlur" placeholder="用户名" />
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">带图标的输入框</view>
+      <view class="card-input-box {{focus[1]?'focus':''}}">
+        <view class="card-list__icon icon-user" />
+        <input id="1" bindfocus="bindFocus" bindblur="bindBlur" placeholder="用户名" />
+      </view>
+      <view class="card-input-box {{focus[2]?'focus':''}}">
+        <view class="card-list__icon icon-lock" />
+        <input id="2" bindfocus="bindFocus" bindblur="bindBlur" placeholder="密码" />
+      </view>
+    </view>
+
+  </view>
+</card-page>

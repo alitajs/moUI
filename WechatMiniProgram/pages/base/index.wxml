@@ -4,6 +4,7 @@
         <view class="page__title">Base</view>
         <view class="page__desc">基础组件库</view>
     </view>
+    
     <view class="page__bd">
         <view class="moui-cells">
             <block wx:for="{{list}}" wx:key="*this">

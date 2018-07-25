@@ -7,7 +7,6 @@
     </view>
 
     <view>
-    
         <view class="moui-cells__title">Menu Progress</view>
         <view class="moui-cells">
             <view class="moui-cell">

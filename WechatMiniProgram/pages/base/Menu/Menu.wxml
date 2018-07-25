@@ -8,7 +8,7 @@
 
     <view>
 
-        <view class="moui-cells__tips">Tips: Menu的内容支持button与icon，前往<navigator url="../Batch/Batch" class="moui-cell__link" hover-class="moui-link-hover">Batch</navigator>查看示例。前往<navigator url="../Progress/Progress" class="moui-cell__link" hover-class="moui-link-hover">Progress</navigator>查看Menu显示、隐藏与切换的动画示例。</view>
+        <view class="moui-cells__tips">Tips: Menu的内容支持『button』与『icon』，前往<navigator url="../Batch/Batch" class="moui-cell__link" hover-class="moui-link-hover">Batch</navigator>查看示例。前往<navigator url="../Progress/Progress" class="moui-cell__link" hover-class="moui-link-hover">Progress</navigator>查看Menu显示、隐藏与切换的动画示例。</view>
         
     </view>
 </view>

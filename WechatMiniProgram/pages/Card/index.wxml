@@ -1,0 +1,32 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Card</view>
+    <view class="page__desc">卡片</view>
+  </view>
+    
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-lists">
+        <block wx:for="{{listA}}" wx:key="*this">
+          <navigator url="{{item}}/{{item}}" class="card-list" hover-class="card-hover">
+            <view class="card-list__title">{{item}}</view>
+            <view class="card-list__info card-navigate__after"></view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">与基础库组合使用示例</view>
+      <view class="card-lists">
+        <block wx:for="{{listB}}" wx:key="*this">
+          <navigator url="{{item}}/{{item}}" class="card-list" hover-class="card-hover">
+            <view class="card-list__title">{{item}}</view>
+            <view class="card-list__info card-navigate__after"></view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</card-page>

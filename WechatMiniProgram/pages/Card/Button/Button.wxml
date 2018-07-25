@@ -1,0 +1,76 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Button</view>
+    <view class="page__desc">按钮</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">Small button</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button class="card-btn primary small" hover-class="card-btn-hover">Primary</button>
+            <button class="card-btn small" hover-class="card-btn-hover">Default</button>
+            <button class="card-btn warn small" hover-class="card-btn-hover">Warn</button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">Default button</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button class="card-btn primary" hover-class="card-btn-hover">Primary</button>
+            <button class="card-btn" hover-class="card-btn-hover">Default</button>
+            <button class="card-btn warn" hover-class="card-btn-hover">Warn</button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">Large button</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button class="card-btn primary large" hover-class="card-btn-hover">Primary</button>
+            <button class="card-btn large" hover-class="card-btn-hover">Default</button>
+            <button class="card-btn warn large" hover-class="card-btn-hover">Warn</button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">Button with icon</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button class="card-btn primary" hover-class="card-btn-hover">
+              <view class="icon icon-download-light" />
+              Download
+            </button>
+          </view>
+        </view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button class="card-btn primary" hover-class="card-btn-hover" bindtap="{{loading?'':'bindLoading'}}">
+              <view class="{{loading?'card-btn-loading light':''}}" />
+              Click
+            </button>
+          </view>
+          <view class="column">
+            <button class="card-btn" hover-class="card-btn-hover" bindtap="{{loading?'':'bindLoading'}}">
+              <view class="{{loading?'card-btn-loading':''}}" />
+              Click
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</card-page>

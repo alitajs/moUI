@@ -1,0 +1,111 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">List</view>
+    <view class="page__desc">列表</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-collapse__title">带说明的列表项</view>
+      <view class="card-lists">
+        <view class="card-list">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info">说明文字</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">带操作的列表项</view>
+      <view class="card-lists">
+        <view class="card-list">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-link" hover-class="card-link-hover">操作</view>
+        </view>
+        <view class="card-list">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-link" hover-class="card-link-hover">操作</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">带图标、说明的列表项</view>
+      <view class="card-lists">
+        <view class="card-list">
+          <view class="card-list__icon icon-build-fill" />
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info">说明文字</view>
+        </view>
+        <view class="card-list">
+          <view class="card-list__icon icon-build-fill" />
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info">说明文字</view>
+        </view>
+      </view>
+    </view>
+        
+    <view class="card-container">
+      <view class="card-collapse__title">带跳转的列表项</view>
+      <view class="card-lists">
+        <navigator url="" class="card-list" hover-class="card-hover">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-navigate__after"></view>
+        </navigator>
+        <navigator url="" class="card-list" hover-class="card-hover">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-navigate__after"></view>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">带说明、跳转的列表项</view>
+      <view class="card-lists">
+        <navigator url="" class="card-list" hover-class="card-hover">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-navigate__after">说明文字</view>
+        </navigator>
+        <navigator url="" class="card-list" hover-class="card-hover">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-navigate__after">说明文字</view>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">带图标、说明、跳转的列表项</view>
+      <view class="card-lists">
+        <navigator url="" class="card-list" hover-class="card-hover">
+          <view class="card-list__icon icon-build-fill" />
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-navigate__after">说明文字</view>
+        </navigator>
+        <navigator url="" class="card-list" hover-class="card-hover">
+          <view class="card-list__icon icon-build-fill" />
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info card-navigate__after">说明文字</view>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">无边框的列表项</view>
+      <view class="card-lists noborder">
+        <view class="card-list">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info">说明文字</view>
+        </view>
+        <view class="card-list">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info">说明文字</view>
+        </view>
+        <view class="card-list">
+          <view class="card-list__title">标题文字</view>
+          <view class="card-list__info">说明文字</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</card-page>

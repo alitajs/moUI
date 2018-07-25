@@ -1,0 +1,92 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Collapse</view>
+    <view class="page__desc">折叠面板</view>
+  </view>
+
+  <view class="page__bd" style="--borderRadius:{{borderRadius}}px;">
+    <view class="card-container">
+      <view class="card-collapse__title">折叠面板</view>
+      <view class="card-collapse">
+        <block wx:for="{{panelA}}" wx:key="index">
+          <view class="card-panel">
+            <view class="card-panel__header card-navigate__before {{item.open?'':'hide'}} {{item.disabled?'disabled':''}}" bindtap="{{item.disabled?'':'bindOpenPanelA'}}" id="{{index}}">{{item.title}}</view>
+            <view class="card-panel__item {{item.open?'':'hide'}}">Add your content here.</view>
+          </view>
+        </block>
+      </view>
+   </view>
+      
+    <view class="card-container">
+      <view class="card-collapse__title">面板嵌套</view>
+      <view class="card-collapse">
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelB[0].open?'':'hide'}}" bindtap="bindOpenPanelB" id="0">{{panelB[0].title}}</view>
+          <view class="card-panel__item {{panelB[0].open?'':'hide'}}">
+            <view class="card-collapse">
+              <view class="card-panel">
+                <view class="card-panel__header card-navigate__before {{panelB[2].open?'':'hide'}}" bindtap="bindOpenPanelB" id="2">{{panelB[2].title}}</view>
+                <view class="card-panel__item {{panelB[2].open?'':'hide'}}">Add your content here.</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelB[1].open?'':'hide'}}" bindtap="bindOpenPanelB" id="1">{{panelB[1].title}}</view>
+          <view class="card-panel__item {{panelB[1].open?'':'hide'}}">Add your content here.</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container" style="--collapseMargin:{{collapseMargin}}px;">
+      <view class="card-collapse__title">自定义面板</view>
+      <view class="card-collapse">
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelC[0].open?'':'hide'}}" bindtap="bindOpenPanelC" id="0">{{panelC[0].title}}</view>
+          <view class="card-panel__item {{panelC[0].open?'':'hide'}}">
+            <slider bindchanging="changeBorderRadius" bindchange="changeBorderRadius" activeColor="#faad14" block-size="14" max="16" value="{{borderRadius}}" show-value style="width:100%;" />
+          </view>
+        </view>
+      </view>
+      <view class="card-collapse">
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelC[1].open?'':'hide'}}" bindtap="bindOpenPanelC" id="1">{{panelC[1].title}}</view>
+          <view class="card-panel__item {{panelC[1].open?'':'hide'}}">
+            <slider bindchanging="changeCollapseMargin" bindchange="changeCollapseMargin" activeColor="#faad14" block-size="14" max="32" value="{{collapseMargin}}" show-value style="width:100%;" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container" style="--panelBGColor:#fafafa;--collapseMargin:16px;">
+      <view class="card-collapse__title">自定义背景色与无边框</view>
+      <view class="card-collapse noborder">
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelC[2].open?'':'hide'}}" bindtap="bindOpenPanelC" id="2">{{panelC[2].title}}</view>
+          <view class="card-panel__item {{panelC[2].open?'':'hide'}}">Add your content here.</view>
+        </view>
+      </view>
+      <view class="card-collapse noborder">
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelC[3].open?'':'hide'}}" bindtap="bindOpenPanelC" id="3">{{panelC[3].title}}</view>
+          <view class="card-panel__item {{panelC[3].open?'':'hide'}}">Add your content here.</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">简洁式面板</view>
+      <view class="card-collapse simple">
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelC[4].open?'':'hide'}}" bindtap="bindOpenPanelC" id="4">{{panelC[4].title}}</view>
+          <view class="card-panel__item {{panelC[4].open?'':'hide'}}">Add your content here.</view>
+        </view>
+        <view class="card-panel">
+          <view class="card-panel__header card-navigate__before {{panelC[5].open?'':'hide'}}" bindtap="bindOpenPanelC" id="5">{{panelC[5].title}}</view>
+          <view class="card-panel__item {{panelC[5].open?'':'hide'}}">Add your content here.</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</card-page>

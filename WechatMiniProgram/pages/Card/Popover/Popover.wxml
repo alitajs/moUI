@@ -1,0 +1,13 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Popover</view>
+    <view class="page__desc">气泡卡片</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      
+    </view>
+  </view>
+</card-page>

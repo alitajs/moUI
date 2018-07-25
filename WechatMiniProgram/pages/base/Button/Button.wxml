@@ -47,7 +47,7 @@
         </view>
 
         <view class="moui-cell-L__name" style="margin:16px 90rpx 16px 90rpx;">
-            <view>Tips: 在某一级父元素的style设置局部变量--miniBtnWidth的值，即可控制所有mini子元素的宽度。--miniBtnWidth建议值为72px(默认)，64px，48px。</view>
+            <view>Tips: 在某一级父元素的style设置局部变量『--miniBtnWidth』的值，即可控制所有mini子元素的宽度。『--miniBtnWidth』建议值为72px(默认)，64px，48px。</view>
         </view>
         
     </view>

@@ -1,0 +1,112 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Panel</view>
+    <view class="page__desc">面板</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-collapse__title">面板</view>
+      <block wx:for="{{panel}}" wx:key="*this">
+        <view class="card-panel">
+          <view class="card-panel__header">{{item}}</view>
+          <view class="card-panel__item">Add your content here.</view>
+        </view>
+      </block>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">标题列表</view>
+      <view class="card-panel">
+        <view class="card-panel__header">Header</view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <view class="column">
+            <view class="title">文字标题</view>
+          </view>
+        </view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <view class="column">
+            <view class="title">文字标题</view>
+          </view>
+        </view>
+      </view>
+      <view class="card-panel">
+        <view class="card-panel__header">Header</view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <view class="column">
+            <view class="title">文字标题</view>
+          </view>
+        </view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <view class="column">
+            <view class="title">文字标题</view>
+          </view>
+        </view>
+        <view class="card-link" hover-class="card-link-hover">查看更多</view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">带图标的标题列表</view>
+      <view class="card-panel">
+        <view class="card-panel__header">Header</view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <image class="icon" src="{{image_exmaple}}" />
+          <view class="column">
+            <view class="title">文字标题</view>
+          </view>
+        </view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <image class="icon" src="{{image_exmaple}}" />
+          <view class="column">
+            <view class="title">文字标题</view>
+          </view>
+        </view>
+        <view class="card-link" hover-class="card-link-hover">查看更多</view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">信息列表</view>
+      <view class="card-panel">
+        <view class="card-panel__header">Header</view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <view class="column">
+            <view class="title">文字标题</view>
+            <view class="info">说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</view>
+          </view>
+        </view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <view class="column">
+            <view class="title">文字标题</view>
+            <view class="info">说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</view>
+          </view>
+        </view>
+        <view class="card-link" hover-class="card-link-hover">查看更多</view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-collapse__title">图文列表</view>
+      <view class="card-panel">
+        <view class="card-panel__header">Header</view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <image class="image" src="{{image_exmaple}}" />
+          <view class="column">
+            <view class="title">图文标题</view>
+            <view class="info">说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</view>
+          </view>
+        </view>
+        <view class="card-panel__item" hover-class="card-hover">
+          <image class="image" src="{{image_exmaple}}" />
+          <view class="column">
+            <view class="title">图文标题</view>
+            <view class="info">说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</view>
+          </view>
+        </view>
+        <view class="card-link" hover-class="card-link-hover">查看更多</view>
+      </view>
+    </view>
+  </view>
+</card-page>

@@ -4,6 +4,7 @@
         <view class="page__title">Flex</view>
         <view class="page__desc">Flex布局</view>
     </view>
+    
     <view>
         <view class="moui-flex">
             <view class="moui-flex__item"><view class="placeholder">Flex</view></view>
