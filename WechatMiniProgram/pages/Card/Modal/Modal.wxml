@@ -1,0 +1,143 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Modal</view>
+    <view class="page__desc">模态框</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">Total</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button
+              id="0"
+              class="card-btn primary"
+              hover-class="card-btn-hover"
+              bindtap="bindShowTotal"
+            >文字提示</button>
+            <button
+              id="1"
+              class="card-btn primary"
+              hover-class="card-btn-hover"
+              bindtap="bindShowTotal"
+            >详情提示</button>
+          </view>
+        </view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button
+              id="2"
+              class="card-btn primary"
+              hover-class="card-btn-hover"
+              bindtap="bindShowTotal"
+            >透明蒙层</button>
+            <button
+              id="3"
+              class="card-btn primary"
+              hover-class="card-btn-hover"
+              bindtap="bindShowTotal"
+            >带图标的提示</button>
+          </view>
+        </view>
+      </view>
+
+      <view class="card-panel">
+        <view class="card-panel__header">Modal</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button
+              id="4"
+              class="card-btn primary"
+              hover-class="card-btn-hover"
+              bindtap="bindShowModal"
+            >需手动确认的提示</button>
+          </view>
+        </view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button
+              id="5"
+              class="card-btn primary"
+              hover-class="card-btn-hover"
+              bindtap="bindShowModal"
+            >带必要操作的提示</button>
+          </view>
+        </view>
+        <view class="card-panel__item">
+          <view class="column">
+            <button
+              id="6"
+              class="card-btn primary"
+              hover-class="card-btn-hover"
+              bindtap="bindShowModal"
+            >允许点击蒙层取消</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view id="0" class="card-modal-box {{hide[0]?'hide':''}}">
+    <view class="card-modal">
+      <view class="title">操作成功</view>
+    </view>
+  </view>
+
+  <view id="1" class="card-modal-box {{hide[1]?'hide':''}}">
+    <view class="card-modal">
+      <view class="title">操作成功</view>
+      <view class="content">详细描述详细描述详细描述详细描述详细描述详细描述详细描述</view>
+    </view>
+  </view>
+
+  <view id="2" class="card-modal-box {{hide[2]?'hide':''}} transparent">
+    <view class="card-modal">
+      <view class="title">透明蒙层</view>
+    </view>
+  </view>
+
+  <view id="3" class="card-modal-box {{hide[3]?'hide':''}}">
+    <view class="card-modal">
+      <icon class="icon" type="success" size="64" color="#fa8c16" />
+      <view class="title">操作成功</view>
+    </view>
+  </view>
+
+  <view id="4" class="card-modal-box {{hide[4]?'hide':''}}">
+    <view class="card-modal">
+      <view class="title">标题文字</view>
+      <view class="content">详细描述详细描述详细描述详细描述详细描述详细描述详细描述</view>
+      <view class="footer">
+        <button
+          id="4"
+          class="card-btn primary small"
+          hover-class="card-btn-hover"
+          bindtap="bindHideModal"
+        >操作</button>
+      </view>
+    </view>
+  </view>
+
+  <view id="5" class="card-modal-box {{hide[5]?'hide':''}}">
+    <view class="card-modal">
+      <view class="title">标题文字</view>
+      <view class="content">点击取消关闭Modal</view>
+      <view class="footer">
+        <button id="5" class="card-btn small" hover-class="card-btn-hover" bindtap="bindHideModal">取消</button>
+        <button class="card-btn primary small" hover-class="card-btn-hover">操作</button>
+      </view>
+    </view>
+  </view>
+
+  <view id="6" class="card-modal-box {{hide[6]?'hide':''}}" bindtap="bindHideModal">
+    <view class="card-modal">
+      <icon class="icon" type="info" size="64" />
+      <view class="title">点击蒙层关闭Modal</view>
+      <view class="footer">
+        <button class="card-btn primary small" hover-class="card-btn-hover">操作</button>
+      </view>
+    </view>
+  </view>
+</card-page>

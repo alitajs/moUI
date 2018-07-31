@@ -6,7 +6,7 @@
         <view class="page__desc">moUI是一个CSS组件库，你可以从GitHub上获取到样式源码来使用，也可以提交你设计的组件库，或指出已有组件库的Bug，欢迎Pull Request！</view>
     </view>
     <view class="page__bd">
-        <block wx:for="{{list}}" wx:key="*this">
+        <block wx:for="{{list}}" wx:key="name">
             <navigator url="{{item.name}}/index" class="card" hover-class="card-btn-hover">
                 <view class="moui-cell-L__icon {{item.icon}}" />
                 <view class="title">{{item.name}}</view>

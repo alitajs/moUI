@@ -10,19 +10,19 @@
 
         <view class="moui-cells__title">表单</view>
         <view class="moui-input-box" bindtap="bindFocus">
-            <view class="moui-input__name {{focus_A?'focus':input_A?'inputted':''}}">姓名</view>
-            <input id="A" focus="{{focus_A}}" bindfocus="bindFocus" bindblur="bindBlur"/>
+            <view class="moui-input__name {{focus.A?'focus':input.A?'inputted':''}}">姓名</view>
+            <input id="A" focus="{{focus.A}}" bindfocus="bindFocus" bindblur="bindBlur"/>
         </view>
 
         <view class="moui-input-box" bindtap="bindFocus">
-            <view class="moui-input__name {{focus_B?'focus':input_B?'inputted':''}}">手机号</view>
-            <input id="B" focus="{{focus_B}}" bindfocus="bindFocus" bindblur="bindBlur"/>
+            <view class="moui-input__name {{focus.B?'focus':input.B?'inputted':''}}">手机号</view>
+            <input id="B" focus="{{focus.B}}" bindfocus="bindFocus" bindblur="bindBlur"/>
         </view>
 
         <view class="moui-input-box" bindtap="bindFocus">
-            <view class="moui-input__name {{focus_C?'focus':input_C?'inputted':''}}">验证码</view>
+            <view class="moui-input__name {{focus.C?'focus':input.C?'inputted':''}}">验证码</view>
             <view class="moui-input__link-box">
-                <input id="C" focus="{{focus_C}}" bindfocus="bindFocus" bindblur="bindBlur"/>
+                <input id="C" focus="{{focus.C}}" bindfocus="bindFocus" bindblur="bindBlur"/>
                 <view class="moui-input__link {{tips_primary_disabled?'moui-disabled':''}}" bindtap="{{tips_primary_disabled?'':'bindShowTopTips'}}">获取验证码{{tips_primary_disabled?"("+tips_primary_disabled+"s)":""}}</view>
             </view>
         </view>
@@ -33,16 +33,16 @@
         </view>
 
         <view class="moui-input-box" bindtap="bindFocus">
-            <view class="moui-input__name {{focus_D?'focus':input_D?'inputted':''}} moui-warn-text">报错</view>
-            <input id="D" focus="{{focus_D}}" bindfocus="bindFocus" bindblur="bindBlur"/>
+            <view class="moui-input__name {{focus.D?'focus':input.D?'inputted':''}} moui-warn-text">报错</view>
+            <input id="D" focus="{{focus.D}}" bindfocus="bindFocus" bindblur="bindBlur"/>
         </view>
 
         <view class="moui-input-box moui-textarea" bindtap="bindFocus">
-            <view class="moui-input__name {{focus_E?'focus':input_E?'inputted':''}} {{textarea_length>30?'moui-warn-text':''}}">
+            <view class="moui-input__name {{focus.E?'focus':input.E?'inputted':''}} {{textarea_length>30?'moui-warn-text':''}}">
                 文本（{{textarea_length}}/30）
             </view>
-            <input id="E" value="{{clear_E}}" class="moui-input__icon__after" focus="{{focus_E}}" bindfocus="bindFocus" bindblur="bindBlur" bindinput="bindInput"/>
-            <icon type="clear" color="#ccc" size="17" wx:if="{{input_E}}" bindtap="bindClear"></icon>
+            <input id="E" value="{{clear.E}}" class="moui-input__icon__after" focus="{{focus.E}}" bindfocus="bindFocus" bindblur="bindBlur" bindinput="bindInput"/>
+            <icon type="clear" color="#ccc" size="17" wx:if="{{input.E}}" bindtap="bindClear"></icon>
         </view>
 
         <view class="moui-cells__tips">Tips: 通过input focus返回的键盘高度，可实现底部菜单随键盘上浮</view>

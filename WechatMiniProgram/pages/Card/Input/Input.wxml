@@ -1,8 +1,8 @@
 <card-page>
   <view class="moui-start" />
   <view class="page__hd">
-    <view class="page__title">List</view>
-    <view class="page__desc">列表</view>
+    <view class="page__title">Input</view>
+    <view class="page__desc">输入</view>
   </view>
 
   <view class="page__bd">

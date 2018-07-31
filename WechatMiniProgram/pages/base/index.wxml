@@ -8,10 +8,13 @@
     <view class="page__bd">
         <view class="moui-cells">
             <block wx:for="{{list}}" wx:key="*this">
-                <navigator url="{{item}}/{{item}}" class="moui-cell" hover-class="moui-hover">
-                    <view class="moui-cell__name">{{item}}</view>
+                <view id="{{index}}" data-url="{{item}}/{{item}}" data-visit="{{visited[item]}}" class="moui-cell" hover-class="moui-hover" bindtap="bindVisit">
+                    <view class="moui-cell__name">
+                      <text>{{item}}</text>
+                      <view class="moui-badge small" hidden="{{visited[item]}}" />
+                    </view>
                     <view class="moui-cell__info moui-cell__navigate"></view>
-                </navigator>
+                </view>
             </block>
         </view>
     </view>

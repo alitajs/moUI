@@ -1,45 +1,37 @@
 Page({
   data: {
-    panelA: [
-      { open: true, title: "Title 1" },
-      { open: false, title: "Title 2 - Disabled", disabled: true },
-      { open: false, title: "Title 3" }
-    ],
-    panelB: [
-      { open: false, title: "Title 1" },
-      { open: false, title: "Title 2" },
-      { open: false, title: "Title 3" }
-    ],
-    panelC: [
-      { open: false, title: "圆角 - 本页" },
-      { open: false, title: "边距" },
-      { open: false, title: "Title 1" },
-      { open: false, title: "Title 2" },
-      { open: false, title: "Title 1" },
-      { open: false, title: "Title 2" }
-    ],
-    borderRadius: 4,
+    panel: {
+      A: [
+        { open: true, title: "Title 1" },
+        { open: false, title: "Title 2 - Disabled", disabled: true },
+        { open: false, title: "Title 3" }
+      ],
+      B: [
+        { open: false, title: "Title 1" },
+        { open: false, title: "Title 2" },
+        { open: false, title: "Title 3" }
+      ],
+      C: [
+        { open: false, title: "圆角 - 本页" },
+        { open: false, title: "边距" }
+       ],
+      D:[
+        { open: false, title: "Title 1" },
+        { open: false, title: "Title 2" }
+      ],
+      E: [
+        { open: false, title: "Title 1" },
+        { open: false, title: "Title 2" }
+      ]
+    },
+    borderRadius: 0,
     collapseMargin: 16
   },
-  bindOpenPanelA: function ({ currentTarget: { id } } = {}) {
-    console.log("PanelA " + id + " changed.");
-    let str = "panelA[" + id + "].open";
+  bindOpenPanel: function ({ currentTarget: { id, dataset: { key } } } = {}) {
+    console.log("Panel " + key + " " + id + " changed.");
+    let str = "panel." + key + "[" + id + "].open";
     this.setData({
-      [str]: !this.data.panelA[id].open
-    });
-  },
-  bindOpenPanelB: function ({ currentTarget: { id } } = {}) {
-    console.log("PanelB " + id + " changed.");
-    let str = "panelB[" + id + "].open";
-    this.setData({
-      [str]: !this.data.panelB[id].open
-    });
-  },
-  bindOpenPanelC: function ({ currentTarget: { id } } = {}) {
-    console.log("PanelC " + id + " changed.");
-    let str = "panelC[" + id + "].open";
-    this.setData({
-      [str]: !this.data.panelC[id].open
+      [str]: !this.data.panel[key][id].open
     });
   },
   changeBorderRadius: function ({ detail: { value } } = {}) {

@@ -1,0 +1,193 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Dropdown</view>
+    <view class="page__desc">下拉菜单</view>
+  </view>
+
+  <view class="page__bd" style="padding-bottom:80px;">
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">导航功能</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <view class="card-dropdown-box">
+              <view class="column {{dropdown.A[0].open?'active':''}}">
+                <view
+                  id="0"
+                  data-key="A"
+                  bindtap="bindDropdown"
+                  class="card-link content"
+                >{{dropdown.A[0].open?'Click to close':'Click to handle'}}</view>
+                <view class="card-dropdown">
+                  <view class="card-lists">
+                    <block wx:for="{{dropdown.A[0].items}}" wx:key="*this">
+                      <view
+                        id="0"
+                        data-key="A"
+                        class="card-list"
+                        hover-class="card-hover"
+                        bindtap="{{dropdown.A[0].open?'bindDropdown':''}}"
+                      >
+                        <view class="card-list__title">{{item}}</view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">按钮样式与无分割线</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <view class="card-dropdown-box">
+              <view class="column {{dropdown.A[1].open?'active':''}}">
+                <view
+                  id="1"
+                  data-key="A"
+                  bindtap="bindDropdown"
+                  class="card-link content"
+                >
+                  <button class="card-btn primary" hover-class="card-btn-hover">Button</button>
+                </view>
+                <view class="card-dropdown">
+                  <view class="card-lists">
+                    <block wx:for="{{dropdown.A[1].items}}" wx:key="*this">
+                      <view
+                        id="1"
+                        data-key="A"
+                        class="card-list"
+                        hover-class="card-hover"
+                        bindtap="{{dropdown.A[1].open?'bindDropdown':''}}"
+                      >
+                        <view class="card-list__title">{{item}}</view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="card-panel__item">
+          <view class="column">
+            <view class="card-dropdown-box noborder">
+              <view class="column {{dropdown.A[2].open?'active':''}}">
+                <view
+                  id="2"
+                  data-key="A"
+                  bindtap="bindDropdown"
+                  class="card-link content"
+                >{{dropdown.A[2].open?'Click to close':'Without divider'}}</view>
+                <view class="card-dropdown">
+                  <view class="card-lists">
+                    <block wx:for="{{dropdown.A[2].items}}" wx:key="*this">
+                      <view
+                        id="2"
+                        data-key="A"
+                        class="card-list"
+                        hover-class="card-hover"
+                        bindtap="{{dropdown.A[2].open?'bindDropdown':''}}"
+                      >
+                        <view class="card-list__title">{{item}}</view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">选择功能 | 多项下拉菜单</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <view class="card-dropdown-box">
+              <block wx:for="{{dropdown.B}}" wx:key="index">
+                <view class="column {{item.open?'active':''}}">
+                  <view
+                    data-key="B"
+                    id="{{index}}"
+                    bindtap="bindDropdown"
+                    class="card-link content"
+                  >{{item.select?item.select:'Select ' + item.desc}}</view>
+                  <view class="card-dropdown">
+                    <view class="card-lists">
+                      <block wx:for="{{item.items}}" wx:for-index="itemIndex" wx:key="*this">
+                        <view
+                          data-key="B"
+                          class="card-list"
+                          bindtap="bindSelect"
+                          data-item="{{index}}"
+                          data-select="{{item}}"
+                          hover-class="card-hover"
+                        >
+                          <view class="card-list__title">{{item}}</view>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-container">
+      <view class="card-panel">
+        <view class="card-panel__header">Cascader 级联选择</view>
+        <view class="card-panel__item">
+          <view class="column">
+            <view class="card-dropdown-box cascader">
+              <block wx:for="{{dropdown.C}}" wx:key="index">
+                <view
+                  class="column {{item.open?'active':''}}"
+                  wx:if="{{(index&&dropdown.C[index-1].select)||!index}}"
+                >
+                  <view
+                    data-key="C"
+                    id="{{index}}"
+                    bindtap="bindDropdown"
+                    class="card-link content"
+                  >{{item.select?item.select:item.desc}}</view>
+                  <view class="card-dropdown">
+                    <view class="card-lists">
+                      <block
+                        wx:key="*this"
+                        wx:for-index="itemIndex"
+                        wx:for="{{index?item.items[dropdown.C[index-1].select]:item.items}}"
+                      >
+                        <view
+                          data-key="C"
+                          class="card-list"
+                          bindtap="bindSelect"
+                          data-item="{{index}}"
+                          data-select="{{item}}"
+                          hover-class="card-hover"
+                        >
+                          <view class="card-list__title">{{item}}</view>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</card-page>

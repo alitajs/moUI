@@ -1,5 +1,7 @@
 Page({
   data: {
+    loading_A: false,
+    loading_B: false
   },
   loading_A: function () {
     this.setData({

@@ -4,26 +4,17 @@ Page({
     tips_primary_disabled: 0,
 
     radioItems: [
-      { name: 'radio item', value: '0' },
-      { name: 'radio item', value: '1', checked: true }
+      { name: "radio item", value: "0" },
+      { name: "radio item", value: "1", checked: true }
     ],
     checkboxItems: [
-      { name: 'checkbox item', value: '0', checked: true },
-      { name: 'checkbox item', value: '1' }
+      { name: "checkbox item", value: "0", checked: true },
+      { name: "checkbox item", value: "1" }
     ],
 
-    focus_A: false,
-    focus_B: false,
-    focus_C: false,
-    focus_D: false,
-    focus_E: false,
-    focus_F: false,
-    input_A: false,
-    input_B: false,
-    input_C: false,
-    input_D: false,
-    input_E: false,
-    input_F: false,
+    focus: { A: false, B: false, C: false, D: false, E: false },
+    input: { A: false, B: false, C: false, D: false, E: false },
+    clear: { E: "" },
 
     date: "2018-07-05",
     time: "12:01",
@@ -40,8 +31,6 @@ Page({
     accountIndex: 0,
 
     isAgree: false,
-
-    keyboard: 0
   },
   bindShowTopTips: function (e) {
     this.setData({
@@ -100,7 +89,7 @@ Page({
   bindDateChange: function (e) {
     this.setData({
       date: e.detail.value
-    })
+    });
   },
   bindCountryCodeChange: function (e) {
     console.log('picker country code: ', e.detail.value);
@@ -131,29 +120,29 @@ Page({
         scrollTop: e.currentTarget.id > "B" ? 270 : 140
       });
       this.setData({
-        ["focus_" + e.currentTarget.id]: true
+        ["focus." + e.currentTarget.id]: true
       });
     }
   },
   bindBlur: function (e) {
     this.setData({
       keyboard: 0,
-      ["focus_" + e.target.id]: false,
-      ["input_" + e.target.id]: !!e.detail.value ? true : false
+      ["focus." + e.target.id]: false,
+      ["input." + e.target.id]: !!e.detail.value ? true : false
     });
     console.log("键盘输入内容：" + e.detail.value);
   },
   bindInput: function (e) {
     this.setData({
       textarea_length: e.detail.value.length,
-      input_E: !!e.detail.value ? true : false
+      ["input.E"]: !!e.detail.value ? true : false
     });
   },
   bindClear: function () {
     this.setData({
-      clear_E: "",
-      focus_E: false,
-      input_E: false,
+      ["clear.E"]: "",
+      ["focus.E"]: false,
+      ["input.E"]: false,
       textarea_length: 0
     });
   },

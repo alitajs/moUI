@@ -43,7 +43,7 @@ Page({
     var interval = setInterval(function () {
       for (var key in that.data.loading) {
         if (that.data.loading[key]) break;
-        if (key == "D") {
+        if (key === "D") {
           that.setData({
             load_all: false
           });

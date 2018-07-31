@@ -9,10 +9,21 @@
     <view class="card-container">
       <view class="card-lists">
         <block wx:for="{{listA}}" wx:key="*this">
-          <navigator url="{{item}}/{{item}}" class="card-list" hover-class="card-hover">
-            <view class="card-list__title">{{item}}</view>
+          <view
+            data-list="A"
+            id="{{index}}"
+            data-url="{{item}}/{{item}}"
+            data-visit="{{visited[item]}}"
+            class="card-list"
+            hover-class="card-hover"
+            bindtap="bindVisit"
+          >
+            <view class="card-list__title">
+              <text>{{item}}</text>
+              <view class="moui-badge small" hidden="{{visited[item]}}" />
+            </view>
             <view class="card-list__info card-navigate__after"></view>
-          </navigator>
+          </view>
         </block>
       </view>
     </view>
@@ -21,10 +32,21 @@
       <view class="card-collapse__title">与基础库组合使用示例</view>
       <view class="card-lists">
         <block wx:for="{{listB}}" wx:key="*this">
-          <navigator url="{{item}}/{{item}}" class="card-list" hover-class="card-hover">
-            <view class="card-list__title">{{item}}</view>
+          <view
+            data-list="B"
+            id="{{index}}"
+            data-url="{{item}}/{{item}}"
+            data-visit="{{visited[item]}}"
+            class="card-list"
+            hover-class="card-hover"
+            bindtap="bindVisit"
+          >
+            <view class="card-list__title">
+              <text>{{item}}</text>
+              <view class="moui-badge small" hidden="{{visited[item]}}" />
+            </view>
             <view class="card-list__info card-navigate__after"></view>
-          </navigator>
+          </view>
         </block>
       </view>
     </view>

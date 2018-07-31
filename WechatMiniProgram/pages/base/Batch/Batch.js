@@ -3,9 +3,8 @@ const image_exmaple = require('../../image.js').moui_dark;
 Page({
   data: {
     tips_primary: false,
-
+  
     gallery_selecting: false,
-
     list_selecting: false,
     list_active: {
       A: false,
@@ -26,56 +25,31 @@ Page({
       pdf: icon.pdf,
       word: icon.word
     },
-
-    image: [{
-      id: 0, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 1, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 2, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 3, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 4, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 5, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 6, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 7, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 8, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 9, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 10, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 11, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 12, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 13, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 14, active: false, deleted: false, hide: false, src: image_exmaple
-    }, {
-      id: 15, active: false, deleted: false, hide: false, src: image_exmaple
-    }]
+    image: []
   },
   onLoad: function () {
+    var image = [], i = 16, that = this;
+    while (i) {
+      image.push({ active: false, deleted: false, hide: false, src: image_exmaple });
+      i -= 1;
+    }
+    this.setData({
+      image: image
+    });
     wx.getSystemInfo({
-      success: res => {
-        this.setData({
+      success: function(res) {
+        that.setData({
           gallery_image_size: res.screenWidth * 16 / 75 + 6
         });
       },
-      fail: res => {
+      fail: function(res) {
         wx.showModal({
           title: "错误",
           content: "未获取到屏幕宽度，无法批量操作图片",
           showCancel: true,
           confirmText: "重新加载",
           confirmColor: "#1890ff",
-          success: res => {
+          success: function(res) {
             if (res.confirm) {
               wx.redirectTo({
                 url: "/pages/base/Batch/Batch"
@@ -115,22 +89,19 @@ Page({
     if (this.data.gallery_selecting) {
       var moved = parseInt((e.touches[0].pageY - e.currentTarget.offsetTop - this.data.touches[1]) / this.data.gallery_image_size) * 4 + parseInt((e.touches[0].pageX - e.currentTarget.offsetLeft - this.data.touches[0]) / this.data.gallery_image_size);
       moved = moved > 0 ? moved < this.data.image.length ? moved : this.data.image.length - 1 : 0;
-      var end = moved;
+      var end = moved, image = this.data.image;
       while (true) {
         if (moved > this.data.gallery_select_start) {
-          var str = "image[" + moved + "].active";
-          this.setData({
-            [str]: this.data.image[moved--].active ? false : true
-          });
+          image[moved].active = !image[moved].active;
+          moved -= 1;
         }
         else if (moved < this.data.gallery_select_start) {
-          var str = "image[" + moved + "].active";
-          this.setData({
-            [str]: this.data.image[moved++].active ? false : true
-          });
+          image[moved].active = !image[moved].active;
+          moved += 1;
         }
         else {
           this.setData({
+            image: image,
             gallery_select_start: end
           });
           break;
@@ -148,17 +119,15 @@ Page({
   },
   bindDelete: function () {
     if (this.data.gallery_selecting) {
-      for (var k in this.data.image) {
-        if (this.data.image[k].active) {
-          this.setData({
-            ["image[" + k + "].deleted"]: true
-          });
-        }
+      var image = this.data.image;
+      for (var k in image) {
+        image[k].deleted = image[k].active || image[k].deleted;
       }
-      this.bindCancel();
       this.setData({
+        image: image,
         tips_primary: true
       });
+      this.bindCancel();
       var that = this;
       setTimeout(function () {
         that.setData({
@@ -167,24 +136,25 @@ Page({
       }, 3200);
     }
     else if (this.data.list_selecting) {
-      for (var k in this.data.list_active) {
-        if (this.data.list_active[k]) {
-          this.setData({
-            ["list_deleted." + k]: true
-          });
-        }
+      var list_active = this.data.list_active;
+      var list_deleted = this.data.list_deleted;
+      for (var k in list_active) {
+        list_deleted[k] = list_active[k] || list_deleted[k];
       }
+      this.setData({
+        list_deleted: list_deleted
+      });
       this.bindCancel();
     }
   },
   bindCancel: function () {
     if (this.data.gallery_selecting) {
-      for (var k in this.data.image) {
-        this.setData({
-          ["image[" + k + "].active"]: false
-        });
+      var image = this.data.image;
+      for (var k in image) {
+        image[k].active = false;
       }
       this.setData({
+        image: image,
         gallery_selecting: false
       });
     }
@@ -199,11 +169,15 @@ Page({
     }
   },
   bindUndo: function () {
-    for (var k in this.data.image) {
-      this.setData({
-        ["image[" + k + "].deleted"]: false,
-        ["image[" + k + "].hide"]: false
-      });
+    var image = this.data.image;
+    for (var k in image) {
+      image[k].hide = false;
+      image[k].deleted = false;
+      if (k == image.length - 1) {
+        this.setData({
+          image: image
+        });
+      }
     }
   },
   bindImageDeleted: function (e) {

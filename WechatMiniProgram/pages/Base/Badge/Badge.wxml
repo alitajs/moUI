@@ -1,0 +1,50 @@
+<view class="page">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Badge</view>
+        <view class="page__desc">徽章</view>
+    </view>
+
+    <view>
+        <view class="moui-cells">
+            <view class="moui-cell">
+                <view class="moui-cell__name">标题文字</view>
+                <view class="moui-cell__info">说明文字<view class="moui-badge number">9</view></view>
+            </view>
+        </view>
+
+        <view class="moui-cells">
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="moui-cell__name">Cell<view class="moui-badge small" /></view>
+                <view class="moui-cell__info moui-cell__navigate"></view>
+            </navigator>
+            <navigator url="" class="moui-cell" hover-class="moui-hover">
+                <view class="moui-cell__name">Cell<view class="moui-badge">New</view></view>
+                <view class="moui-cell__info moui-cell__navigate"></view>
+            </navigator>
+        </view>
+
+        <view class="moui-cells">
+            <view class="moui-cell-L">
+                <view class="icon-info moui-cell-L__icon">
+                    <view class="moui-badge number" style="top:-28%;right:-60%">9</view>
+                </view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view class="moui-cell__info">Info</view>
+            </view>
+            <view class="moui-cell-L">
+                <view class="icon-info moui-cell-L__icon">
+                    <view class="moui-badge small" style="top:-32%;right:-75%" />
+                </view>
+                <view class="moui-cell-L__name">Title
+                    <view>text</view>
+                    <view>information</view>
+                </view>
+                <view class="moui-cell__info">Info</view>
+            </view>
+        </view>
+    </view>
+</view>

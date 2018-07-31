@@ -11,7 +11,7 @@
 
         <view class="moui-cells__title">轻触预览，长按批量操作，支持手指滑动选择</view>
         <view class="moui-gallery" bindlongpress="bindSelectMode" bindtap="bindGallery" bindtouchstart="bindSelectStart" bindtouchmove="bindSelectGallery">
-            <block wx:for="{{image}}" wx:key="id">
+            <block wx:for="{{image}}" wx:key="index">
                 <view id="{{index}}" hidden="{{item.hide}}">
                     <image id="{{index}}" src="{{item.src}}" mode="aspectFill" class="moui-gallery__image {{item.active?'active':''}} {{item.deleted?'deleted':''}}" bindtransitionend="bindImageDeleted"/>
                     <icon class="moui-gallery__icon" wx:if="{{item.active&&!item.deleted}}" size="20" type="success" color="#1890ff"/>

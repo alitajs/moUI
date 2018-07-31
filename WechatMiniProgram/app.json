@@ -7,6 +7,7 @@
     "pages/Base/Menu/Menu",
     "pages/Base/Input/Input",
     "pages/Base/Batch/Batch",
+    "pages/Base/Badge/Badge",
     "pages/Base/Button/Button",
     "pages/Base/Switch/Switch",
     "pages/Base/Footer/Footer",
@@ -20,10 +21,11 @@
     "pages/Card/List/List",
     "pages/Card/Input/Input",
     "pages/Card/Panel/Panel",
+    "pages/Card/Modal/Modal",
     "pages/Card/Button/Button",
     "pages/Card/Preview/Preview",
-    "pages/Card/Popover/Popover",
-    "pages/Card/Collapse/Collapse"
+    "pages/Card/Collapse/Collapse",
+    "pages/Card/Dropdown/Dropdown"
   ],
   "window":{
     "backgroundTextStyle":"light",
