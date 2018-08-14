@@ -1,6 +1,5 @@
 # moUI
 
-<br />
 
 开始写moUI之前，笔者开发过一款微信小程序，结果被自己团队其他人吐槽太丑，于是下定决心要出一套样式库，为自己创业项目即将开发的n个小程序做准备。大一下学期期末最后一门 ~~ 大学雾里 ~~ 大学物理考完后，闭关四天，边学CSS边写出了第一套组件库Base。
 
@@ -10,7 +9,7 @@
 
 __欢迎大家指出源码的Bug或提交新的组件库！小程序交流社区即将上线~__
 
-<br />
+
 
 ## 理念
 
@@ -20,7 +19,7 @@ Coming...
 
 __微信小程序__
 
-<img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/wxacode.jpg" width="180" height="180" alt="moUI微信小程序" />
+![moUI微信小程序](https://raw.githubusercontent.com/mofong/moUI/master/Preview/wxacode.jpg)
 
 ### Base
 
