@@ -1,0 +1,8 @@
+<view class="page">
+    <view class="moui-start"/>
+    <view class="page__hd">
+        <view class="page__title">Community</view>
+        <view class="page__desc">——</view>
+        <view class="page__desc">即将到来...</view>
+    </view>
+</view>

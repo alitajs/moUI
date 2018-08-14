@@ -2,7 +2,7 @@ Page({
   data: {
     dropdown: {
       A: [
-        { open: false, items: ['dropdown item 1', 'dropdown item 2', 'dropdown item 3'] },
+        { open: false, items: ['Button', 'Panel', 'Collapse'] },
         { open: false, items: ['dropdown item 1', 'dropdown item 2', 'dropdown item 3'] },
         { open: false, items: ['dropdown item 1', 'dropdown item 2', 'dropdown item 3'] }
       ],

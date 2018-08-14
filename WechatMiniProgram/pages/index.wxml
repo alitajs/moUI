@@ -3,7 +3,7 @@
     <view class="page__hd">
         <view class="page__title">moUI</view>
         <view class="page__desc">——</view>
-        <view class="page__desc">moUI是一个CSS组件库，你可以从GitHub上获取到样式源码来使用，也可以提交你设计的组件库，或指出已有组件库的Bug，欢迎Pull Request！</view>
+        <view class="page__desc">moUI是一个CSS组件库，你可以从GitHub上获取到样式源码来使用，也欢迎指出已有组件库的Bug，或提交你设计的组件库！</view>
     </view>
     <view class="page__bd">
         <block wx:for="{{list}}" wx:key="name">

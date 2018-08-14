@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index",
+    "pages/community/coming",
     "pages/Base/index",
     "pages/Base/List/List",
     "pages/Base/Flex/Flex",
@@ -27,6 +28,26 @@
     "pages/Card/Collapse/Collapse",
     "pages/Card/Dropdown/Dropdown"
   ],
+  "tabBar": {
+    "selectedColor": "#666666",
+    "color": "#c7c7c7",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index",
+        "text": "组件",
+        "iconPath": "/image/layout.png",
+        "selectedIconPath": "/image/layout-fill.png"
+      },
+      {
+        "pagePath": "pages/community/coming",
+        "text": "社区",
+        "iconPath": "/image/code-library.png",
+        "selectedIconPath": "/image/code-library-fill.png"
+      }
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",

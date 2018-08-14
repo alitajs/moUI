@@ -18,19 +18,20 @@
                   data-key="A"
                   bindtap="bindDropdown"
                   class="card-link content"
-                >{{dropdown.A[0].open?'Click to close':'Click to handle'}}</view>
+                >{{dropdown.A[0].open?'Click to close':'Click to navigate'}}</view>
                 <view class="card-dropdown">
                   <view class="card-lists">
                     <block wx:for="{{dropdown.A[0].items}}" wx:key="*this">
-                      <view
+                      <navigator
                         id="0"
                         data-key="A"
                         class="card-list"
                         hover-class="card-hover"
+                        url="../{{item}}/{{item}}"
                         bindtap="{{dropdown.A[0].open?'bindDropdown':''}}"
                       >
                         <view class="card-list__title">{{item}}</view>
-                      </view>
+                      </navigator>
                     </block>
                   </view>
                 </view>

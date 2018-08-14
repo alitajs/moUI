@@ -136,7 +136,7 @@
       <icon class="icon" type="info" size="64" />
       <view class="title">点击蒙层关闭Modal</view>
       <view class="footer">
-        <button class="card-btn primary small" hover-class="card-btn-hover">操作</button>
+        <button class="card-btn primary small card-disabled">操作</button>
       </view>
     </view>
   </view>

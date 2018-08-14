@@ -25,12 +25,13 @@ Page({
       pdf: icon.pdf,
       word: icon.word
     },
+    src: image_exmaple,
     image: []
   },
   onLoad: function () {
     var image = [], i = 16, that = this;
     while (i) {
-      image.push({ active: false, deleted: false, hide: false, src: image_exmaple });
+      image.push({ active: false, deleted: false, hide: false });
       i -= 1;
     }
     this.setData({
