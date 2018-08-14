@@ -23,40 +23,27 @@ __微信小程序__
 
 ### Base
 
-<div>
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/List.jpg" width="270" height="480" alt="moUI - Base" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Switch.jpg" width="270" height="480" alt="moUI - Base" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Loading.jpg" width="270" height="480" alt="moUI - Base" />
-</div>
-<br />
-<div>
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Progress.jpg" width="270" height="480" alt="moUI - Base" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Toptips.jpg" width="270" height="480" alt="moUI - Base" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Input.gif" width="270" height="480" alt="moUI - Base" />
-</div>
-<br />
-<div>
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Batch.gif" width="270" height="480" alt="moUI - Base" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Preview.jpg" width="270" height="480" alt="moUI - Base" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Searchbar.jpg" width="270" height="480" alt="moUI - Base" />
-</div>
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/List.jpg)
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Switch.jpg)
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Loading.jpg)
+
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Progress.jpg)
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Toptips.jpg)
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Input.gif)
+
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Batch.gif)
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Preview.jpg)
 
 ### Card
 
-<div>
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/index.jpg" width="270" height="480" alt="moUI - Card" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/List.jpg" width="270" height="480" alt="moUI - Card" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Dropdown_0.jpg" width="270" height="480" alt="moUI - Card" />
-</div>
-<br />
-<div>
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Dropdown_1.jpg" width="270" height="480" alt="moUI - Card" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Panel_0.jpg" width="270" height="480" alt="moUI - Card" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Panel_1.jpg" width="270" height="480" alt="moUI - Card" />
-</div>
-<br />
-<div>
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Modal.jpg" width="270" height="480" alt="moUI - Card" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Collapse.gif" width="270" height="480" alt="moUI - Card" />
-  <img src="https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Preview.jpg" width="270" height="480" alt="moUI - Card" />
-</div>
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/index.jpg)
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/List.jpg)
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Dropdown_0.jpg)
+
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Dropdown_1.jpg)
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Panel_0.jpg)
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Panel_1.jpg)
+
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Modal.jpg)
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Collapse.gif)
+![moUI - Card](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Card/Preview.jpg)
