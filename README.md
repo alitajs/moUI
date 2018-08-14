@@ -33,6 +33,8 @@ __微信小程序__
 
 ![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Batch.gif)
 ![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Preview.jpg)
+![moUI - Base](https://raw.githubusercontent.com/mofong/moUI/master/Preview/Base/Searchbar.jpg)
+
 
 ### Card
 
