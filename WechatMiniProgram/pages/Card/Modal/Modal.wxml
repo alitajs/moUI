@@ -8,7 +8,7 @@
   <view class="page__bd">
     <view class="card-container">
       <view class="card-panel">
-        <view class="card-panel__header">Total</view>
+        <view class="card-panel__header">Toast</view>
         <view class="card-panel__item">
           <view class="column">
             <button
