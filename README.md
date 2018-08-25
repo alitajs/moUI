@@ -15,6 +15,47 @@ __欢迎大家指出源码的Bug或提交新的组件库！小程序交流社区
 
 Coming...
 
+## 用法
+
+正在逐渐支持template。
+
+例如：
+```wxml
+<import src='./path/to/card.wxml' />
+<template is='Modal' data='{{...Modal}}' />
+<template is='Toast' data='{{...Toast}}' />
+```
+
+```javascript
+import { Modal } from './path/to/card.js';
+Page({
+  ...
+  networkErr: function () {
+    Modal.showModal.bind(this)({
+      mask: true,
+      title: '无网络',
+      okText: '确认',
+      maskClosable: true,
+      onOk: 'handleNetworkErr',
+      onCancel: 'handleCancel',
+      content: '网络似乎出了点问题，请检查后重试',
+    });
+  },
+  ...
+  handleCancel: function (e) { Modal.hideModal.bind(this)({ e }) },
+  ...
+  serverErr: function () {
+    Modal.showToast.bind(this)({
+      duration: 2000,
+      icon: 'ICON_TYPE',
+      iconColor: '#1890ff',
+      title: '服务器竟然崩溃了，请稍后再试',
+    });
+  },
+  ...
+});
+```
+
 ## 预览
 
 __微信小程序__
