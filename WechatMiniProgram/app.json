@@ -20,11 +20,13 @@
     "pages/Base/Searchbar/Searchbar",
     "pages/Card/index",
     "pages/Card/List/List",
+    "pages/Card/Spin/Spin",
     "pages/Card/Input/Input",
     "pages/Card/Panel/Panel",
     "pages/Card/Modal/Modal",
     "pages/Card/Button/Button",
     "pages/Card/Preview/Preview",
+    "pages/Card/Overview/Overview",
     "pages/Card/Collapse/Collapse",
     "pages/Card/Dropdown/Dropdown"
   ],

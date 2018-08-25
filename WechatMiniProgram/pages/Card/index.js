@@ -1,8 +1,9 @@
 const app = getApp();
 Page({
   data: {
-    listA: ['List', 'Button', 'Input', 'Dropdown', 'Panel', 'Modal', 'Collapse'],
+    listA: ['List', 'Button', 'Input', 'Dropdown', 'Panel', 'Modal', 'Collapse', 'Spin'],
     listB: ['Preview'],
+    listC: ['Modal', 'Overview'],
     visited: {}
   },
   onLoad: function () {
@@ -16,7 +17,7 @@ Page({
   bindVisit: function ({ currentTarget: { id, dataset: { list, url, visit } } }) {
     if (!visit) {
       let visited = this.data.visited;
-      list = list === 'A' ? this.data.listA : this.data.listB;
+      list = list === 'A' ? this.data.listA : list === 'B' ? this.data.listB : this.data.listC;
       visited[list[parseInt(id)]] = true;
       this.setData({ visited });
       app.globalData.visited.Card = visited;

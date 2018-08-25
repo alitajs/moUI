@@ -7,7 +7,7 @@ Page({
       icon: "icon-app-store-fill"
     }, {
       name: "Card",
-      version: "V 0.7.1",
+      version: "V 0.8.0",
       icon: "icon-card-fill"
     }]
   },

@@ -1,0 +1,39 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Spin</view>
+    <view class="page__desc">加载中</view>
+  </view>
+
+  <view class="page__bd">
+    <view class='card-spin'>
+      <view class='card-spin-title'>
+        <view class='moui-loading' style='margin-right:4px' />
+        Loading
+      </view>
+      <view class='card-spin-content'>
+        <view class="card-container">
+          <view class="card-collapse__title">图文列表</view>
+          <view class="card-panel">
+            <view class="card-panel__header">Header</view>
+            <view class="card-panel__item" hover-class="card-hover">
+              <image class="image" src="{{image_exmaple}}" />
+              <view class="column">
+                <view class="title">图文标题</view>
+                <view class="info">说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</view>
+              </view>
+            </view>
+            <view class="card-panel__item" hover-class="card-hover">
+              <image class="image" src="{{image_exmaple}}" />
+              <view class="column">
+                <view class="title">图文标题</view>
+                <view class="info">说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</view>
+              </view>
+            </view>
+            <view class="card-link" hover-class="card-link-hover">查看更多</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</card-page>

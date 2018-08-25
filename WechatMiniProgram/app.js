@@ -1,5 +1,5 @@
 //app.js
-const version = "1.8.0";
+const version = "1.9.0";
 App({
   onLaunch: function () {
     wx.getStorage({
@@ -29,8 +29,8 @@ App({
   },
   globalData: {
     update: {
-      Base: ['Badge'],
-      Card: ['Dropdown']
+      Base: [],
+      Card: ['Spin', 'Overview', 'Modal'],
     }
   }
 });

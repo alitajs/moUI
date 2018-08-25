@@ -1,0 +1,116 @@
+<template name="Modal">
+  <view
+    id="{{id}}"
+    bindtap="{{maskClosable?onCancel:''}}"
+    class="card-modal-box {{show?'':'hide'}} {{mask?'':'transparent'}}"
+    >
+    <view class="card-modal">
+      <icon class="icon" type="{{icon}}" size="64" color="{{iconColor}}" wx:if="{{icon}}" />
+      <view class="title" wx:if="{{!!title}}">{{title}}</view>
+      <view class="content" wx:if="{{!!content}}">{{content}}</view>
+      <view class="footer" wx:if="{{onCancel||onOk}}">
+        <button
+          id="{{id}}"
+          class="card-btn small"
+          bindtap="{{onCancel}}"
+          hover-class="card-btn-hover"
+          wx:if="{{onCancel}}"
+          >{{cancelText||"取消"}}</button>
+        <button
+          id="{{id}}"
+          wx:if="{{onOk}}"
+          bindtap="{{onOk}}"
+          hover-class="card-btn-hover"
+          class="card-btn primary small"
+          >{{okText||"确认"}}</button>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="Toast">
+  <view
+    id="{{id}}"
+    bindtap="{{maskClosable?onCancel:''}}"
+    class="card-modal-box {{show?'':'hide'}} {{mask?'':'transparent'}}"
+    >
+    <view class="card-modal">
+      <icon class="icon" type="{{icon}}" size="64" color="{{iconColor}}" wx:if="{{icon}}" />
+      <view class="title" wx:if="{{!!title}}">{{title}}</view>
+      <view class="content" wx:if="{{!!content}}">{{content}}</view>
+    </view>
+  </view>
+</template>
+<template name="Overview">
+  <view class="card-container">
+    <block
+      wx:key="panelIndex"
+      wx:for-item="panel"
+      wx:for="{{panelList}}"
+      wx:for-index="panelIndex"
+      >
+      <view
+        id="{{panel.id}}"
+        class="card-panel"
+        bindtap="{{panel.bindtap}}"
+        data-panel="{{panelIndex}}"
+        >
+        <view class="card-panel__header">{{panel.header}}</view>
+        <block wx:for="{{panel.itemList}}" wx:key="itemIndex" wx:for-index="itemIndex">
+          <view
+            id="{{item.id}}"
+            class="card-panel__item"
+            data-item="{{itemIndex}}"
+            bindtap="{{item.bindtap}}"
+            data-panel="{{panelIndex}}"
+            hover-class="{{item.bindtap?'card-hover':''}}"
+            >
+            <block
+              wx:key="index"
+              wx:for-item="column"
+              wx:for-index="columnIndex"
+              wx:for="{{item.columnList}}"
+              >
+              <view class="column">
+                <view
+                  id="{{column.id}}"
+                  data-item="{{itemIndex}}"
+                  data-panel="{{panelIndex}}"
+                  bindtap="{{column.bindtap}}"
+                  data-column="{{columnIndex}}"
+                  style="padding:10px;max-width:72px;max-height:72px;border-radius:100px"
+                  hover-class="{{column.bindtap?'card-hover':''}}"
+                  >
+                  <view
+                    class="title number"
+                    style="font-size:24px;line-height:45px;text-align:center"
+                    >{{column.title}}</view>
+                  <view class="title" style="font-weight:400;text-align:center;white-space:nowrap">
+                    <view
+                      wx:if="{{column.icon}}"
+                      class="icon-{{column.icon}}"
+                      style="width:18px;height:18px;margin-bottom:-2px;display:inline-block"
+                    />
+                    <image
+                      src="{{column.image}}"
+                      wx:if="{{column.image}}"
+                      style="width:18px;height:18px;margin-bottom:-2px;display:inline-block"
+                    />
+                    {{column.describe}}
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <view
+          id="{{panel.id}}"
+          class="card-link"
+          wx:if="{{panel.more}}"
+          data-panel="{{panelIndex}}"
+          hover-class="card-link-hover"
+          bindtap="{{panel.more.bindtap}}"
+          >{{panel.more.text}}</view>
+      </view>
+    </block>
+  </view>
+</template>

@@ -1,0 +1,15 @@
+<import src='../card.wxml' />
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Overview</view>
+    <view class="page__desc">概览</view>
+  </view>
+
+  <view class="page__bd">
+    <view class='card-container'>
+      <view class="card-collapse__title">Just in one line of code</view>
+    </view>
+    <template is='Overview' data='{{...Overview}}' />
+  </view>
+</card-page>
