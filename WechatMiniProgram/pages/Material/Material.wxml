@@ -1,0 +1,15 @@
+<template name='Ripple'>
+  <view class='mt-ripple' style='--x:{{touch[0]}}px;--y:{{touch[1]}}px;' />
+</template>
+<template name='Button'>
+  <button class='mt-btn {{className}}' hover-class='mt-btn-hover' style='{{style}}' form-type='{{formType}}' open-type='{{openType}}'
+    data-wxml='{{wxml}}' data-namespace='{{namespace}}' disabled='{{disabled}}' bindtap='mtTap' bindlongpress='mtTap'
+    bindtouchstart='mtTouch' bindtouchmove='mtTouch' bindtouchcancel='mtTouch' bindtouchend='mtTouch' bindtouchforcechange='mtTouch'
+    bindgetuserinfo='mtOpenType' bindgetphonenumber='mtOpenType' bindanimationstart='mtAnimation' bindanimationend='mtAnimation'
+    bindanimationiteration='mtAnimation' bindtransitionend='mtAnimation'>
+    <block wx:for='{{Ripple}}' wx:key='timeStamp' wx:if='{{!hideRipple&&!disabled}}'>
+      <template is='Ripple' data='{{...item}}' />
+    </block>
+    <text>{{content}}</text>
+  </button>
+</template>

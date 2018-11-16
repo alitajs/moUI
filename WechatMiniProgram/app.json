@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/Material/Button/Button",
     "pages/index",
     "pages/community/coming",
     "pages/Base/index",
@@ -19,12 +20,14 @@
     "pages/Base/Progress/Progress",
     "pages/Base/Searchbar/Searchbar",
     "pages/Card/index",
+    "pages/Card/Tag/Tag",
     "pages/Card/List/List",
     "pages/Card/Spin/Spin",
     "pages/Card/Input/Input",
     "pages/Card/Panel/Panel",
     "pages/Card/Modal/Modal",
     "pages/Card/Button/Button",
+    "pages/Card/Divider/Divider",
     "pages/Card/Preview/Preview",
     "pages/Card/Overview/Overview",
     "pages/Card/Collapse/Collapse",

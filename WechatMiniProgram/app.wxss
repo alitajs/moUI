@@ -2,6 +2,7 @@
 @import 'moui/moui.wxss';
 @import 'moui/card.wxss';
 @import 'moui/icon.wxss';
+@import 'moui/material.wxss';
 
 
 .page__hd {

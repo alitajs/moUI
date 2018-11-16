@@ -7,7 +7,7 @@
     </view>
     <view class="page__bd">
         <block wx:for="{{list}}" wx:key="name">
-            <navigator url="{{item.name}}/index" class="card" hover-class="card-btn-hover">
+            <navigator url="{{item.name}}/index" class="card" hover-class="card-filter-hover">
                 <view class="moui-cell-L__icon {{item.icon}}" />
                 <view class="title">{{item.name}}</view>
                 <view class="moui-cell__info number">{{item.version}}</view>

@@ -1,7 +1,7 @@
 const app = getApp();
 Page({
   data: {
-    listA: ['List', 'Button', 'Input', 'Dropdown', 'Panel', 'Modal', 'Collapse', 'Spin'],
+    listA: ['List', 'Button', 'Input', 'Dropdown', 'Panel', 'Modal', 'Collapse', 'Spin', 'Tag', 'Divider'],
     listB: ['Preview'],
     listC: ['Modal', 'Overview'],
     visited: {}

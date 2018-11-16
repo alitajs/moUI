@@ -1,0 +1,27 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Tag</view>
+    <view class="page__desc">标签</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-collapse__title">Tags</view>
+      <view class="card-panel">
+        <view class="card-panel__header">Default tags</view>
+        <view class="card-panel__item">
+          <view class="card-tag">Tags 1</view>
+          <view class="card-tag">Tags 2</view>
+        </view>
+      </view>
+      <view class="card-panel">
+        <view class="card-panel__header">Mini tags</view>
+        <view class="card-panel__item">
+          <view class="card-tag mini">Tags 1</view>
+          <view class="card-tag mini">Tags 2</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</card-page>

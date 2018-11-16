@@ -1,0 +1,10 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Material</view>
+    <view class="page__desc">Google Design</view>
+  </view>
+    
+  <view class="page__bd">
+  </view>
+</card-page>

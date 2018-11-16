@@ -53,6 +53,7 @@
         class="card-panel"
         bindtap="{{panel.bindtap}}"
         data-panel="{{panelIndex}}"
+        style='{{panel.shadow?"--panelShadow:0 0 3px 3px rgba(0, 0, 0, .08)":""}}'
         >
         <view class="card-panel__header">{{panel.header}}</view>
         <block wx:for="{{panel.itemList}}" wx:key="itemIndex" wx:for-index="itemIndex">

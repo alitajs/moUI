@@ -1,0 +1,20 @@
+<card-page>
+  <view class="moui-start" />
+  <view class="page__hd">
+    <view class="page__title">Divider</view>
+    <view class="page__desc">分割线</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="card-container">
+      <view class="card-collapse__title">Divider</view>
+      <view class="card-panel">
+        <view class="card-panel__item">
+          <view style="margin-right:8px" class="card-link card-divider-column">item 1</view>
+          <view style="margin-right:8px" class="card-link card-divider-column">item 2</view>
+          <view class="card-link card-divider-column">item 3</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</card-page>
