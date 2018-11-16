@@ -17,7 +17,9 @@ Coming...
 
 ## 用法
 
-正在逐渐支持template。
+moJS 用法请前往 https://www.yuque.com/hele/mojs
+
+逐渐支持template。
 
 例如：
 ```wxml
