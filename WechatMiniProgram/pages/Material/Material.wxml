@@ -1,12 +1,30 @@
 <template name='Ripple'>
   <view class='mt-ripple' style='--x:{{touch[0]}}px;--y:{{touch[1]}}px;' />
 </template>
+<template name='LoadingBar'>
+  <view class='mt-load-bar' style='--T:{{duration||".8"}}s' data-pos='{{position}}' />
+</template>
 <template name='Button'>
-  <button class='mt-btn {{className}}' hover-class='mt-btn-hover' style='{{style}}' form-type='{{formType}}' open-type='{{openType}}'
+  <button data-namespace='{{namespace}}' class='{{className}}' hover-class='mt-btn-hover' form-type='{{formType}}' bindgetuserinfo='mtOT'
+    style='{{style}}' bindtap='mtTap' disabled='{{disabled}}' data-blo='{{block}}' bindanimationiteration='mtAni' bindtouchcancel='mtTou'
+    type='{{type}}' data-wxml='{{wxml}}' data-cir='{{circle}}' data-otl='{{outlined}}' bindtouchmove='mtTou' bindtouchforcechange='mtTou'
+    bindtouchend='mtTou' data-nos='{{noShadow}}' bindlongpress='mtTap' bindtouchstart='mtTou' size='{{size}}' data-i='{{icon&&"i"+icon}}'
+    bindanimationstart='mtAni' bindanimationend='mtAni' open-type='{{openType}}' bindtransitionend='mtAni' bindgetphonenumber='mtOT'>
+    <block wx:for='{{Ripple}}' wx:key='timeStamp' hidden='{{hideRipple}}'>
+      <template is='Ripple' data='{{...item}}' />
+    </block>
+    <text>{{content}}</text>
+    <view hidden='{{!LoadingBar}}'>
+      <template is='LoadingBar' data='{{...LoadingBar}}' />
+    </view>
+  </button>
+</template>
+<template name='Icon'>
+  <button class='{{className}}' hover-class='mt-btn-hover' style='{{style}}' form-type='{{formType}}' open-type='{{openType}}'
     data-wxml='{{wxml}}' data-namespace='{{namespace}}' disabled='{{disabled}}' bindtap='mtTap' bindlongpress='mtTap'
-    bindtouchstart='mtTouch' bindtouchmove='mtTouch' bindtouchcancel='mtTouch' bindtouchend='mtTouch' bindtouchforcechange='mtTouch'
-    bindgetuserinfo='mtOpenType' bindgetphonenumber='mtOpenType' bindanimationstart='mtAnimation' bindanimationend='mtAnimation'
-    bindanimationiteration='mtAnimation' bindtransitionend='mtAnimation'>
+    bindtouchstart='mtTou' bindtouchmove='mtTou' bindtouchcancel='mtTou' bindtouchend='mtTou' bindtouchforcechange='mtTou'
+    bindgetuserinfo='mtOT' bindgetphonenumber='mtOT' bindanimationstart='mtAni' bindanimationend='mtAni'
+    bindanimationiteration='mtAni' bindtransitionend='mtAni'>
     <block wx:for='{{Ripple}}' wx:key='timeStamp' wx:if='{{!hideRipple&&!disabled}}'>
       <template is='Ripple' data='{{...item}}' />
     </block>

@@ -12,7 +12,7 @@
 		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.1.0",
+	"libVersion": "2.4.1",
 	"appid": "",
 	"projectname": "moUI",
 	"isGameTourist": false,

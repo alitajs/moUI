@@ -1,7 +1,7 @@
 /**
   * moUI - Material
-  * 2018/11/16
-  * Version: 0.1.0
+  * 2018/12/05
+  * Version: 0.1.1
   * Mail: moui@moapi.cn
 **/
 page {
@@ -22,7 +22,9 @@ page {
   --mtBR: 8rpx;
   --mtFS: 16px;
   --mtLH: 24px;
-  --mtCRF: rgb(225, 0, 80);
+  --mtCRB: #ffa3b7;
+  --mtCRD: #fa5080;
+  --mtCRF: #e10050;
   --mtCBA: rgba(0, 0, 0, .87);
   --mtCBB: rgba(0, 0, 0, .54);
   --mtCBC: rgba(0, 0, 0, .26);
@@ -45,15 +47,15 @@ page {
   font-family: monospace, Tahoma;
 }
 
-.mt-blo {
+[data-blo=true] {
   display: block;
 }
 
-.mt-inb {
+[data-blo=false] {
   display: inline-block;
 }
 
-page .mt-cir {
+page [data-cir=true] {
   border-radius: 50%;
 }
 
@@ -61,23 +63,23 @@ page .mt-nob {
   border: none;
 }
 
-page .mt-nos {
+page [data-nos=true] {
   box-shadow: none;
 }
 
 /**
  * Components style
 **/
-.mt-btn {
+button {
   position: relative;
 }
 
-.mt-btn {
+button {
   transition: all .24s ease-in-out;
   -webkit-transition: all .24s ease-in-out;
 }
 
-.mt-btn {
+button {
   z-index: 999;
   overflow: hidden;
   font-weight: 500;
@@ -87,104 +89,161 @@ page .mt-nos {
   font-size: var(--mtFS);
   box-shadow: var(--mtSBA);
   line-height: var(--mtLH);
-  background: var(--colorF);
   border-radius: var(--mtBR);
+  text-shadow: 0 -1px 0 var(--mtCBD);
 }
 
-.mt-btn, .mt-btn::after {
+button, button::after {
   border: none;
 }
 
-.mt-btn.mt-nrm {
+button[type=primary] {
+  background: var(--colorF);
+}
+
+button[type=normal] {
+  text-shadow: none;
   color: var(--mtCBA);
   background: transparent;
-  border-color: var(--mtCBA);
 }
 
-.mt-btn.mt-dan {
+button[type=danger] {
   background: var(--mtCRF);
-  border-color: var(--mtCRF);
 }
 
-.mt-btn.mt-otl {
+button[data-otl=true] {
   border: 1px solid;
+  padding: 7px 15px;
+  text-shadow: none;
   color: var(--colorF);
   background: transparent;
   border-color: var(--colorF);
 }
 
-.mt-btn.mt-sma {
+button[type=normal][data-otl=true] {
+  color: var(--mtCBA);
+  border-color: var(--mtCBA);
+}
+
+button[type=danger][data-otl=true] {
+  color: var(--mtCRF);
+  border-color: var(--mtCRF);
+}
+
+button[size=small] {
   padding: 4px 12px;
   font-size: calc(var(--mtFS) - 2px);
 }
 
-.mt-btn.mt-lar {
+button[size=large] {
   padding: 9px 18px;
 }
 
 .mt-btn-hover {
-  filter: brightness(.9);
+  filter: brightness(.8);
   box-shadow: var(--mtSBB);
+}
+
+button[type=normal][data-nos=false].mt-btn-hover {
+  background: var(--mtCBD);
+}
+
+button[type=primary][data-otl=true].mt-btn-hover {
+  filter: none;
+  background: var(--colorB);
+}
+
+button[type=danger][data-otl=true].mt-btn-hover {
+  filter: none;
+  background: var(--mtCRB);
+}
+
+button[disabled], button[disabled][type=primary] {
+  opacity: .72;
+  color: var(--mtCBB);
+  background: var(--mtCBC);
+}
+
+button[disabled][type=normal][data-nos=true] {
+  background: transparent;
+}
+
+button[disabled][data-otl=true] {
+  color: var(--mtCBB);
+  background: transparent;
+  border-color: var(--mtCBB);
 }
 
 .mt-ripple {
   --x: 0;
   --y: 0;
-  width: 0;
   height: 0;
+  width: 100%;
   top: var(--y);
   left: var(--x);
   position: absolute;
 }
 
 .mt-ripple::before {
+  top: 0;
+  opacity: 0;
+  left: -100%;
+  width: 200%;
   content: ' ';
+  margin-top: -100%;
+  padding-top: 200%;
   position: absolute;
-  border-radius: 100vw;
-  margin: -6px 0 0 -6px;
+  border-radius: 50%;
   background: var(--mtCBC);
-  animation: mtRip .48s ease-in-out both;
-  -webkit-animation: mtRip .48s ease-in-out both;
+  animation: mtRip .64s ease-in-out both;
+  -webkit-animation: mtRip .64s ease-in-out both;
 }
 
 @keyframes mtRip {
   0% {
-    top: 0;
     left: 0;
-    width: 12px;
-    opacity: .6;
-    height: 12px;
+    width: 0;
+    opacity: .48;
+    margin-top: 0;
+    padding-top: 0;
   }
-  32% {
-    opacity: 1;
+  33% {
+    opacity: .8;
+  }
+  66% {
+    left: -100%;
+    width: 200%;
+    margin-top: -100%;
+    padding-top: 200%;
   }
   to {
-    top: -80vw;
     opacity: 0;
-    left: -80vw;
-    width: 160vw;
-    height: 160vw;
   }
 }
 
 @-webkit-keyframes mtRip {
   0% {
-    top: 0;
     left: 0;
-    width: 12px;
+    width: 0;
     opacity: .6;
-    height: 12px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    left: -100%;
+    width: 200%;
+    margin-top: -100%;
+    padding-top: 200%;
   }
   to {
-    top: -80vw;
     opacity: 0;
-    left: -80vw;
-    width: 160vw;
-    height: 160vw;
   }
 }
 
-.mt-cir.mt-btn {
+button[data-cir=true] {
   padding: 0;
   width: 48px;
   height: 48px;
@@ -192,29 +251,106 @@ page .mt-nos {
   box-sizing: border-box;
 }
 
-.mt-cir.mt-btn.mt-sma {
+button[size=small][data-cir=true] {
   width: 32px;
   height: 32px;
   line-height: 32px;
-  box-sizing: border-box;
 }
 
-.mt-cir.mt-btn.mt-lar {
+button[size=large][data-cir=true] {
   width: 64px;
   height: 64px;
   line-height: 64px;
-  box-sizing: border-box;
 }
 
-.mt-cir.icon {
-  font-size: 28px;
+[data-cir=true][data-i^=i]:before {
+  font-size: 26px;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
-.mt-cir.mt-sma.icon {
-  font-size: 24px;
+[data-cir=true][size=small][data-i^=i]:before {
+  font-size: 20px;
 }
 
-.mt-cir.mt-lar.icon {
-  font-size: 34px;
+[data-cir=true][size=large][data-i^=i]:before {
+  font-size: 32px;
+}
+
+.mt-load-bar {
+  left: 0;
+  --T: .8s;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.mt-load-bar:before {
+  bottom: 0;
+  height: 2px;
+  content: ' ';
+  position: absolute;
+  background: var(--colorF);
+  animation: mtLob var(--T) ease-in-out infinite;
+  -webkit-animation: mtLob var(--T) ease-in-out infinite;
+}
+
+.mt-load-bar[data-pos=top], .mt-load-bar[data-pos=top]:before {
+  top: 0;
+}
+
+button[type=danger] .mt-load-bar:before {
+  background: var(--mtCRD);
+}
+
+button[type=primary][data-otl=false] .mt-load-bar:before {
+  background: var(--colorD);
+}
+
+button[type=danger][data-otl=true] .mt-load-bar:before {
+  background: var(--mtCRF);
+}
+
+button[type=normal][data-otl=true] .mt-load-bar:before {
+  background: var(--mtCBA);
+}
+
+button[disabled][type=primary] .mt-load-bar:before {
+  background: var(--colorF);
+}
+
+@keyframes mtLob {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  44% {
+    left: 0;
+  }
+  56% {
+    width: 100%;
+  }
+  to {
+    left: 100%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes mtLob {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  44% {
+    left: 0;
+  }
+  56% {
+    width: 100%;
+  }
+  to {
+    left: 100%;
+    width: 100%;
+  }
 }

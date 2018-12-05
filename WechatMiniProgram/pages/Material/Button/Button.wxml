@@ -7,7 +7,27 @@
     <view class='page__desc'>按钮</view>
   </view>
   
-  <view class='page__bd'>
-    <template is='Button' data='{{...button.a}}' />
+  <view class='page__bd' style='padding: 0 16px;'>
+    <view>
+      <template is='Button' data='{{...buttonA}}' />
+      <template is='Button' data='{{...buttonB}}' />
+      <template is='Button' data='{{...buttonC}}' />
+    </view>
+    <view>
+      <template is='Button' data='{{...buttonD}}' />
+      <template is='Button' data='{{...buttonE}}' />
+      <template is='Button' data='{{...buttonF}}' />
+    </view>
+    <template is='Button' data='{{...buttonG}}' />
+    <template is='Button' data='{{...buttonH}}' />
+    <view>
+      <template is='Button' data='{{...buttonI}}' />
+      <template is='Button' data='{{...buttonJ}}' />
+    </view>
+    <view>
+      <template is='Button' data='{{...buttonK}}' />
+      <template is='Button' data='{{...buttonL}}' />
+      <template is='Button' data='{{...buttonM}}' />
+    </view>
   </view>
 </view>
