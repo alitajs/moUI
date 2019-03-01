@@ -29,5 +29,6 @@
       <template is='Button' data='{{...buttonL}}' />
       <template is='Button' data='{{...buttonM}}' />
     </view>
+    <template is='LoadingCir' />
   </view>
 </view>

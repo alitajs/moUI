@@ -2,14 +2,15 @@
   <view class='mt-ripple' style='--x:{{touch[0]}}px;--y:{{touch[1]}}px;' />
 </template>
 <template name='LoadingBar'>
-  <view class='mt-load-bar' style='--T:{{duration||".8"}}s' data-pos='{{position}}' />
+  <view class='mt-load-bar' style='--mtTE:{{duration||".72"}}s' data-pos='{{position}}' />
 </template>
 <template name='Button'>
   <button data-namespace='{{namespace}}' class='{{className}}' hover-class='mt-btn-hover' form-type='{{formType}}' bindgetuserinfo='mtOT'
     style='{{style}}' bindtap='mtTap' disabled='{{disabled}}' data-blo='{{block}}' bindanimationiteration='mtAni' bindtouchcancel='mtTou'
     type='{{type}}' data-wxml='{{wxml}}' data-cir='{{circle}}' data-otl='{{outlined}}' bindtouchmove='mtTou' bindtouchforcechange='mtTou'
     bindtouchend='mtTou' data-nos='{{noShadow}}' bindlongpress='mtTap' bindtouchstart='mtTou' size='{{size}}' data-i='{{icon&&"i"+icon}}'
-    bindanimationstart='mtAni' bindanimationend='mtAni' open-type='{{openType}}' bindtransitionend='mtAni' bindgetphonenumber='mtOT'>
+    bindanimationstart='mtAni' bindanimationend='mtAni' open-type='{{openType}}' bindtransitionend='mtAni' bindgetphonenumber='mtOT'
+    hover-start-time='50' hover-stay-time='100'>
     <block wx:for='{{Ripple}}' wx:key='timeStamp' hidden='{{hideRipple}}'>
       <template is='Ripple' data='{{...item}}' />
     </block>
@@ -20,14 +21,13 @@
   </button>
 </template>
 <template name='Icon'>
-  <button class='{{className}}' hover-class='mt-btn-hover' style='{{style}}' form-type='{{formType}}' open-type='{{openType}}'
-    data-wxml='{{wxml}}' data-namespace='{{namespace}}' disabled='{{disabled}}' bindtap='mtTap' bindlongpress='mtTap'
-    bindtouchstart='mtTou' bindtouchmove='mtTou' bindtouchcancel='mtTou' bindtouchend='mtTou' bindtouchforcechange='mtTou'
-    bindgetuserinfo='mtOT' bindgetphonenumber='mtOT' bindanimationstart='mtAni' bindanimationend='mtAni'
-    bindanimationiteration='mtAni' bindtransitionend='mtAni'>
-    <block wx:for='{{Ripple}}' wx:key='timeStamp' wx:if='{{!hideRipple&&!disabled}}'>
-      <template is='Ripple' data='{{...item}}' />
-    </block>
-    <text>{{content}}</text>
-  </button>
+  <view class='{{className}}' style='{{style}}' data-wxml='{{wxml}}' data-namespace='{{namespace}}' bindtap='mtTap' bindlongpress='mtTap'
+    data-i='{{type}}' bindtouchstart='mtTou' bindtouchmove='mtTou' bindtouchcancel='mtTou' bindtouchend='mtTou' bindanimationend='mtAni'
+    bindtouchforcechange='mtTou' bindanimationstart='mtAni' bindanimationiteration='mtAni' bindtransitionend='mtAni' />
+</template>
+<template name='LoadingCir'>
+  <view class='mt-load-cir'>
+    <view class='mt-n1' />
+    <view class='mt-n1' />
+  </view>
 </template>

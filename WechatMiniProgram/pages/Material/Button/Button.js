@@ -103,6 +103,4 @@ Page({
   data, mt,
   ...PageFun(),
   onShareAppMessage() { },
-  onLoad: function () {
-  },
 });

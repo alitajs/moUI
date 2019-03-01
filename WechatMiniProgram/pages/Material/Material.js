@@ -273,7 +273,7 @@ class Icon extends Component {
     ...p,
   } = {}) {
     super(p);
-    this.setData(type);
+    this.setData({ type });
   }
 };
 
