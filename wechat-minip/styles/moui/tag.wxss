@@ -1,0 +1,108 @@
+.m-tag {
+  height: var(--tagHeight);
+  margin-left: calc(var(--tagHeight) / 2);
+  border-radius: calc(var(--tagHeight) / 2 + var(--tagBorderWidth));
+  border: var(--tagBorderWidth) solid var(--tagColor);
+  max-width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 0 8px;
+  color: var(--tagColor);
+  line-height: var(--tagHeight);
+  font-size: var(--fs1);
+  font-weight: 500;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-tag::-webkit-scrollbar {
+  width:0;
+  height:0;
+  color:transparent;
+}
+
+.m-tag:first-child {
+  margin-left: 0;
+}
+
+.m-tags[data-size='small'],
+.m-tag[data-size='small'] {
+  --tagHeight: 20px;
+  --tagBorderWidth: 1px;
+}
+
+.m-tags[data-size='tiny'],
+.m-tag[data-size='tiny'] {
+  --tagHeight: 16px;
+  --tagBorderWidth: 1px;
+}
+
+.m-tags[data-size='tiny'] .m-tag,
+.m-tag[data-size='tiny'] {
+  font-size: var(--fs0);
+}
+
+.m-tag-checked,
+.m-tag[data-checked='true'] {
+  background-color: var(--tagColor);
+  color: var(--white0);
+}
+
+.dark .m-tag-checked,
+.dark .m-tag[data-checked='true'] {
+  color: var(--white1);
+}
+
+.m-tags {
+  display: flex;
+  max-width: 100%;
+  overflow: auto;
+  margin: 0 var(--wingBlank) calc(var(--tagHeight) / -3) calc(var(--wingBlank) - var(--tagHeight) / 2);
+  flex-wrap: wrap;
+  flex-grow: 2;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-tags .m-tag {
+  margin-bottom: calc(var(--tagHeight) / 3);
+}
+
+.m-tags .m-tag:first-child {
+  margin-left: calc(var(--tagHeight) / 2);
+}
+
+.m-tags[data-inline='true'] {
+  margin: 0;
+  overflow: initial;
+  overflow-x: scroll;
+  flex-wrap: initial;
+}
+
+.m-tags[data-inline='true']::-webkit-scrollbar {
+  display: none;
+  color: transparent;
+}
+
+.m-tags[data-inline='true'] .m-tag {
+  max-width: initial;
+  overflow: initial;
+  margin-bottom: 0;
+}
+
+.m-tags[data-inline='true'] .m-tag:first-child {
+  margin-left: 0;
+}
+
+.m-tag [data-icon]:last-child {
+  vertical-align: center;
+  margin: calc(0px - var(--tagBorderWidth)) 0;
+  margin-right: -8px;
+  padding: 0 8px 0 4px;
+  font-size: var(--fs1);
+  font-weight: 900;
+  line-height: calc(var(--tagHeight) + var(--tagBorderWidth) * 2);
+  transform: scale(0.85);
+}
+
+.android .m-tag [data-icon]:last-child {
+  font-weight: 800;
+}

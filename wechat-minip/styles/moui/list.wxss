@@ -1,0 +1,226 @@
+.m-list {
+  --listLeftSpace: var(--listWingBlank);
+  --prefixWidth: 0px;
+  flex-direction: column;
+  border: 1px solid var(--gray2);
+  border-width: 1px 0;
+  background-color: var(--white0);
+  transition: all ease-in-out var(--dur2);
+}
+
+.dark .m-list {
+  border-color: var(--gray7);
+  background-color: var(--white6);
+}
+
+.m-list:empty {
+  border-width: 0;
+}
+
+.m-list-item {
+  position: relative;
+  min-height: var(--listHeight);
+  box-sizing: border-box;
+  padding: 8px 0 8px var(--listLeftSpace);
+  align-items: center;
+  font-size: var(--fs2);
+  color: var(--lightB1);
+  line-height: 1.4;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-list-item:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  margin-left: var(--listLeftSpace);
+  background-color: var(--gray2);
+}
+
+.m-list-item:last-child:after {
+  height: 0;
+}
+
+.dark .m-list-item:after {
+  background-color: var(--gray7);
+}
+
+.m-list[data-prefix] {
+  --prefixWidth: 32px;
+  --listWingBlank: 12px;
+  --listLeftSpace: calc(var(--listWingBlank) * 2 + var(--prefixWidth));
+}
+
+.m-list .m-prefix {
+  margin: 0 8px 0 var(--listWingBlank);
+  align-items: center;
+}
+
+.m-list[data-prefix] .m-list-item .m-prefix,
+.m-list[data-prefix] .m-list-item[data-icon]:before {
+  width: var(--prefixWidth);
+  position: absolute;
+  left: 0;
+  margin: 0 var(--listWingBlank);
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.m-list[data-prefix] .m-list-item[data-icon]:before {
+  display: flex;
+  font-size: calc(var(--listHeight) / 2);
+}
+
+.m-list[data-prefix~='fill'] .m-list-item .m-prefix,
+.m-list[data-prefix~='fill'] .m-list-item[data-icon]:before {
+  color: var(--lightW1);
+  border-radius: var(--sRadius);
+  overflow: hidden;
+  background-color: var(--prefixFill, var(--lightB7));
+}
+
+.m-list[data-prefix~='square'] .m-list-item .m-prefix,
+.m-list[data-prefix~='square'] .m-list-item[data-icon]:before {
+  height: var(--prefixWidth);
+}
+
+.m-list[data-prefix~='circle'] .m-list-item .m-prefix,
+.m-list[data-prefix~='circle'] .m-list-item[data-icon]:before {
+  height: var(--prefixWidth);
+  border-radius: calc(var(--prefixWidth) / 2);
+}
+
+.m-list[data-size='middle'] {
+  --listHeight: 54px;
+  --prefixWidth: 44px;
+}
+
+.m-list[data-size='middle'][data-prefix~='circle'] {
+  --prefixWidth: 40px;
+}
+
+.m-list[data-size='large'] {
+  --listHeight: 72px;
+  --prefixWidth: 54px;
+}
+
+.m-list[data-size='large'][data-prefix~='circle'] {
+  --prefixWidth: 50px;
+}
+
+/* .m-list-item view:not(.m-prefix):not(.m-suffix),
+.m-list-title view:not(.m-prefix):not(.m-suffix) {
+  flex: 1;
+} */
+
+.m-list .m-suffix {
+  margin: 0 var(--listWingBlank) 0 8px;
+  white-space: nowrap;
+  color: var(--gray5);
+  align-items: center;
+}
+
+.m-list-item .m-suffix[data-icon] {
+  padding-right: 20px;
+}
+
+.m-list-item .m-suffix[data-icon]:before {
+  position: absolute;
+  right: var(--listWingBlank);
+  font-weight: 900;
+  color: var(--gray4);
+}
+
+.android .m-list-item .m-suffix[data-icon]:before {
+  font-weight: 800;
+}
+
+.dark .m-list-item .m-suffix[data-icon]:before {
+  color: var(--gray6);
+}
+
+.m-list .m-list-title {
+  margin: 0 var(--listWingBlank);
+  line-height: 44px;
+  font-size: var(--fs3);
+  font-weight: 600;
+  color: var(--lightB1);
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-list[data-size='middle'] .m-list-title {
+  line-height: 48px;
+  font-size: var(--fs4);
+}
+
+.m-list[data-size='large'] .m-list-title {
+  line-height: 54px;
+  font-size: var(--fs4);
+}
+
+.m-list-title .m-suffix {
+  margin-right: 0;
+  font-size: var(--fs2);
+  font-weight: 400;
+}
+
+.m-list-item-holder {
+  position: relative;
+  min-height: var(--listHeight);
+  align-items: center;
+  justify-content: center;
+  transition: all ease-in-out var(--dur2);
+}
+
+input.m-list-item {
+  padding: 8px var(--listWingBlank) 8px var(--listLeftSpace);
+}
+
+.m-list-item > input {
+  padding-right: var(--listWingBlank);
+}
+
+.m-list-label {
+  display: block;
+  padding-right: 12px;
+  font-size: var(--fs2);
+  text-align-last: justify;
+}
+
+.m-list-item .m-tags {
+  flex: 1;
+  margin: 0;
+}
+
+.m-list-item > .m-tags {
+  margin: 0 var(--listWingBlank) calc(var(--tagHeight) / -3) 0;
+}
+
+.m-list-item > .m-tags:only-child {
+  margin: 0 var(--listWingBlank) calc(var(--tagHeight) / -3) var(--listLeftSpace);
+}
+
+.m-list-item .m-tags .m-tag {
+  margin-left: 0;
+  margin-right: calc(var(--tagHeight) / 2);
+}
+
+.m-list-item .m-tags .m-tag:first-child {
+  margin-left: 0;
+}
+
+.m-list-item .m-tags .m-tag:last-child {
+  margin-right: 0;
+}
+
+.m-list-item .m-suffix.m-switch {
+  margin: -2px var(--listWingBlank) -2px 8px;
+}
+
+.m-list-item > .m-flex {
+  overflow: auto;
+  padding-right: var(--listWingBlank);
+}

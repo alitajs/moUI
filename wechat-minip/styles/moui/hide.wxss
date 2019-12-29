@@ -1,0 +1,40 @@
+.m-hide-height {
+  --fixedHeight: '';
+  height: var(--fixedHeight);
+  overflow: hidden;
+  transition: height cubic-bezier(0.22, 0.61, 0.36, 1) var(--dur2);
+}
+
+.m-list .m-list-item.m-hide-height {
+  --fixedHeight: var(--listHeight);
+}
+
+.m-hide-height[data-visible='false'] {
+  height: 0;
+}
+
+.m-hide-width {
+  --fixedWidth: '';
+  width: var(--fixedWidth);
+  overflow: hidden;
+  transition: width cubic-bezier(0.22, 0.61, 0.36, 1) var(--dur2);
+}
+
+.m-list .m-hide-width {
+  --fixedWidth: var(--listWidth);
+}
+
+.m-hide-width[data-visible='false'] {
+  width: 0;
+}
+
+.m-hide-height .m-list-item:only-child,
+.m-hide-height .m-list-item-holder:only-child,
+.m-hide-width .m-list-item:only-child,
+.m-hide-width .m-list-item-holder:only-child {
+  flex: 1;
+}
+
+.m-hide-opacity[data-visible='false'] {
+  opacity: 0;
+}

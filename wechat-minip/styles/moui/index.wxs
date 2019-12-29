@@ -1,0 +1,12 @@
+mergeModule(module, require('form.wxs'));
+mergeModule(module, require('onswiper.wxs'));
+mergeModule(module, require('ontouch.wxs'));
+mergeModule(module, require('utils.wxs'));
+
+function mergeModule(selfmodule, importedmodule) {
+  for (var i = 0; i < importedmodule.KEYS.length; i++) {
+    if (selfmodule.exports[importedmodule.KEYS[i]])
+      return console.log('duplicate definition found: ' + importedmodule.KEYS[i]);
+    selfmodule.exports[importedmodule.KEYS[i]] = importedmodule[importedmodule.KEYS[i]];
+  }
+}

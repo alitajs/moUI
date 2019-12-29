@@ -1,0 +1,17 @@
+.m-list {
+  margin-top: 32px;
+}
+
+.m-suffix[data-visible='false'] {
+  opacity: 0;
+}
+
+.m-suffix[data-visible='false'][data-icon]:before {
+  transform: scale(0);
+}
+
+.m-list .m-list-item .m-suffix[data-icon]:before {
+  color: var(--pColor);
+  font-weight: 700;
+  font-size: calc(var(--listHeight) / 2.4);
+}

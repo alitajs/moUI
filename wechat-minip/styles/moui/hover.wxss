@@ -1,0 +1,19 @@
+.m-hover-opacity {
+  opacity: var(--hoverOpacity);
+}
+
+.m-hover-scale {
+  transform: scale(var(--hoverScale, 0.92));
+}
+
+.material .m-hover-scale {
+  --hoverScale: 1.08;
+}
+
+.m-hover-bg {
+  background-color: var(--gray2) !important;
+}
+
+.dark .m-hover-bg {
+  background-color: var(--gray7) !important;
+}

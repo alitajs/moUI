@@ -1,0 +1,15 @@
+{
+  "name": "moui-wechat-minip",
+  "version": "2.0.0",
+  "license": "MIT",
+  "scripts": {
+    "prettier": "prettier ./**/*.ts --write",
+    "prettier:js": "prettier ./**/*.js --write --loglevel=error",
+    "compile": "tsc && node preload.js && npm run prettier:js"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {}
+}

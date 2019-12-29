@@ -1,0 +1,43 @@
+.m-card {
+  box-sizing: border-box;
+  flex-direction: column;
+  margin: 8px var(--wingBlank);
+  border-radius: var(--sRadius);
+  background-color: var(--white0);
+}
+
+.dark .m-card {
+  background-color: var(--white6);
+}
+
+.m-card-footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.m-card-footer .m-desc {
+  margin: 0 var(--cardBlank);
+  line-height: 24px;
+  font-size: var(--fs0);
+}
+
+.m-card-footer .m-button {
+  --buttonRadius: var(--sRadius);
+  flex: 1;
+  padding: 0 var(--cardBlank);
+}
+
+.m-card-footer .m-button-group {
+  flex: 1;
+}
+
+.m-card-footer .m-button:only-child,
+.m-card-footer .m-button-group:only-child .m-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.m-card-body {
+  box-sizing: border-box;
+  padding: var(--cardBlank);
+}

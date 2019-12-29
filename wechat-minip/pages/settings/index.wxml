@@ -1,0 +1,42 @@
+<!--settings/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <template name="UIUserSetting">
+    <view class="m-list">
+      <navigator
+        class="m-list-item"
+        hover-class="m-hover-bg"
+        url="/pages/settings/options?for=uilang">
+        <view class="m-flex">风格</view>
+        <view class="m-suffix" data-icon="caret-right">
+          {{uilang==='material'?'Material Design':'Human Interface Guidelines'}}
+        </view>
+      </navigator>
+      <navigator
+        class="m-list-item"
+        hover-class="m-hover-bg"
+        url="/pages/settings/options?for=mode">
+        <view class="m-flex">主题</view>
+        <view class="m-suffix" data-icon="caret-right">
+          {{mode==='light'?'浅色':mode==='dark'?'深色':'自动'}}
+        </view>
+      </navigator>
+      <navigator
+        class="m-list-item"
+        hover-class="m-hover-bg"
+        url="/pages/settings/options?for=animation">
+        <view class="m-flex">禁用动画</view>
+        <view class="m-suffix" data-icon="caret-right">
+          {{animation==='auto'?'仅低电量时':animation?'总是':'永不'}}
+        </view>
+      </navigator>
+    </view>
+  </template>
+  <include src="../../components/utils/normal-navbar.wxml" />
+  <template data="{{...UIUserSetting}}" is="UIUserSetting" />
+  <view class="m-list">
+    <navigator class="m-list-item" hover-class="m-hover-bg" url="/pages/settings/about">
+      <view class="m-flex">关于</view>
+      <view class="m-suffix" data-icon="caret-right" />
+    </navigator>
+  </view>
+</view>

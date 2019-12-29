@@ -1,0 +1,7 @@
+<!--settings/about.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../components/utils/normal-navbar.wxml" />
+  <view class="m-footer">
+    <view class="m-desc">Drived by MofonCloud</view>
+  </view>
+</view>

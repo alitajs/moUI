@@ -1,0 +1,39 @@
+.m-cols {
+  flex-direction: column;
+}
+
+.m-rows {
+  flex-direction: row;
+}
+
+.m-flex {
+  flex: 1;
+}
+
+.m-flex-center {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-prefix, .m-suffix {
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-fill-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.m-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: var(--wingBlank);
+  justify-content: center;
+}

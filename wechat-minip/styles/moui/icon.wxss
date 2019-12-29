@@ -1,0 +1,10 @@
+@import 'iconfont.wxss';
+
+[data-icon]:before {
+  color: currentColor;
+  font-style: normal;
+  align-self: center;
+  font-family: iconfont !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

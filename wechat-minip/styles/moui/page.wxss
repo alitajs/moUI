@@ -1,0 +1,65 @@
+/* view[class~='dark'],
+view[class~='light'], */
+.m-page {
+  /* --modeTrans: background-color ease-in-out var(--dur5); */
+  display: block;
+  width: 100vw;
+  box-sizing: border-box;
+  padding-bottom: var(--wingBlank, 1px);
+  transition: all ease-in-out var(--dur3), background-color ease-in-out var(--dur2);
+}
+
+.m-cover-page {
+  --statusBar: 0px;
+  --sysNavbar: 48px;
+  --sysNavtop: 48px;
+  display: flex;
+  opacity: 0;
+  position: fixed;
+  z-index: 9;
+  bottom: -100vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: var(--sRadius);
+  padding-bottom: calc(100vh - var(--coverPageHeight));
+  transition: all ease-in-out var(--dur3), opacity linear 0s var(--dur3), background-color ease-in-out var(--dur2);
+}
+
+.m-cover-page[data-visible='true'] {
+  opacity: 1;
+  bottom: calc(var(--coverPageHeight) - 100vh);
+  transition: all ease-in-out var(--dur3), opacity linear 0s, background-color ease-in-out var(--dur2);
+}
+
+.m-cover-page .m-navbar-body {
+  position: absolute;
+}
+
+.dark.m-cover-page .m-navbar-body,
+.dark .m-cover-page .m-navbar-body {
+  background-color: var(--white5);
+}
+
+.m-page[data-covered] {
+  transform-origin: 50vw 40vh 0;
+}
+
+.m-page[data-covered='true'] {
+  opacity: 0.8;
+  border-radius: var(--mRadius);
+  transform: scale(0.92);
+}
+
+.m-cover-page.m-ontouchmovey[data-visible='true'] {
+  bottom: calc(var(--coverPageHeight) - 100vh + var(--touchMoveY, 0) * 1px);
+  transition: var(--touchMoveY, all) ease-in-out var(--dur3), var(--touchMoveY, opacity) linear 0s, background-color ease-in-out var(--dur2);
+}
+
+.m-page.m-ontouchmovey[data-covered='true'] {
+  opacity: calc(0.8 - 0.2 * var(--touchMoveY, 0) / var(--screenHeight));
+  transform: scale(calc(0.92 - 0.08 * var(--touchMoveY, 0) / var(--screenHeight)));
+  border-radius: calc(var(--mRadius) * (1 + var(--touchMoveY, 0) / var(--screenHeight)));
+  transition: var(--touchMoveY, all) ease-in-out var(--dur3), background-color ease-in-out var(--dur2);
+}

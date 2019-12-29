@@ -1,0 +1,16 @@
+<!--settings/options.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../components/utils/normal-navbar.wxml" />
+  <view class="m-list">
+    <view
+      bindtap="{{item.value===value||'onSelect'}}"
+      class="m-list-item"
+      data-value="{{item.value}}"
+      hover-class="m-hover-bg"
+      wx:for="{{options}}"
+      wx:key="value">
+      <view class="m-flex">{{item.name}}</view>
+      <view class="m-suffix" data-icon="check" data-visible="{{item.value===value}}" />
+    </view>
+  </view>
+</view>

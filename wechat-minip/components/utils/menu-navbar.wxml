@@ -1,0 +1,13 @@
+<!--components/utils/menu-navbar.wxml-->
+<template name="menu-navbar">
+  <view class="m-navbar" data-mode="menu">
+    <view bindlongpress="backTop" class="m-navbar-body">
+      <navigator class="m-navbar-back" hover-class="m-hover-opacity" open-type="navigateBack">
+        {{from}}
+      </navigator>
+      <view class="m-navbar-title">{{title}}</view>
+      <navigator class="m-avatar m-hide-opacity" data-icon="{{icon}}" data-visible="{{!!icon}}" hover-class="m-hover-opacity" url="{{icon?nav:''}}" wx:if="{{nav}}" />
+      <view bindtap="{{icon?tap:''}}" class="m-avatar m-hide-opacity" data-icon="{{icon}}" data-visible="{{!!icon}}" hover-class="m-hover-opacity" wx:else="" />
+    </view>
+  </view>
+</template>

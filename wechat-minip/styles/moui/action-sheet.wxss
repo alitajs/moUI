@@ -1,0 +1,13 @@
+.m-action-sheet {
+  position: fixed;
+  z-index: 29;
+  bottom: 0;
+  width: 100vw;
+  border-radius: var(--sRadius) var(--sRadius) 0 0;
+  background-color: var(--lightW0);
+  transition: all ease-out var(--dur2);
+}
+
+.m-action-sheet[data-visible='false'] {
+  bottom: 100vh;
+}

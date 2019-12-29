@@ -1,0 +1,47 @@
+function onSwiperTrans(event, instance) {
+  var dataset = event.currentTarget.dataset;
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper || '.m-page';
+  wrapper = dataset.disablecachewrapper
+    ? instance.selectComponent(wrapper)
+    : (components[wrapper] = components[wrapper] || instance.selectComponent(wrapper));
+  if (event.type === 'animationfinish') {
+    if (dataset.emitSwiperend) {
+      event.type = 'swiperend';
+      instance.callMethod(dataset.emitSwiperend, event);
+    } else {
+      wrapper.setStyle({ '--swiperX': '', '--swiperY': '' });
+      wrapper.removeClass('next', 'prev');
+    }
+  }
+  if (event.type !== 'transition') return;
+  if (event.detail.dx) {
+    wrapper.addClass(event.detail.dx >= 0 ? 'next' : 'prev');
+    wrapper.setStyle({ '--swiperX': event.detail.dx });
+  } else if (event.detail.dy) {
+    wrapper.addClass(event.detail.dy >= 0 ? 'next' : 'prev');
+    wrapper.setStyle({ '--swiperY': event.detail.dy });
+  }
+}
+
+function removeEffectOfOnSwiperTrans(newprop, _, instance, currentInstance) {
+  if (!newprop) return;
+  var dataset = currentInstance.getDataset();
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper || '.m-page';
+  wrapper = dataset.disablecachewrapper
+    ? instance.selectComponent(wrapper)
+    : (components[wrapper] = components[wrapper] || instance.selectComponent(wrapper));
+  wrapper.setStyle({ '--swiperX': '', '--swiperY': '' });
+  wrapper.removeClass('next', 'prev');
+  if (dataset.emitEffectRemoved)
+    instance.callMethod(dataset.emitEffectRemoved, { type: 'effectRemoved' });
+}
+
+module.exports = {
+  KEYS: ['onSwiperTrans', 'removeEffectOfOnSwiperTrans'],
+  onSwiperTrans: onSwiperTrans,
+  removeEffectOfOnSwiperTrans: removeEffectOfOnSwiperTrans,
+};

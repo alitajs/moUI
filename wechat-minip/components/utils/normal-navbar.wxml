@@ -1,0 +1,9 @@
+<!--components/utils/normal-navbar.wxml-->
+<view class="m-navbar">
+  <view bindlongpress="backTop" class="m-navbar-body">
+    <navigator class="m-navbar-back" hover-class="m-hover-opacity" open-type="navigateBack">
+      {{_.from}}
+    </navigator>
+    <view class="m-navbar-title">{{_.title}}</view>
+  </view>
+</view>

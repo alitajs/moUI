@@ -1,0 +1,11 @@
+.m-desc {
+  color: var(--gray5);
+  font-size: var(--fs1);
+}
+
+.m-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

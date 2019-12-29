@@ -1,0 +1,123 @@
+function onScroll(event, instance) {
+  if (event.type !== 'scroll') return;
+  var dataset = event.currentTarget.dataset;
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper || '.m-page';
+  wrapper = dataset.disablecachewrapper
+    ? instance.selectComponent(wrapper)
+    : (components[wrapper] = components[wrapper] || instance.selectComponent(wrapper));
+  if (event.detail.scrollTop) wrapper.setStyle({ '--scrollY': event.detail.scrollTop });
+  if (event.detail.scrollLeft) wrapper.setStyle({ '--scrollX': event.detail.scrollLeft });
+}
+
+function onScrollEmit(event, instance) {
+  if (event.type !== 'scroll') return;
+  var localState = event.instance.getState();
+  var state = (localState.onScrollEmit = localState.onScrollEmit || {});
+  var dataset = event.currentTarget.dataset;
+  var top = dataset.top ? parseInt(dataset.top) : 8;
+  var left = dataset.left ? parseInt(dataset.left) : 8;
+  var right = dataset.right ? parseInt(dataset.right) : 32;
+  var bottom = dataset.bottom ? parseInt(dataset.bottom) : 32;
+  if (dataset.emitScrollY) {
+    if (!state.top && top >= event.detail.scrollTop)
+      instance.callMethod(dataset.emitScrollY, { top: (state.top = true) });
+    else if (state.top && bottom <= event.detail.scrollTop) {
+      instance.callMethod(dataset.emitScrollY, { top: (state.top = false) });
+    }
+  }
+  if (dataset.emitScrollX) {
+    if (!state.left && left >= event.detail.scrollLeft)
+      instance.callMethod(dataset.emitScrollX, { left: (state.left = true) });
+    else if (state.left && right <= event.detail.scrollLeft) {
+      instance.callMethod(dataset.emitScrollX, { left: (state.left = false) });
+    }
+  }
+}
+
+function onTouchMove(event, instance) {
+  var dataset = event.currentTarget.dataset;
+  var globalState = instance.getState();
+  var localState = event.instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper || '.m-page';
+  wrapper = dataset.disablecachewrapper
+    ? instance.selectComponent(wrapper)
+    : (components[wrapper] = components[wrapper] || instance.selectComponent(wrapper));
+  if (event.type !== 'touchmove') {
+    var emitRemoveEffect = true;
+    var state = localState.onTouchMove || {};
+    if (state.direction === 'x' && dataset.emitMoveX) {
+      if (Math.abs(state.movedX) > (dataset.maxMoveX || 160)) {
+        event.type = 'touchMoveX';
+        event.detail = { movedX: state.movedX };
+        emitRemoveEffect = !dataset.emitEffectRemoved;
+        instance.callMethod(dataset.emitMoveX, event);
+      }
+    } else if (state.direction === 'y' && dataset.emitMoveY) {
+      if (Math.abs(state.movedY) > (dataset.maxMoveY || 300)) {
+        event.type = 'touchMoveY';
+        event.detail = { movedY: state.movedY };
+        emitRemoveEffect = !dataset.emitEffectRemoved;
+        instance.callMethod(dataset.emitMoveY, event);
+      }
+    }
+    if (emitRemoveEffect) {
+      wrapper.setStyle({ '--touchMoveX': '', '--touchMoveY': '' });
+      wrapper.removeClass('next', 'prev');
+    }
+    return (localState.onTouchMove = null);
+  } else if (!event.touches.length) return;
+  var touchesMap = {};
+  for (var i = 0; i < event.touches.length; i++)
+    touchesMap[event.touches[i].identifier] = event.touches[i];
+  var state = (localState.onTouchMove = localState.onTouchMove || { start: touchesMap });
+  // if ((state.pause = !state.pause)) return; // throttle
+  if (!touchesMap[state.observing]) {
+    for (var i = 0; i < event.touches.length; i++)
+      if (state.start[event.touches[i].identifier]) {
+        state.observing = event.touches[i].identifier;
+        break;
+      } else if (i === event.touches.length - 1) return;
+  }
+  state.movedX = state.start[state.observing].pageX - touchesMap[state.observing].pageX;
+  state.movedY = state.start[state.observing].pageY - touchesMap[state.observing].pageY;
+  if (!state.direction) {
+    if (Math.abs(state.movedX) > 2) state.direction = 'x';
+    else if (Math.abs(state.movedY) > 2) state.direction = 'y';
+  }
+  if (state.direction === 'y') {
+    wrapper.addClass(state.movedY >= 0 ? 'next' : 'prev');
+    wrapper.removeClass(state.movedY >= 0 ? 'prev' : 'next');
+    wrapper.setStyle({ '--touchMoveX': '', '--touchMoveY': state.movedY });
+  } else if (state.direction === 'x') {
+    wrapper.addClass(state.movedX >= 0 ? 'next' : 'prev');
+    wrapper.removeClass(state.movedX >= 0 ? 'prev' : 'next');
+    wrapper.setStyle({ '--touchMoveX': state.movedX, '--touchMoveY': '' });
+  } else {
+    wrapper.setStyle({ '--touchMoveX': state.movedX, '--touchMoveY': state.movedY });
+  }
+}
+
+function removeEffectOfOnTouchMove(_next, _prev, instance, currentInstance) {
+  var dataset = currentInstance.getDataset();
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper || '.m-page';
+  wrapper = dataset.disablecachewrapper
+    ? instance.selectComponent(wrapper)
+    : (components[wrapper] = components[wrapper] || instance.selectComponent(wrapper));
+  wrapper.setStyle({ '--touchMoveX': '', '--touchMoveY': '' });
+  wrapper.removeClass('next', 'prev');
+  if (dataset.emitEffectRemoved)
+    instance.callMethod(dataset.emitEffectRemoved, { type: 'effectRemoved' });
+}
+
+module.exports = {
+  KEYS: ['onScroll', 'onScrollEmit', 'onTouchMove', 'removeEffectOfOnTouchMove'],
+  onScroll: onScroll,
+  onScrollEmit: onScrollEmit,
+  onTouchMove: onTouchMove,
+  removeEffectOfOnTouchMove: removeEffectOfOnTouchMove,
+};

@@ -1,0 +1,171 @@
+/** COLOR */
+page {
+  /** white */
+  --white0: #fff;
+  --white1: rgba(255, 255, 255, 0.85);
+  --white2: rgba(255, 255, 255, 0.65);
+  --white3: rgba(255, 255, 255, 0.45);
+  --white4: rgba(255, 255, 255, 0.25);
+  --white5: rgba(255, 255, 255, 0.15);
+  --white6: rgba(255, 255, 255, 0.09);
+  --white7: rgba(255, 255, 255, 0.04);
+  /** black */
+  --black0: #000;
+  --black1: rgba(0, 0, 0, 0.85);
+  --black2: rgba(0, 0, 0, 0.65);
+  --black3: rgba(0, 0, 0, 0.45);
+  --black4: rgba(0, 0, 0, 0.25);
+  --black5: rgba(0, 0, 0, 0.15);
+  --black6: rgba(0, 0, 0, 0.09);
+  --black7: rgba(0, 0, 0, 0.04);
+  /** dark / light mode responsive color */
+  --lightW0: var(--white0);
+  --lightW1: var(--white1);
+  --lightW2: var(--white2);
+  --lightW3: var(--white3);
+  --lightW4: var(--white4);
+  --lightW5: var(--white5);
+  --lightW6: var(--white6);
+  --lightW7: var(--white7);
+  --lightB0: var(--black0);
+  --lightB1: var(--black1);
+  --lightB2: var(--black2);
+  --lightB3: var(--black3);
+  --lightB4: var(--black4);
+  --lightB5: var(--black5);
+  --lightB6: var(--black6);
+  --lightB7: var(--black7);
+  /** gray */
+  --gray0: #fafafa;
+  --gray1: #f5f5f5;
+  --gray2: #e8e8e8;
+  --gray3: #d9d9d9;
+  --gray4: #bfbfbf;
+  --gray5: #8c8c8c;
+  --gray6: #595959;
+  --gray7: #262626;
+  /** opacity */
+  --opa0: 0.85;
+  --opa1: 0.65;
+  --opa2: 0.45;
+  --opa3: 0.25;
+  --opa4: 0.15;
+  --opa5: 0.09;
+  --opa6: 0.04;
+  --opa7: 0.02;
+  --hoverOpacity: 0.65;
+}
+
+.dark {
+  --lightW0: var(--black0);
+  --lightW1: var(--black1);
+  --lightW2: var(--black2);
+  --lightW3: var(--black3);
+  --lightW4: var(--black4);
+  --lightW5: var(--black5);
+  --lightW6: var(--black6);
+  --lightW7: var(--black7);
+  --lightB0: var(--white0);
+  --lightB1: var(--white1);
+  --lightB2: var(--white2);
+  --lightB3: var(--white3);
+  --lightB4: var(--white4);
+  --lightB5: var(--white5);
+  --lightB6: var(--white5);
+  --lightB7: var(--white6);
+}
+
+/** FONT */
+page {
+  /** fontSize */
+  --fs0: 12px;
+  --fs1: 14px;
+  --fs2: 16px;
+  --fs3: 20px;
+  --fs4: 24px;
+  --fs5: 30px;
+  --fs6: 38px;
+  --fs7: 46px;
+  --fs8: 56px;
+  --fs9: 68px;
+  /** lineHeight */
+  --lh0: 20px;
+  --lh1: 22px;
+  --lh2: 24px;
+  --lh3: 28px;
+  --lh4: 32px;
+  --lh5: 38px;
+  --lh6: 46px;
+  --lh7: 54px;
+  --lh8: 64px;
+  --lh9: 76px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+/** DURATION */
+page {
+  --dur0: 0.08s;
+  --dur1: 0.16s;
+  --dur2: 0.24s;
+  --dur3: 0.32s;
+  --dur4: 0.4s;
+  --dur5: 0.48s;
+}
+
+/** BORDER */
+page {
+  --tRadius: 4px;
+  --sRadius: 8px;
+  --mRadius: 16px;
+  --lRadius: 24px;
+}
+
+/** FILTER */
+page {
+  --brightness9: brightness(1);
+  --brightness8: brightness(var(--opa0));
+  --brightness7: brightness(var(--opa1));
+  --brightness6: brightness(var(--opa2));
+  --brightness5: brightness(var(--opa3));
+  --brightness4: brightness(var(--opa4));
+  --brightness3: brightness(var(--opa5));
+  --brightness2: brightness(var(--opa6));
+  --brightness1: brightness(var(--opa7));
+  --brightness0: brightness(0);
+  --grayscale9: grayscale(1);
+  --grayscale8: grayscale(var(--opa0));
+  --grayscale7: grayscale(var(--opa1));
+  --grayscale6: grayscale(var(--opa2));
+  --grayscale5: grayscale(var(--opa3));
+  --grayscale4: grayscale(var(--opa4));
+  --grayscale3: grayscale(var(--opa5));
+  --grayscale2: grayscale(var(--opa6));
+  --grayscale1: grayscale(var(--opa7));
+  --grayscale0: grayscale(0);
+}
+
+.without-animation {
+  --dur0: 0s;
+  --dur1: 0s;
+  --dur2: 0s;
+  --dur3: 0s;
+  --dur4: 0s;
+  --dur5: 0s;
+}
+
+.without-animation.m-onswiper,
+.without-animation .m-onswiper {
+  --swiperX: 0;
+}
+
+.without-animation.m-ontouchmovex,
+.without-animation .m-ontouchmovex {
+  --touchMoveX: 0;
+}
+
+.without-animation.m-ontouchmovey,
+.without-animation .m-ontouchmovey {
+  --touchMoveY: 0;
+}

@@ -1,0 +1,51 @@
+.m-badge {
+  position: relative;
+}
+
+.m-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: var(--badgeColor);
+  transition: all cubic-bezier(0.68, -0.55, 0.27, 1.55) var(--dur2);
+}
+
+.m-badge .m-badge-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.m-badge-text {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 7px;
+  line-height: 22px;
+  border-radius: 11px;
+  font-size: var(--fs1);
+  font-weight: 600;
+  color: var(--lightW0);
+  background-color: var(--badgeColor);
+  transition: all cubic-bezier(0.68, -0.55, 0.27, 1.55) var(--dur2);
+}
+
+.m-badge .m-badge-text {
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  right: -8px;
+}
+
+.m-badge-text {
+  margin-left: 8px;
+}
+
+.m-badge-text:first-child {
+  margin-left: 0;
+}
+
+.m-badge-dot[data-visible='false'],
+.m-badge-text[data-visible='false'] {
+  transform: scale(0);
+}

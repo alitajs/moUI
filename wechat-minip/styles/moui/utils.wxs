@@ -1,0 +1,22 @@
+function getTabPosition(val, curr, all) {
+  if (all) {
+    val = Array.indexOf(val, all);
+    curr = Array.indexOf(curr, all);
+  }
+  return val < curr ? -1 : val > curr ? 1 : 0;
+}
+
+var Array = {
+  indexOf: function indexOf(val, self) {
+    for (var i = 0; i < self.length; i++) {
+      if (self[i] === val) return i;
+    }
+    return -1;
+  },
+};
+
+module.exports = {
+  KEYS: ['pos', 'Array'],
+  pos: getTabPosition,
+  Array: Array,
+};

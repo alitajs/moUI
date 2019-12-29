@@ -1,0 +1,32 @@
+/**
+ * filename: app.wxss
+ * location: @/
+ */
+@import 'styles/moui/index.wxss';
+@import 'components/index.wxss';
+
+page {
+  --badgeColor: var(--pColor5);
+  --navbarColor: rgba(240, 240, 240, 0.98);
+  --pageColor: #f0f0f0;
+}
+
+.m-page {
+  min-height: calc(var(--screenHeight) * 1px);
+}
+
+.m-navbar-body,
+.dark .m-navbar-body,
+.dark.m-cover-page .m-navbar-body {
+  background-color: var(--navbarColor);
+}
+
+.m-page,
+.dark.m-page {
+  background-color: var(--pageColor);
+}
+
+.dark {
+  --pageColor: #000000;
+  --navbarColor: rgba(32, 32, 32, 0.98);
+}

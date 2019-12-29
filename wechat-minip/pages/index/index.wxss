@@ -1,0 +1,18 @@
+.m-page {
+  background-color: var(--lightW0);
+}
+
+.p-header {
+  width: 100vw;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 var(--wingBlank);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.p-title {
+  color: var(--lightB1);
+  font-size: var(--fs5);
+  font-weight: 600;
+}

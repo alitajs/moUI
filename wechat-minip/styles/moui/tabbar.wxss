@@ -1,0 +1,84 @@
+.m-tabbar {
+  height: var(--tabbarHeight);
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--gray2);
+  border-bottom-width: 1px;
+  background-color: var(--lightW1);
+  flex-direction: row;
+  align-items: center;
+  transition: all ease-in-out var(--dur4);
+}
+
+.dark .m-tabbar {
+  border-color: var(--gray7);
+}
+
+.m-tabbar .m-tab {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  height: var(--tabbarHeight);
+  padding-bottom: 1px;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray4);
+  font-size: var(--fs1);
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-tabbar .m-tab[data-icon]:before,
+.m-tabbar .m-tab [data-icon]:before {
+  font-size: 22px;
+}
+
+.m-tab-curr,
+.m-tab[data-pos='0'] {
+  color: var(--pColor);
+  font-weight: 500;
+}
+
+.m-tabbar .m-tab:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-tabbar .m-tab[data-pos='0']:after {
+  background-color: var(--pColor);
+}
+
+.m-tabbar[data-grayscale] .m-tab {
+  --tabbarFilter: grayscale(1);
+  color: var(--pColor);
+  filter: var(--tabbarFilter) var(--disabledFilter);
+}
+
+.m-tabbar[data-grayscale] .m-tab[data-pos='0'] {
+  --tabbarFilter: ;
+}
+
+.m-tabbar.m-onswiper[data-grayscale] .m-tab {
+  transition: var(--swiperX, all) ease-in-out var(--dur2);
+}
+
+.prev .m-tabbar.m-onswiper[data-grayscale] .m-tab[data-pos='-1'] {
+  --tabbarFilter: grayscale(calc(1 + var(--swiperX) / var(--screenWidth)));
+}
+
+.prev .m-tabbar.m-onswiper[data-grayscale] .m-tab[data-pos='0'] {
+  --tabbarFilter: grayscale(calc(0 - var(--swiperX) / var(--screenWidth)));
+}
+
+.next .m-tabbar.m-onswiper[data-grayscale] .m-tab[data-pos='1'] {
+  --tabbarFilter: grayscale(calc(1 - var(--swiperX) / var(--screenWidth)));
+}
+
+.next .m-tabbar.m-onswiper[data-grayscale] .m-tab[data-pos='0'] {
+  --tabbarFilter: grayscale(calc(var(--swiperX) / var(--screenWidth)));
+}

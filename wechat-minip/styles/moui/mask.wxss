@@ -1,0 +1,37 @@
+.m-mask {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black2);
+  transition: all ease-out var(--dur2), top linear 0s;
+}
+
+.m-mask[data-scope='page'] {
+  position: fixed;
+  z-index: 19;
+}
+
+.m-mask[data-visible='false'] {
+  top: 100%;
+  opacity: 0;
+  transition: all ease-in var(--dur2), top linear 0s var(--dur2);
+}
+
+.m-page[data-covered='true'] .m-mask[data-scope='page'] {
+  border-radius: var(--mRadius);
+}
+
+.m-mask[data-type='opaque'] {
+  background-color: var(--lightW0);
+}
+
+.m-mask[data-type='transparent'] {
+  background-color: transparent;
+}
+
+.m-cover-page .m-mask[data-scope='page'] {
+  position: absolute;
+}

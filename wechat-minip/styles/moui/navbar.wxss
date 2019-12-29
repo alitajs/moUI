@@ -1,0 +1,322 @@
+.m-navbar {
+  --navbarTopSP: var(--statusBar, 20px);
+  --navbarHeight: var(--sysNavbar, 44px);
+  width: 100vw;
+  height: var(--navbarHeight);
+  align-items: center;
+  flex-direction: column;
+  padding-top: var(--navbarTopSP);
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-navbar-hide,
+.m-navbar[data-visible='false'] {
+  opacity: 0;
+}
+
+.material .m-navbar-hide,
+.material .m-navbar[data-visible='false'] {
+  position: relative;
+}
+
+.material .m-navbar-hide .m-navbar-body,
+.material .m-navbar[data-visible='false'] .m-navbar-body {
+  top: calc(0px - var(--navbarHeight) - var(--navbarTopSP));
+}
+
+.m-navbar-body {
+  --navbarTrans: all ease-in-out var(--dur2), height ease-in-out var(--dur2) var(--dur2);
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  width: 100vw;
+  height: var(--navbarHeight);
+  line-height: var(--navbarHeight);
+  padding-top: var(--navbarTopSP);
+  background-color: var(--lightW0);
+  transition: var(--navbarTrans), var(--modeTrans, var(--navbarTrans));
+}
+
+.m-navbar-title {
+  --moveRange: 16px;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  justify-content: center;
+  color: var(--lightB1);
+  white-space: nowrap;
+  font-size: calc(var(--fs2) + 2px);
+  font-weight: 700;
+  transition: all ease-in-out var(--dur4);
+}
+
+.material .m-navbar-title {
+  padding-left: calc(var(--wingBlank) + 32px);
+  justify-content: left;
+}
+
+.android.material .m-navbar-title {
+  width: auto;
+}
+
+.material .m-navbar-title:first-child {
+  padding-left: var(--wingBlank);
+}
+
+.m-navbar-title[data-pos] {
+  opacity: 0;
+}
+
+.m-navbar-title[data-pos='0'] {
+  z-index: 1;
+  opacity: 1;
+}
+
+.m-navbar.m-onswiper .m-navbar-title {
+  transition: var(--swiperX, all) ease-in-out var(--dur4);
+}
+
+.m-navbar.m-onswiper .m-navbar-title[data-pos] {
+  --leftBase: none;
+  left: calc(var(--moveRange) * (var(--leftBase) - var(--swiperX, 0) / var(--screenWidth)));
+}
+
+.m-navbar.m-onswiper .m-navbar-title[data-pos='0'] {
+  --leftBase: 0;
+}
+
+.prev .m-navbar.m-onswiper .m-navbar-title[data-pos='0'] {
+  opacity: calc(1 + var(--swiperX, 0) / var(--screenWidth));
+}
+
+.prev .m-navbar.m-onswiper .m-navbar-title[data-pos='-1'] {
+  --leftBase: -1;
+  opacity: calc(0 - var(--swiperX, 0) / var(--screenWidth));
+}
+
+.next .m-navbar.m-onswiper .m-navbar-title[data-pos='0'] {
+  opacity: calc(1 - var(--swiperX, 0) / var(--screenWidth));
+}
+
+.next .m-navbar.m-onswiper .m-navbar-title[data-pos='1'] {
+  --leftBase: 1;
+  opacity: calc(var(--swiperX, 0) / var(--screenWidth));
+}
+
+/* .m-navbar-body .m-avatar:first-child {
+  --avatarSize: 32px;
+} */
+
+.m-navbar-back {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  color: var(--pColor);
+  white-space: nowrap;
+  font-size: var(--fs2);
+  font-weight: 500;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-navbar-back:before {
+  position: relative;
+  left: 2px;
+  font-family: iconfont;
+  content: '\e857';
+  font-size: 24px;
+  font-weight: 900;
+  transform: scaleX(0.85);
+}
+
+.android .m-navbar-back:before {
+  font-weight: 800;
+}
+
+.material .m-navbar-back {
+  margin-left: calc(var(--wingBlank) - 9px);
+  overflow: hidden;
+  width: 38px;
+  color: transparent;
+}
+
+.material .m-navbar-back:before {
+  left: 9px;
+  color: var(--pColor);
+  content: '\e860';
+  font-size: 20px;
+  transform: none;
+}
+
+.m-navbar[data-mode~='tabbar'] {
+  justify-content: center;
+}
+
+.m-navbar[data-mode~='avatar'] .m-navbar-title {
+  padding: 0 var(--wingBlank);
+  justify-content: left;
+  font-size: var(--fs5);
+}
+
+.hig .m-navbar[data-mode~='avatar'],
+.material .m-navbar[data-mode~='avatar'][data-mode~='tabbar'] {
+  --navbarHeight: 40px;
+  --navbarTopSP: var(--sysNavtop, 64px);
+}
+
+.material .m-navbar[data-mode~='avatar'] .m-navbar-title {
+  justify-content: center;
+  font-size: var(--fs3);
+}
+
+.android.hig .m-navbar[data-mode~='avatar'] .m-navbar-title {
+  width: auto;
+}
+
+.android.material .m-navbar[data-mode~='avatar'] .m-navbar-title {
+  width: 100vw;
+}
+
+.material .m-navbar[data-mode~='tabbar'] .m-navbar-title {
+  display: none;
+}
+
+.m-navbar[data-mode~='menu'] .m-avatar,
+.m-navbar[data-mode~='avatar'] .m-avatar {
+  position: absolute;
+  z-index: 1;
+  bottom: calc((var(--navbarHeight) - var(--avatarSize)) / 2);
+  right: var(--wingBlank);
+}
+
+.material .m-navbar[data-mode~='avatar'] .m-avatar {
+  --avatarSize: 28px;
+  right: calc(100vw - var(--wingBlank) - var(--avatarSize));
+}
+
+.m-navbar[data-noplaceholder] {
+  height: 0;
+  padding-top: 0;
+}
+
+.m-navbar[data-mode~='tabbar'] .m-tabbar {
+  z-index: 9;
+  border-bottom-width: 0;
+}
+
+.android.material .m-navbar[data-mode~='tabbar'] .m-tabbar {
+  left: 0;
+  right: 0;
+  margin: 0 calc(var(--wingBlank) + 54px);
+}
+
+.hig .m-navbar[data-mode~='tabbar'] .m-tabbar {
+  --tabbarHeight: 54px;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  border-top-width: 1px;
+}
+
+.material .m-navbar[data-mode~='tabbar'] .m-tabbar {
+  position: absolute;
+  bottom: calc(100vh - var(--navbarTopSP) - (var(--navbarHeight) + var(--tabbarHeight)) / 2);
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: calc(var(--tabbarHeight) / 2);
+  background-color: var(--pColor);
+  transition: all ease-in-out var(--dur2);
+}
+
+.dark .m-navbar[data-mode~='tabbar'] .m-tabbar {
+  background-color: rgba(32, 32, 32, 0.85);
+}
+
+.m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab {
+  padding-bottom: 0;
+}
+
+.hig .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab {
+  flex-direction: column;
+  font-size: var(--fs0);
+  padding-top: 1px;
+}
+
+.material .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab {
+  --tabbarFilter: ;
+  height: calc(var(--tabbarHeight) - 8px);
+  padding-bottom: 0;
+  padding: 0 8px;
+  border-radius: calc(var(--tabbarHeight) / 2 - 4px);
+  color: var(--white2);
+  font-weight: 500;
+}
+
+.material .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab[data-pos='0'] {
+  background-color: var(--lightW0);
+  color: var(--pColor);
+  box-shadow: 0 0 4px 4px var(--black7);
+}
+
+.m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab:after {
+  display: none;
+}
+
+.hig .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab[data-icon]:before,
+.hig .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab [data-icon]:before {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.material .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab [data-icon]:before {
+  margin-right: 2px;
+}
+
+.material .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab [data-icon]:only-child:before {
+  margin-right: 0;
+}
+
+.hig .m-navbar[data-mode~='avatar'][data-mode~='mini'],
+.material .m-navbar[data-mode~='avatar'][data-mode~='mini'] {
+  --navbarTopSP: var(--statusBar, 20px);
+  --navbarHeight: var(--sysNavbar, 44px);
+}
+
+.hig .m-navbar[data-mode~='avatar'][data-mode~='mini'] .m-navbar-title {
+  font-size: var(--fs3);
+}
+
+.m-navbar[data-mode~='avatar'][data-mode~='mini'] .m-avatar {
+  --avatarSize: 28px;
+}
+
+.m-navbar[data-mode~='menu'] .m-avatar,
+.hig .m-navbar[data-mode~='avatar'][data-mode~='mini'] .m-avatar {
+  right: var(--sysMenuWidth);
+}
+
+.material .m-navbar[data-mode~='avatar'][data-mode~='mini'][data-mode~='tabbar'] .m-tabbar {
+  --tabbarHeight: 32px;
+}
+
+.android.material .m-navbar[data-mode~='avatar'][data-mode~='mini'][data-mode~='tabbar'] .m-tabbar {
+  --tabbarHeight: 32px;
+  margin: 0 calc(var(--sysMenuWidth) + 7px) 0 calc(var(--wingBlank) + 46px);
+}
+
+.m-navbar[data-mode~='menu'] .m-avatar {
+  --avatarSize: 32px;
+  color: var(--lightB1);
+  box-sizing: border-box;
+  border: 1px solid var(--black7);
+  background-color: var(--white3);
+}
+
+.dark .m-navbar[data-mode~='menu'] .m-avatar {
+  background-color: var(--black5);
+  border: 1px solid var(--white6);
+}
+
+.m-page[data-covered='true'] .m-navbar-body {
+  border-radius: var(--mRadius) var(--mRadius) 0 0;
+}

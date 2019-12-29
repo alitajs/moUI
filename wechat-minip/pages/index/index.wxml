@@ -1,0 +1,12 @@
+<!--index/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}} " style="{{_.ui.cssvar}}">
+  <view class="m-navbar" data-mode="menu" data-visible="{{navbarVisible}}">
+    <view bindlongpress="backTop" class="m-navbar-body">
+      <view class="m-navbar-title">{{_.title}}</view>
+      <view bindtap="backTop" class="m-avatar" data-icon="caret-up" hover-class="m-hover-opacity" />
+    </view>
+  </view>
+  <view class="p-header">
+    <view class="p-title">{{_.title}}</view>
+  </view>
+</view>

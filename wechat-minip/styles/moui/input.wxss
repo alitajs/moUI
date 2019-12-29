@@ -1,0 +1,18 @@
+input {
+  display: flex;
+  height: auto;
+  min-height: initial;
+  flex: 1;
+  font-size: inherit;
+  font-family: inherit;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-input-placeholder {
+  font-size: inherit;
+}
+
+input.m-disabled,
+input[data-disabled='true'] {
+  --disabledFilter: opacity(var(--opa1));
+}

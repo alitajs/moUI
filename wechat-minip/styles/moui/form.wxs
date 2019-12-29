@@ -1,0 +1,56 @@
+function cacheEvent(event, instance) {
+  var dataset = event.currentTarget.dataset;
+  if (!event.detail) return;
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper;
+  if (!wrapper) wrapper = event.instance;
+  else if (dataset.disablecachewrapper) wrapper = instance.selectComponent(wrapper);
+  else wrapper = components[wrapper] = components[wrapper] || instance.selectComponent(wrapper);
+  wrapper.getState().cacheEvent = event;
+}
+
+function emitCachedEvent(event, instance) {
+  var dataset = event.currentTarget.dataset;
+  if (!dataset.emit) return;
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper;
+  if (!wrapper) wrapper = event.instance;
+  else if (dataset.disablecachewrapper) wrapper = instance.selectComponent(wrapper);
+  else wrapper = components[wrapper] = components[wrapper] || instance.selectComponent(wrapper);
+  instance.callMethod(dataset.emit, wrapper.getState().cacheEvent || event);
+}
+
+function onSwitchChange(event, instance) {
+  if (event.type !== 'change') return;
+  var dataset = event.currentTarget.dataset;
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper || '.m-switch';
+  wrapper = dataset.disablecachewrapper
+    ? instance.selectComponent(wrapper)
+    : (components[wrapper] = components[wrapper] || instance.selectComponent(wrapper));
+  wrapper[event.detail.value ? 'addClass' : 'removeClass']('m-switch-checked');
+  if (dataset.emit) instance.callMethod(dataset.emit, event);
+}
+
+function onSetSwitchChecked(newValue, _oldValue, instance, currentInstance) {
+  onSwitchChange(
+    {
+      type: 'change',
+      instance: currentInstance,
+      currentTarget: { dataset: currentInstance.getDataset() },
+      detail: { value: newValue },
+    },
+    instance,
+  );
+}
+
+module.exports = {
+  KEYS: ['cacheEvent', 'emitCachedEvent', 'onSetSwitchChecked', 'onSwitchChange'],
+  cacheEvent: cacheEvent,
+  emitCachedEvent: emitCachedEvent,
+  onSetSwitchChecked: onSetSwitchChecked,
+  onSwitchChange: onSwitchChange,
+};

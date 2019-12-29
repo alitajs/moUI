@@ -1,0 +1,45 @@
+.m-search-bar {
+  display: block;
+  height: 36px;
+  margin: 8px var(--wingBlank);
+  background-color: rgba(245, 245, 245, 0.9);
+  box-sizing: border-box;
+  border-radius: var(--sRadius);
+  padding: 0 12px;
+  transition: all ease-in-out var(--dur2);
+}
+
+.dark .m-search-bar {
+  background-color: rgba(245, 245, 245, 0.1);
+}
+
+.m-search-bar[data-icon] {
+  padding-left: 36px;
+}
+
+.m-search-bar[data-icon]:before,
+.m-search-bar > input[data-icon]:before {
+  position: absolute;
+  color: gray;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.m-search-bar[data-icon]:before {
+  margin-left: -26px;
+  margin-top: 6px;
+}
+
+.m-search-bar > input {
+  height: 36px;
+  line-height: 36px;
+  color: var(--lightB1);
+}
+
+.m-search-bar > input[data-icon] {
+  margin-right: 24px;
+}
+
+.m-search-bar > input[data-icon]:before {
+  right: 24px;
+}

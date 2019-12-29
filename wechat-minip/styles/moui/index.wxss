@@ -1,0 +1,74 @@
+@import 'const.wxss';
+@import 'action-sheet.wxss';
+@import 'avatar.wxss';
+@import 'badge.wxss';
+@import 'button.wxss';
+@import 'card.wxss';
+@import 'grid.wxss';
+@import 'hide.wxss';
+@import 'hover.wxss';
+@import 'icon.wxss';
+@import 'input.wxss';
+@import 'list.wxss';
+@import 'loading.wxss';
+@import 'mask.wxss';
+@import 'navbar.wxss';
+@import 'page.wxss';
+@import 'search-bar.wxss';
+@import 'switch.wxss';
+@import 'tabbar.wxss';
+@import 'tag.wxss';
+@import 'typography.wxss';
+
+page {
+  background-color: transparent;
+
+  /** basic color */
+  --pColor0: #e6ffee;
+  --pColor1: #a6f5c2;
+  --pColor2: #79e8a3;
+  --pColor3: #4fdb89;
+  --pColor4: #29cf74;
+  --pColor5: #07c160;
+  --pColor6: #009c50;
+  --pColor7: #007541;
+  --pColor8: #004f2e;
+  --pColor9: #002919;
+  --pColor: var(--pColor5);
+  --dangerColor: #f5222d;
+  --warningColor: #faad14;
+
+  /** layout */
+  --screenHeight: 667;
+  --screenWidth: 375;
+  --statusBar: 20px;
+  --sysMenuWidth: 104px;
+  --sysNavbar: 44px;
+  --sysNavtop: 64px;
+  --veloRatio: 1.6;
+  --wingBlank: 16px;
+
+  /** components */
+  --avatarSize: 40px;
+  --badgeColor: #f5222d;
+  --buttonHeight: 40px;
+  --buttonRadius: var(--tRadius);
+  --cardBlank: 16px;
+  --coverPageHeight: 95vh;
+  --listHeight: 44px;
+  --listWingBlank: 16px;
+  --loadingHolderHeight: 64px;
+  --tabbarHeight: 36px;
+  --tagBorderWidth: 2px;
+  --tagColor: var(--pColor);
+  --tagHeight: 24px;
+}
+
+.dark {
+  background-color: var(--black0);
+}
+
+view,
+navigator {
+  display: flex;
+}
