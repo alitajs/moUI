@@ -129,4 +129,18 @@ declare namespace WXML {
     target: Element<U>;
     type: 'change';
   }
+
+  interface ScrollDetail {
+    deltaX: number;
+    deltaY: number;
+    scrollHeight: number;
+    scrollLeft: number;
+    scrollTop: number;
+    scrollWidth: number;
+  }
+
+  interface ScrollEvent<T = Record<string, unknown>, U = T> extends BaseEvent<T, U, ScrollDetail> {
+    target: Element<U>;
+    type: 'scroll';
+  }
 }

@@ -14,7 +14,7 @@
     data-emit-swiperend="onChangeTab"
     duration="320">
     <swiper-item wx:for="01" wx:key="*this">
-      <scroll-view enable-flex="1" scroll-y="1">
+      <scroll-view bindscroll="{{index?'':'onScroll'}}" enable-flex="1" scroll-y="1">
         <view class="m-navbar" />
         <include src="components.wxml" wx:if="{{index===0}}" />
         <include src="settings.wxml" wx:elif="{{index===1}}" />

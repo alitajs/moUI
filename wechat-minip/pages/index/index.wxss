@@ -68,7 +68,8 @@
   font-weight: 500;
 }
 
-swiper {
+swiper,
+scroll-view {
   position: absolute;
   top: 0;
   left: 0;

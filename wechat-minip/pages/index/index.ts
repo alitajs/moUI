@@ -11,6 +11,7 @@ interface Data {
   UIUserSetting: MP.UI.UserSetting;
   components: ComponentsGroup[];
   disableOnSwiper?: boolean;
+  indexNavbarVisible?: boolean;
   swiperIndex: 0 | 1;
   tabIndex: 0 | 1;
   tabsMeta: [string, string][];
@@ -22,7 +23,7 @@ const components: Data['components'] = [
     title: '通用',
     components: [
       { name: '按钮', suffix: 'Button', folder: 'button' },
-      { name: '图表', suffix: 'Icon', folder: 'icon' },
+      { name: '图标', suffix: 'Icon', folder: 'icon' },
       { name: '排版', suffix: 'Typography', folder: 'typography' },
     ],
   },
@@ -76,5 +77,12 @@ Page({
   updateSettings() {
     if (this.data.UIUserSetting === app.ui.UserSetting) return this.mutant();
     return this.mutant().update({ UIUserSetting: app.ui.UserSetting });
+  },
+  onScroll(event: WXML.ScrollEvent) {
+    if (this.data.indexNavbarVisible) {
+      if (event.detail.scrollTop < 96)
+        this.setData({ indexNavbarVisible: this.data.indexNavbarVisible = false });
+    } else if (event.detail.scrollTop > 100)
+      this.setData({ indexNavbarVisible: this.data.indexNavbarVisible = true });
   },
 });
