@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/components/button/index",
+    "pages/components/icon/index",
+    "pages/components/typography/index",
     "pages/settings/about",
     "pages/settings/options"
   ],

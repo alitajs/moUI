@@ -45,6 +45,7 @@ Page({
   data: { ...app.eachPage.data, ...initialData },
   onLoad(query: Record<string, string>) {
     this.onLoadOne(this, query).commit();
+    if (query.path) wx.navigateTo({ url: decodeURIComponent(query.path) });
   },
   onShow() {
     this.onShowOne(this);
@@ -54,7 +55,7 @@ Page({
     this.onUnloadOne(this);
   },
   onShareAppMessage() {
-    return {};
+    return { title: this.data._.title };
   },
   onChangeTab(event: WXML.TapEvent<{ pos: number }> | Comp.SwiperEndEvent) {
     const { swiperIndex, tabIndex, tabsMeta } = this.data;

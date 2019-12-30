@@ -1,4 +1,12 @@
-import { BaseMutant, DataMutant, UI, Version, createTask, truncate } from './utils/index';
+import {
+  BaseMutant,
+  DataMutant,
+  UI,
+  Version,
+  createTask,
+  querystring,
+  truncate,
+} from './utils/index';
 
 export * from './utils/index';
 
@@ -22,6 +30,7 @@ export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
     query?: Partial<Record<string, string>>,
     title?: string,
   ) => DataMutant<EachPageData & T>;
+  onShareAppMessage: (options?: Page.IShareAppMessageOption) => Page.ICustomShareContent;
   onShowOne: (page: EachPage) => DataMutant<EachPageData & T>;
   onUnloadOne: (page: EachPage) => DataMutant<EachPageData & T>;
   setPageTitle: (page: EachPage, title: string) => DataMutant<EachPageData & T>;
@@ -55,8 +64,8 @@ const eachPage = {
   consolelog: console.log,
   backTop: () => wx.pageScrollTo({ scrollTop: 0 }),
   mutant() {
-    const page: any = this;
-    return (page.__mutant = page.__mutant || new DataMutant(page));
+    const page: EachPage<{}> = this;
+    return (page.vars.__mutant = page.vars.__mutant || new DataMutant(page));
   },
   noop: () => {},
   onLoadOne: (page, _query = {}, title = 'moUI') => {
@@ -64,6 +73,15 @@ const eachPage = {
     const from = pages[pages.length - 1]?.data?._?.title ?? '返回';
     pages.push(page);
     return page.setPageTitle(page, title).update({ '_.from': truncate(from, 8) });
+  },
+  onShareAppMessage(options) {
+    const page: EachPage<{}> = this;
+    const from = options && options.from;
+    const query = querystring({ path: `/${page.route}`, from });
+    return {
+      title: page.data._.title || 'moUI',
+      path: `/pages/index/index?${query}`,
+    };
   },
   onShowOne: page => {
     AppRef.get().ui.loadIconfont();

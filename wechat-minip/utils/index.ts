@@ -228,3 +228,17 @@ export function createTask<T>() {
   ref.task = new Promise<T>(resolve => (ref.resolve = resolve));
   return ref;
 }
+
+export function  querystring(query: Record<string, any> = {}) {
+  const enc = encodeURIComponent;
+  const keys = Object.keys(query);
+  return keys
+    .reduce<string[]>((prev, curr) => {
+      const key = enc(curr);
+      if (typeof query[curr] === 'boolean' && !query[curr]) return prev;
+      if (typeof query[curr] === 'undefined' || query[curr] === null) return prev;
+      if (!Array.isArray(query[curr])) return prev.concat(`${key}=${enc(query[curr])}`);
+      return prev.concat(query[curr].map((value: any) => `${key}=${enc(`${value}`)}`));
+    }, [])
+    .join('&');
+}
