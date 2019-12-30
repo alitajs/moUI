@@ -7,13 +7,13 @@
 - 原生 CSS 编写
 - 深浅色主题与风格定制
 - 按需载入国际化文案
-- 多平台支持 (**help wanted!**)
+- 多框架支持 (**help wanted!**)
 
 ## 本地预览
 
 ### 微信小程序
 
-Clone 项目到本地，进入 `wechat-minip` 目录，执行命令安装依赖：
+1. Clone 项目到本地，进入 `wechat-minip` 目录，执行命令安装依赖：
 
 ```bash
 yarn install
@@ -21,7 +21,15 @@ yarn install
 npm install
 ```
 
-安装并打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，登录后在项目列表页选择导入小程序项目，选中 `wechat-minip` 目录即可开始开发。
+2. 在 `wechat-minip` 目录下编译：
+
+```bash
+yarn run compile
+# or
+npm run compile
+```
+
+3. 安装并打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，登录后在项目列表页选择导入小程序项目，选中 `wechat-minip` 目录。
 
 > 如果开发者工具提示“不属于项目成员”，删除 `wechat-minip/project.config.json` 中的 `appid` 项再以游客身份重新导入项目。
 

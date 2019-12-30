@@ -82,7 +82,7 @@ const eachPage = {
 App<App>({
   onLaunch() {
     this.ui.App = AppRef.value = this;
-    Version.applyMPVersion({ major: 1, minor: 0, patch: 0 }, {}).then(() => {
+    Version.applyMPVersion({ major: 2, minor: 0, patch: 0 }, {}).then(() => {
       AppLaunchTaskRef.resolve((AppLaunchTaskRef.result = this));
     });
   },
