@@ -44,15 +44,15 @@ Page({
   ...(app.eachPage as EachPage<Data>),
   data: { ...app.eachPage.data, ...initialData },
   onLoad(query: Record<string, string>) {
-    this.onLoadOne(this, query).commit();
+    this.onLoadOne(query).commit();
     if (query.path) wx.navigateTo({ url: decodeURIComponent(query.path) });
   },
   onShow() {
-    this.onShowOne(this);
-    this.updateSettings();
+    this.onShowOne();
+    this.updateSettings().commit();
   },
   onUnload() {
-    this.onUnloadOne(this);
+    this.onUnloadOne().commit();
   },
   onShareAppMessage() {
     return { title: this.data._.title };
@@ -68,7 +68,7 @@ Page({
       const nextTabIndex = event.detail.current;
       this.mutant().update({ disableOnSwiper: true });
       if (nextTabIndex === tabIndex) return this.mutant().commit();
-      this.setPageTitle(this, tabsMeta[nextTabIndex][0])
+      this.setPageTitle(tabsMeta[nextTabIndex][0])
         .update({ swiperIndex: nextTabIndex, tabIndex: nextTabIndex })
         .commit();
     }
@@ -77,7 +77,7 @@ Page({
     this.setData({ disableOnSwiper: false });
   },
   updateSettings() {
-    if (this.data.UIUserSetting === app.ui.UserSetting) return;
-    this.setData({ UIUserSetting: app.ui.UserSetting });
+    if (this.data.UIUserSetting === app.ui.UserSetting) return this.mutant();
+    return this.mutant().update({ UIUserSetting: app.ui.UserSetting });
   },
 });

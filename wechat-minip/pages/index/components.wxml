@@ -1,6 +1,6 @@
 <!--index/components.wxml-->
 <block>
-  <view class="m-cols m-flex-center p-header">
+  <view class="m-cols m-flex-center g-header">
     <view class="m-h2">moUI</view>
     <view class="m-desc">🍕 面向现代浏览器的CSS样式库</view>
   </view>

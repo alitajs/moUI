@@ -1,4 +1,8 @@
 <!--components/button/index.wxml-->
 <view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
   <include src="../../../components/utils/normal-navbar.wxml" />
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">按钮</view>
+    <view class="m-desc">Button</view>
+  </view>
 </view>

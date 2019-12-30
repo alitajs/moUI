@@ -52,10 +52,6 @@ swiper {
   height: 100vh;
 }
 
-.p-header {
-  padding: var(--wingBlank);
-}
-
 .p-list-title {
   padding: 4px var(--wingBlank);
 }

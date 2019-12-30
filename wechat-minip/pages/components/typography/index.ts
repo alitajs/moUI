@@ -6,12 +6,12 @@ Page({
   ...app.eachPage,
   data: { ...app.eachPage.data },
   onLoad(query: Record<string, string>) {
-    this.onLoadOne(this, query, '排版').commit();
+    this.onLoadOne(query, '排版').commit();
   },
   onShow() {
-    this.onShowOne(this);
+    this.onShowOne().commit();
   },
   onUnload() {
-    this.onUnloadOne(this);
+    this.onUnloadOne().commit();
   },
 });

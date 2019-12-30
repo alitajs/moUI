@@ -29,3 +29,7 @@ page {
   --pageColor: #000000;
   --navbarColor: rgba(32, 32, 32, 0.98);
 }
+
+.g-header {
+  padding: var(--wingBlank);
+}

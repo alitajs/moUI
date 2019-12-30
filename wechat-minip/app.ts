@@ -22,18 +22,16 @@ export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
   vars: Record<string, any>;
   data: { _: EachPageData } & T;
   backTop: () => void;
-  consolelog: Console['log'];
   mutant: () => DataMutant<EachPageData & T>;
   noop: () => void;
   onLoadOne: (
-    page: EachPage,
     query?: Partial<Record<string, string>>,
     title?: string,
   ) => DataMutant<EachPageData & T>;
   onShareAppMessage: (options?: Page.IShareAppMessageOption) => Page.ICustomShareContent;
-  onShowOne: (page: EachPage) => DataMutant<EachPageData & T>;
-  onUnloadOne: (page: EachPage) => DataMutant<EachPageData & T>;
-  setPageTitle: (page: EachPage, title: string) => DataMutant<EachPageData & T>;
+  onShowOne: () => DataMutant<EachPageData & T>;
+  onUnloadOne: () => DataMutant<EachPageData & T>;
+  setPageTitle: (title: string) => DataMutant<EachPageData & T>;
   toast: (title: string, duration?: number, mask?: boolean) => void;
 }
 
@@ -61,41 +59,43 @@ const eachPage = {
   ...({} as Pick<EachPage<{}>, 'setData' | 'route'>),
   vars: {},
   data: { _: { from: '返回', title: 'moUI', ui: ui.PageData } },
-  consolelog: console.log,
-  backTop: () => wx.pageScrollTo({ scrollTop: 0 }),
-  mutant() {
-    const page: EachPage<{}> = this;
-    return (page.vars.__mutant = page.vars.__mutant || new DataMutant(page));
+  backTop() {
+    wx.pageScrollTo({ scrollTop: 0 });
   },
-  noop: () => {},
-  onLoadOne: (page, _query = {}, title = 'moUI') => {
+  mutant() {
+    return (this.vars.__mutant = this.vars.__mutant || new DataMutant(page));
+  },
+  noop() {},
+  onLoadOne(_query = {}, title = 'moUI') {
     const pages = AppRef.get().pages;
-    const from = pages[pages.length - 1]?.data?._?.title ?? '返回';
-    pages.push(page);
-    return page.setPageTitle(page, title).update({ '_.from': truncate(from, 8) });
+    const from = pages[pages.length - 1]?.data._.title ?? '返回';
+    pages.push(this);
+    return this.setPageTitle(title).update({ '_.from': truncate(from, 8) });
   },
   onShareAppMessage(options) {
-    const page: EachPage<{}> = this;
     const from = options && options.from;
-    const query = querystring({ path: `/${page.route}`, from });
+    const query = querystring({ path: `/${this.route}`, from });
     return {
-      title: page.data._.title || 'moUI',
+      title: this.data._.title || 'moUI',
       path: `/pages/index/index?${query}`,
     };
   },
-  onShowOne: page => {
+  onShowOne() {
     AppRef.get().ui.loadIconfont();
     AppRef.get().ui.forceUpdateUserSetting();
-    return page.mutant();
+    return this.mutant();
   },
-  onUnloadOne: page => {
-    const index = AppRef.get().pages.indexOf(page);
+  onUnloadOne() {
+    const index = AppRef.get().pages.indexOf(this);
     if (index > -1) AppRef.get().pages.splice(index, 1);
-    return page.mutant();
+    return this.mutant();
   },
-  setPageTitle: (page, title) => page.mutant().update({ '_.title': truncate(title, 14) }),
-  toast: (title, duration = 1.5, mask) =>
-    wx.showToast({ icon: 'none', mask, title, duration: duration * 1000 }),
+  setPageTitle(title) {
+    return this.mutant().update({ '_.title': truncate(title, 14) });
+  },
+  toast(title, duration = 1.5, mask) {
+    wx.showToast({ icon: 'none', mask, title, duration: duration * 1000 });
+  },
 } as EachPage<{}>;
 
 App<App>({

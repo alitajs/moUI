@@ -73,18 +73,17 @@ Page({
   ...app.eachPage,
   data: { ...app.eachPage.data, ...initialData },
   onLoad(query: { for?: OptionsFor } = {}) {
-    this.onLoadOne(this, query);
+    this.onLoadOne(query);
     if (!query.for) return navQueryNotFound();
-    this.setPageTitle(this, forms[query.for].name).update({
-      ...forms[query.for],
-      value: forms[query.for].getValue(),
-    }).commit();
+    this.setPageTitle(forms[query.for].name)
+      .update({ ...forms[query.for], value: forms[query.for].getValue() })
+      .commit();
   },
   onShow() {
-    this.onShowOne(this);
+    this.onShowOne().commit();
   },
   onUnload() {
-    this.onUnloadOne(this);
+    this.onUnloadOne().commit();
   },
   onSelect(event: any) {
     const { dataset = {} } = event.currentTarget;
