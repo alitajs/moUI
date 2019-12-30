@@ -70,6 +70,10 @@ export class UISetting {
     return Math.ceil((times * this.DeviceSetting.screenHeight) / height);
   }
 
+  public nodeScrollsOverNavbar(offsetFromNavbar: number, scrollTop: number) {
+    return this.DeviceSetting.sysNavtop + offsetFromNavbar < scrollTop;
+  }
+
   public onDeviceSettingUpdate(value: MP.UI.DeviceSetting) {
     this.PageData.cssvar = this.deviceSettingToCSSVar(value);
     this.App?.pagesMutant.update({ '_.ui': { ...this.PageData } }).commit();

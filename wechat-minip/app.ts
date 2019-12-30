@@ -29,7 +29,9 @@ export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
     title?: string,
   ) => DataMutant<EachPageData & T>;
   onShareAppMessage: (options?: Page.IShareAppMessageOption) => Page.ICustomShareContent;
+  onShow: () => void;
   onShowOne: () => DataMutant<EachPageData & T>;
+  onUnload: () => void;
   onUnloadOne: () => DataMutant<EachPageData & T>;
   setPageTitle: (title: string) => DataMutant<EachPageData & T>;
   toast: (title: string, duration?: number, mask?: boolean) => void;
@@ -80,10 +82,16 @@ const eachPage = {
       path: `/pages/index/index?${query}`,
     };
   },
+  onShow() {
+    this.onShowOne().commit();
+  },
   onShowOne() {
     AppRef.get().ui.loadIconfont();
     AppRef.get().ui.forceUpdateUserSetting();
     return this.mutant();
+  },
+  onUnload() {
+    this.onUnloadOne().commit();
   },
   onUnloadOne() {
     const index = AppRef.get().pages.indexOf(this);

@@ -79,12 +79,6 @@ Page({
       .update({ ...forms[query.for], value: forms[query.for].getValue() })
       .commit();
   },
-  onShow() {
-    this.onShowOne().commit();
-  },
-  onUnload() {
-    this.onUnloadOne().commit();
-  },
   onSelect(event: any) {
     const { dataset = {} } = event.currentTarget;
     if (!('value' in dataset)) return;

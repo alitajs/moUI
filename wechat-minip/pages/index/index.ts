@@ -51,9 +51,6 @@ Page({
     this.onShowOne();
     this.updateSettings().commit();
   },
-  onUnload() {
-    this.onUnloadOne().commit();
-  },
   onShareAppMessage() {
     return { title: this.data._.title };
   },
