@@ -1,0 +1,7 @@
+<!--index/components.wxml-->
+<view class="m-list">
+  <navigator class="m-list-item" hover-class="m-hover-bg" url="/pages/settings/about">
+    <view class="m-flex">关于</view>
+    <view class="m-suffix" data-icon="caret-right" />
+  </navigator>
+</view>

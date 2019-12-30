@@ -7,12 +7,17 @@ interface Data {
   disableOnSwiper?: boolean;
   swiperIndex: 0 | 1;
   tabIndex: 0 | 1;
+  tabsMeta: [string, string][];
 }
 
 const initialData: Data = {
   UIUserSetting: app.ui.UserSetting,
   swiperIndex: 0,
   tabIndex: 0,
+  tabsMeta: [
+    ['moUI', 'layout'],
+    ['设置', 'setting'],
+  ],
 };
 
 Page({
@@ -32,15 +37,20 @@ Page({
     return {};
   },
   onChangeTab(event: WXML.TapEvent<{ pos: number }> | Comp.SwiperEndEvent) {
+    const { swiperIndex, tabIndex, tabsMeta } = this.data;
     if (event.type === 'tap') {
-      const nextSwiperIndex = this.data.tabIndex + event.currentTarget.dataset.pos;
-      if (nextSwiperIndex !== this.data.swiperIndex)
-        this.mutant().update({ swiperIndex: nextSwiperIndex });
-    } else if (event.type === 'swiperend') {
-      const { current } = event.detail;
-      this.mutant().update({ disableOnSwiper: true, swiperIndex: current, tabIndex: current });
+      const nextSwiperIndex = tabIndex + event.currentTarget.dataset.pos;
+      if (nextSwiperIndex === swiperIndex) return;
+      return this.setData({ swiperIndex: nextSwiperIndex });
     }
-    this.mutant().commit();
+    if (event.type === 'swiperend') {
+      const nextTabIndex = event.detail.current;
+      this.mutant().update({ disableOnSwiper: true });
+      if (nextTabIndex === tabIndex) return this.mutant().commit();
+      this.setPageTitle(this, tabsMeta[nextTabIndex][0])
+        .update({ swiperIndex: nextTabIndex, tabIndex: nextTabIndex })
+        .commit();
+    }
   },
   afterRemoveSwiperEffect() {
     this.setData({ disableOnSwiper: false });

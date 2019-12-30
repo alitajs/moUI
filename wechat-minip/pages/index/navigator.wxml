@@ -1,0 +1,16 @@
+<!--index/navigator.wxml-->
+<block>
+  <view class="m-navbar m-onswiper">
+    <view class="m-navbar-body">
+      <view class="m-navbar-title" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}">
+        {{item[0]}}
+      </view>
+    </view>
+  </view>
+  <view class="m-tabbar m-onswiper p-tabbar" data-grayscale="">
+    <view class="m-tab" bindtap="onChangeTab" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}">
+      <view data-icon="{{item[1]}}" />
+      <view>{{item[0]}}</view>
+    </view>
+  </view>
+</block>
