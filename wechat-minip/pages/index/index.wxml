@@ -1,12 +1,43 @@
 <!--index/index.wxml-->
-<view class="m-page {{_.ui.wrapcls}} " style="{{_.ui.cssvar}}">
-  <view class="m-navbar" data-mode="menu" data-visible="{{navbarVisible}}">
-    <view bindlongpress="backTop" class="m-navbar-body">
-      <view class="m-navbar-title">{{_.title}}</view>
-      <view bindtap="backTop" class="m-avatar" data-icon="caret-up" hover-class="m-hover-opacity" />
+<view
+  change:data-disable-on-swiper="{{moui.removeEffectOfOnSwiperTrans}}"
+  class="m-page {{_.ui.wrapcls}}"
+  data-disable-on-swiper="{{disableOnSwiper}}"
+  data-emit-effect-removed="afterRemoveSwiperEffect"
+  style="{{_.ui.cssvar}}">
+  <wxs src="../../styles/moui/index.wxs" module="moui" />
+  <view class="m-navbar m-onswiper">
+    <view class="m-navbar-body">
+      <view class="m-navbar-title" data-pos="{{0-tabIndex}}">moUI</view>
+      <view class="m-navbar-title" data-pos="{{1-tabIndex}}">设置</view>
     </view>
   </view>
-  <view class="p-header">
-    <view class="p-title">{{_.title}}</view>
+  <view class="m-tabbar m-onswiper p-tabbar" data-grayscale="">
+    <view
+      class="m-tab" bindtap="onChangeTab"
+      data-pos="{{index-tabIndex}}"
+      wx:for="{{[['moUI','layout'],['设置','setting']]}}"
+      wx:key="0">
+      <view data-icon="{{item[1]}}" />
+      <view>{{item[0]}}</view>
+    </view>
   </view>
+  <swiper
+    bindanimationfinish="{{moui.onSwiperTrans}}"
+    bindtransition="{{moui.onSwiperTrans}}"
+    data-emit-swiperend="onChangeTab"
+    duration="320">
+    <swiper-item>
+      <scroll-view enable-flex="1" scroll-y="1">
+        <view class="m-navbar" />
+        <include src="settings.wxml" />
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view enable-flex="1" scroll-y="1">
+        <view class="m-navbar" />
+        <include src="settings.wxml" />
+      </scroll-view>
+    </swiper-item>
+  </swiper>
 </view>

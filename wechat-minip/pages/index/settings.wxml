@@ -1,5 +1,5 @@
-<!--settings/index.wxml-->
-<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+<!--index/settings.wxml-->
+<block>
   <template name="UIUserSetting">
     <view class="m-list">
       <navigator
@@ -31,7 +31,6 @@
       </navigator>
     </view>
   </template>
-  <include src="../../components/utils/normal-navbar.wxml" />
   <template data="{{...UIUserSetting}}" is="UIUserSetting" />
   <view class="m-list">
     <navigator class="m-list-item" hover-class="m-hover-bg" url="/pages/settings/about">
@@ -39,4 +38,4 @@
       <view class="m-suffix" data-icon="caret-right" />
     </navigator>
   </view>
-</view>
+</block>

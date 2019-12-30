@@ -112,8 +112,14 @@ declare namespace WXML {
     type: 'keyboardheightchange';
   }
 
+  interface SwiperChangeDetail {
+    current: number;
+    currentItemId: string;
+    source: 'autoplay' | 'touch' | '';
+  }
+
   interface SwiperChangeEvent<T = Record<string, unknown>, U = T>
-    extends BaseEvent<T, U, { current: number; source: 'autoplay' | 'touch' | '' }> {
+    extends BaseEvent<T, U, SwiperChangeDetail> {
     target: Element<U>;
     type: 'change';
   }

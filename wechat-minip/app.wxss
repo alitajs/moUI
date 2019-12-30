@@ -6,7 +6,6 @@
 @import 'components/index.wxss';
 
 page {
-  --badgeColor: var(--pColor5);
   --navbarColor: rgba(240, 240, 240, 0.98);
   --pageColor: #f0f0f0;
 }

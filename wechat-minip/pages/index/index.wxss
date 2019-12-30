@@ -1,18 +1,48 @@
 .m-page {
-  background-color: var(--lightW0);
-}
-
-.p-header {
   width: 100vw;
-  height: 40px;
-  box-sizing: border-box;
-  padding: 0 var(--wingBlank);
-  align-items: center;
-  justify-content: space-between;
+  height: 100vh;
+  padding-bottom: 0;
 }
 
-.p-title {
-  color: var(--lightB1);
-  font-size: var(--fs5);
-  font-weight: 600;
+.m-list {
+  margin-top: 32px;
+}
+
+.p-tabbar {
+  --tabbarHeight: 54px;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-width: 1px 0 0 0;
+  background-color: var(--navbarColor);
+}
+
+.p-tabbar .m-tab {
+  flex-direction: column;
+  padding-top: 1px;
+  font-size: var(--fs0);
+}
+
+.p-tabbar .m-tab[data-pos='0'] {
+  font-weight: 400;
+}
+
+.p-tabbar .m-tab:after {
+  display: none;
+}
+
+.p-tabbar .m-tab [data-icon]:before {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
 }

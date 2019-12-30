@@ -9,4 +9,10 @@ declare namespace Comp {
     touches: WXML.TouchDetail[];
     type: 'change';
   }
+
+  interface SwiperEndEvent<T = Record<string, unknown>, U = T>
+    extends WXML.BaseEvent<T, U, WXML.SwiperChangeDetail> {
+    target: WXML.Element<U>;
+    type: 'swiperend';
+  }
 }

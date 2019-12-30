@@ -124,6 +124,7 @@ page {
 
 /** FILTER */
 page {
+  --varHolder: ;
   --brightness9: brightness(1);
   --brightness8: brightness(var(--opa0));
   --brightness7: brightness(var(--opa1));
@@ -155,6 +156,7 @@ page {
   --dur5: 0s;
 }
 
+[data-disable-on-swiper='true'] .m-onswiper,
 .without-animation.m-onswiper,
 .without-animation .m-onswiper {
   --swiperX: 0;

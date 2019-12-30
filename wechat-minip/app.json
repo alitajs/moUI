@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/settings/about",
-    "pages/settings/index",
     "pages/settings/options"
   ],
   "window": {
@@ -12,6 +11,5 @@
     "navigationBarTitleText": "moUI",
     "navigationStyle": "custom"
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "style": "v2"
 }

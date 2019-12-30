@@ -32,7 +32,7 @@ export interface App {
   global: Map<any, any>;
   pages: Page.PageInstance[];
   pagesMutant: BaseMutant<EachPage<{}>['data']>;
-  eachPage: EachPage<any>;
+  eachPage: Omit<EachPage<any>, 'data'> & Pick<EachPage<{}>, 'data'>;
   reLaunch: () => void;
   ui: UI.UISetting;
 }

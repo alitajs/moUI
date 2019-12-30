@@ -56,7 +56,7 @@
 .m-tabbar[data-grayscale] .m-tab {
   --tabbarFilter: grayscale(1);
   color: var(--pColor);
-  filter: var(--tabbarFilter) var(--disabledFilter);
+  filter: var(--tabbarFilter) var(--disabledFilter, var(--varHolder));
 }
 
 .m-tabbar[data-grayscale] .m-tab[data-pos='0'] {

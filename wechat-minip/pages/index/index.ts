@@ -3,11 +3,14 @@ import { App, EachPage } from '../../app';
 const app = getApp<App>();
 
 interface Data {
-  navbarVisible: boolean;
+  UIUserSetting: MP.UI.UserSetting;
+  disableOnSwiper?: boolean;
+  tabIndex: 0 | 1;
 }
 
 const initialData: Data = {
-  navbarVisible: false,
+  UIUserSetting: app.ui.UserSetting,
+  tabIndex: 0,
 };
 
 Page({
@@ -18,6 +21,7 @@ Page({
   },
   onShow() {
     this.onShowOne(this);
+    this.updateSettings();
   },
   onUnload() {
     this.onUnloadOne(this);
@@ -25,10 +29,21 @@ Page({
   onShareAppMessage() {
     return {};
   },
-  onPageScroll(options: Page.IPageScrollOption) {
-    if (options.scrollTop < 40 && this.data.navbarVisible)
-      this.setData({ navbarVisible: this.data.navbarVisible = false });
-    else if (options.scrollTop > 48 && !this.data.navbarVisible)
-      this.setData({ navbarVisible: this.data.navbarVisible = true });
+  onChangeTab(event: WXML.TapEvent<{ pos: number }> | Comp.SwiperEndEvent) {
+    if (event.type === 'tap') {
+      const { pos: change } = event.currentTarget.dataset;
+      if (change) this.mutant().update({ tabIndex: this.data.tabIndex + change });
+    } else if (event.type === 'swiperend') {
+      const { current: tabIndex } = event.detail;
+      this.mutant().update({ tabIndex, disableOnSwiper: true });
+    }
+    this.mutant().commit();
+  },
+  afterRemoveSwiperEffect() {
+    this.setData({ disableOnSwiper: false });
+  },
+  updateSettings() {
+    if (this.data.UIUserSetting === app.ui.UserSetting) return;
+    this.setData({ UIUserSetting: app.ui.UserSetting });
   },
 });
