@@ -147,7 +147,7 @@ button,
 }
 
 .m-button-group:not([data-type^='ghost']) .m-button:last-child,
-.m-button-group[data-type^='ghost'] .m-button:last-child[data-type]:not([data-type^='ghost']) {
+.m-button-group[data-type^='ghost'] .m-button:last-child[data-type]:not([data-type='']):not([data-type^='ghost']) {
   border-right-width: 0px;
 }
 

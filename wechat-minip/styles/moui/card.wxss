@@ -1,7 +1,7 @@
 .m-card {
   box-sizing: border-box;
   flex-direction: column;
-  margin: 8px var(--wingBlank);
+  margin: 12px var(--wingBlank);
   border-radius: var(--sRadius);
   background-color: var(--white0);
   transition: all ease-in-out var(--dur2);
