@@ -48,9 +48,8 @@ export interface App {
 }
 
 export const AppLaunchTaskRef = createTask<App.AppInstance<App> & App>();
-
-const ui = new UI.UISetting();
-const AppRef = {
+export const ui = new UI.UISetting();
+export const AppRef = {
   value: null as (App.AppInstance<App> & App) | null,
   get: () => AppRef.value ?? getApp<App>(),
 };

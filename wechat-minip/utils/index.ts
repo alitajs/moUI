@@ -44,31 +44,6 @@ export function dictDiffPartialKeys<T extends Record<string, any>, U extends Rec
   return Object.keys(o1).filter(k => k in o2 && o1[k] !== o2[k]) as (keyof T)[];
 }
 
-export function pipeline<T extends (arg: any) => any, U, V, W, X, Y, Z>(
-  arg: ArgsType<T>[0],
-  _f1: T,
-  _f2?: (ret: ReturnType<T>) => U,
-  _f3?: (ret: U) => V,
-  _f4?: (ret: V) => W,
-  _f5?: (ret: W) => X,
-  _f6?: (ret: X) => Y,
-  _f7?: (ret: Y) => Z,
-): U extends unknown
-  ? ReturnType<T>
-  : V extends unknown
-  ? U
-  : W extends unknown
-  ? V
-  : X extends unknown
-  ? W
-  : Y extends unknown
-  ? X
-  : Z extends unknown
-  ? Y
-  : Z {
-  return [...arguments].slice(1).reduce((prev, curr) => curr(prev), arg);
-}
-
 export function monitorObject<T extends object>(
   initValue: T,
   onChange: (value: T, diff: Partial<T>) => void,
@@ -229,7 +204,7 @@ export function createTask<T>() {
   return ref;
 }
 
-export function  querystring(query: Record<string, any> = {}) {
+export function querystring(query: Record<string, any> = {}) {
   const enc = encodeURIComponent;
   const keys = Object.keys(query);
   return keys
