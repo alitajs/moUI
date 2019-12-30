@@ -1,8 +1,8 @@
 <!--index/navigator.wxml-->
 <block>
-  <view class="m-navbar m-onswiper">
+  <view class="m-navbar m-onswiper" data-pos="{{0-tabIndex}}">
     <view class="m-navbar-body">
-      <view class="m-navbar-title" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}">
+      <view class="m-navbar-title m-onswiper" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}">
         {{item[0]}}
       </view>
     </view>

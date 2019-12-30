@@ -13,6 +13,31 @@
   margin-bottom: 32px;
 }
 
+.m-navbar.m-onswiper {
+  --percent: calc(var(--swiperX, 0) / var(--screenWidth));
+  transition: var(--swiperX, all) ease-in-out var(--dur2);
+}
+
+.m-navbar.m-onswiper[data-pos='0'] {
+  opacity: 0;
+}
+
+.prev .m-navbar.m-onswiper[data-pos='0'] {
+  opacity: calc(0 - var(--percent));
+}
+
+.prev .m-navbar.m-onswiper[data-pos='-1'] {
+  opacity: calc(1 + var(--percent));
+}
+
+.next .m-navbar.m-onswiper[data-pos='0'] {
+  opacity: var(--percent);
+}
+
+.next .m-navbar.m-onswiper[data-pos='1'] {
+  opacity: calc(1 - var(--percent));
+}
+
 .p-tabbar {
   --tabbarHeight: 54px;
   position: fixed;

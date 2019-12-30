@@ -1,5 +1,5 @@
 <!--components/utils/normal-navbar.wxml-->
-<view class="m-navbar">
+<view class="m-navbar" data-title-visible="{{navbarTitleVisible}}">
   <view bindlongpress="backTop" class="m-navbar-body">
     <navigator class="m-navbar-back" hover-class="m-hover-opacity" open-type="navigateBack">
       {{_.from}}

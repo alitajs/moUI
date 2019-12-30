@@ -63,7 +63,7 @@ const eachPage = {
     wx.pageScrollTo({ scrollTop: 0 });
   },
   mutant() {
-    return (this.vars.__mutant = this.vars.__mutant || new DataMutant(page));
+    return (this.vars.__mutant = this.vars.__mutant || new DataMutant(this));
   },
   noop() {},
   onLoadOne(_query = {}, title = 'moUI') {
