@@ -1,4 +1,4 @@
-import { App, EachPage } from '../../app';
+import { App, EachPage, Version } from '../../app';
 
 const app = getApp<App>();
 
@@ -8,6 +8,7 @@ interface Data {
   swiperIndex: 0 | 1;
   tabIndex: 0 | 1;
   tabsMeta: [string, string][];
+  versionMark: string;
 }
 
 const initialData: Data = {
@@ -18,6 +19,7 @@ const initialData: Data = {
     ['moUI', 'layout'],
     ['设置', 'setting'],
   ],
+  versionMark: Version.stringify(app.version, 'v'),
 };
 
 Page({

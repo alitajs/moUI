@@ -1,7 +1,13 @@
 <!--index/components.wxml-->
-<view class="m-list">
-  <navigator class="m-list-item" hover-class="m-hover-bg" url="/pages/settings/about">
-    <view class="m-flex">关于</view>
-    <view class="m-suffix" data-icon="caret-right" />
-  </navigator>
-</view>
+<block>
+  <view class="m-cols m-flex-center p-header">
+    <view class="m-h1">moUI</view>
+    <view class="m-desc">🍕 面向现代浏览器的CSS样式库</view>
+  </view>
+  <view class="m-list">
+    <navigator class="m-list-item" hover-class="m-hover-bg" url="/pages/settings/about">
+      <view class="m-flex">关于</view>
+      <view class="m-suffix" data-icon="caret-right" />
+    </navigator>
+  </view>
+</block>

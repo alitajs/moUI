@@ -50,3 +50,7 @@ swiper {
   bottom: 0;
   height: 100vh;
 }
+
+.p-header {
+  padding: 64px var(--wingBlank) 16px;
+}

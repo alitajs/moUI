@@ -33,6 +33,10 @@
   </template>
   <template data="{{...UIUserSetting}}" is="UIUserSetting" />
   <view class="m-list">
+    <view class="m-list-item">
+      <view class="m-flex">版本号</view>
+      <view class="m-suffix">{{versionMark}}</view>
+    </view>
     <navigator class="m-list-item" hover-class="m-hover-bg" url="/pages/settings/about">
       <view class="m-flex">关于</view>
       <view class="m-suffix" data-icon="caret-right" />

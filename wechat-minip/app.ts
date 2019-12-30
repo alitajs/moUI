@@ -35,6 +35,7 @@ export interface App {
   eachPage: Omit<EachPage<any>, 'data'> & Pick<EachPage<{}>, 'data'>;
   reLaunch: () => void;
   ui: UI.UISetting;
+  version: MP.Version;
 }
 
 export const AppLaunchTaskRef = createTask<App.AppInstance<App> & App>();
@@ -82,7 +83,7 @@ const eachPage = {
 App<App>({
   onLaunch() {
     this.ui.App = AppRef.value = this;
-    Version.applyMPVersion({ major: 2, minor: 0, patch: 0 }, {}).then(() => {
+    Version.applyMPVersion(this.version, {}).then(() => {
       AppLaunchTaskRef.resolve((AppLaunchTaskRef.result = this));
     });
   },
@@ -98,4 +99,5 @@ App<App>({
   pages: [],
   pagesMutant,
   ui,
+  version: { major: 2, minor: 0, patch: 0 },
 });

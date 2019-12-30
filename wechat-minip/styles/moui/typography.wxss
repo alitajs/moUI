@@ -9,3 +9,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.m-h1 {
+  color: var(--lightB1);
+  font-size: var(--fs5);
+  font-weight: 600;
+}
+
+.android .m-h1 {
+  font-weight: 500;
+}
