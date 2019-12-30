@@ -61,12 +61,14 @@ button,
 .m-button[data-type^='ghost'],
 .m-button-group[data-type^='ghost'] .m-button {
   background-color: transparent;
+  line-height: calc(var(--buttonHeight) - 2px);
 }
 
 .m-button[data-type='ghost-href'],
 .m-button-group[data-type='ghost-href'] .m-button {
   padding: 0;
   font-weight: 400;
+  line-height: var(--buttonHeight);
 }
 
 .m-button[data-type='ghost-primary'],
@@ -172,4 +174,22 @@ button,
   bottom: 0;
   z-index: 2;
   opacity: 0;
+}
+
+.m-button.m-loading[data-shape='block']:before,
+.m-button[data-shape='block'][data-loading]:before {
+  display: inline-block;
+  margin-bottom: -0.24em;
+}
+
+.m-button.m-loading[data-shape='circle'],
+.m-button[data-shape='circle'][data-loading='true'] {
+  color: transparent;
+  font-size: 12px;
+}
+
+.m-button.m-loading[data-shape='circle']:before,
+.m-button[data-shape='circle'][data-loading]:before {
+  position: absolute;
+  margin-right: 0;
 }

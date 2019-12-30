@@ -1,5 +1,7 @@
 declare namespace Comp {
   type AvatarSize = 'default' | 'large' | 'small';
+  type ButtonShape = 'block' | 'circle' | 'default' | 'round';
+  type ButtonSize = 'default' | 'large' | 'small' | 'tiny';
   type TagSize = 'default' | 'small' | 'tiny';
 
   interface TouchMoveXEvent<T = Record<string, unknown>, U = T>

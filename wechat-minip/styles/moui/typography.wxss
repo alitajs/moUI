@@ -10,32 +10,34 @@
   white-space: nowrap;
 }
 
-.m-h1 {
+.m-h1,
+.m-h2,
+.m-h3,
+.m-h4 {
+  flex: 1;
+  padding: 0 var(--wingBlank);
   color: var(--lightB1);
+  font-weight: 600;
+}
+
+.m-h1 {
   font-size: var(--fs6);
   line-height: var(--lh6);
-  font-weight: 600;
 }
 
 .m-h2 {
-  color: var(--lightB1);
   font-size: var(--fs5);
   line-height: var(--lh5);
-  font-weight: 600;
 }
 
 .m-h3 {
-  color: var(--lightB1);
   font-size: var(--fs4);
   line-height: var(--lh4);
-  font-weight: 600;
 }
 
 .m-h4 {
-  color: var(--lightB1);
   font-size: var(--fs3);
   line-height: var(--lh3);
-  font-weight: 600;
 }
 
 .android .m-h1,

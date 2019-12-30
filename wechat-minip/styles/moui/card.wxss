@@ -4,6 +4,7 @@
   margin: 8px var(--wingBlank);
   border-radius: var(--sRadius);
   background-color: var(--white0);
+  transition: all ease-in-out var(--dur2);
 }
 
 .dark .m-card {
@@ -15,10 +16,12 @@
   box-sizing: border-box;
 }
 
+.m-card-footer.m-desc {
+  padding: 0 var(--cardBlank) var(--cardBlank);
+}
+
 .m-card-footer .m-desc {
-  margin: 0 var(--cardBlank);
-  line-height: 24px;
-  font-size: var(--fs0);
+  padding: 0 var(--cardBlank);
 }
 
 .m-card-footer .m-button {

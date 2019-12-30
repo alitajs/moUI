@@ -16,6 +16,10 @@
   justify-content: center;
 }
 
+.m-flex-wrap {
+  flex-wrap: wrap;
+}
+
 .m-prefix, .m-suffix {
   transition: all ease-in-out var(--dur2);
 }

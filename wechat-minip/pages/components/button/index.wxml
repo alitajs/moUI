@@ -1,8 +1,63 @@
 <!--components/button/index.wxml-->
 <view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
   <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <template name="buttons">
+    <view class="m-button" data-loading="{{loading}}" data-shape="{{shape}}" data-size="{{size}}"
+      hover-class="m-hover-opacity" wx:if="{{!ghost}}">普通</view>
+    <view class="m-button" data-loading="{{loading}}" data-shape="{{shape}}" data-size="{{size}}"
+      data-type="{{ghost?'ghost-':''}}primary" hover-class="m-hover-opacity">推荐</view>
+    <view class="m-button" data-loading="{{loading}}" data-shape="{{shape}}" data-size="{{size}}"
+      data-type="{{ghost?'ghost-':''}}danger" hover-class="m-hover-opacity">危险</view>
+    <view class="m-button" data-loading="{{loading}}" data-shape="{{shape}}" data-size="{{size}}"
+      data-type="ghost-href" hover-class="m-hover-opacity" wx:if="{{ghost}}">文字</view>
+  </template>
+
+  <template name="wrapped-buttons">
+    <view class="m-flex g-child-margin">
+      <template data="{{loading,shape,size,ghost}}" is="buttons" />
+    </view>
+  </template>
+
   <view class="m-cols m-flex-center g-header">
     <view class="m-h3">按钮</view>
     <view class="m-desc">Button</view>
+  </view>
+
+  <view bindtap="setBoolean" class="m-card" data-for="loading" hover-class="m-hover-scale">
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{ghost:!!index,loading,size}}" is="wrapped-buttons" wx:for="01" wx:key="*this" />
+    </view>
+    <view class="m-card-footer m-desc">
+      data-type 控制按钮六种类型，data-loading 控制加载态，点击此卡片可使按钮进入加载态
+    </view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{loading,size,shape:'circle'}}" is="wrapped-buttons" />
+      <template data="{{loading,size,shape:'round'}}" is="wrapped-buttons" />
+      <template data="{{loading,size,shape:'block'}}" is="buttons" />
+    </view>
+    <view class="m-card-footer m-desc">
+      data-shape 控制按钮形状，圆形按钮推荐使用图标代替文字
+    </view>
+  </view>
+
+  <view bindtap="setBoolean" class="m-card" data-for="isRoundShape" hover-class="m-hover-scale">
+    <view class="m-card-body m-cols g-child-margin">
+      <block wx:for="{{['','primary','danger','ghost-primary','ghost-danger','ghost-href']}}" wx:key="*this">
+        <view class="m-button-group" data-shape="{{isRoundShape?'round':''}}" data-type="{{item}}">
+          <view catchtouchend="{{loading?'':'setSize'}}" catchtouchstart="noop" class="m-button"
+            data-index="{{index}}" data-loading="{{loading}}" data-size="{{size}}"
+            hover-class="m-hover-opacity" wx:for="{{['大','中','小','微']}}" wx:key="*this">
+            {{item}}
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="m-card-footer m-desc">
+      m-button-group 包裹按钮组合，可统一配置形状与大小，点击按钮切换按钮大小，点击卡片其他位置可切换 round 形状
+    </view>
   </view>
 </view>
