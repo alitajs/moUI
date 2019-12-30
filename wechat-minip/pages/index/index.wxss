@@ -8,8 +8,9 @@
   padding-left: var(--wingBlank);
 }
 
+.m-navbar,
 .m-list {
-  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .p-tabbar {
@@ -52,5 +53,9 @@ swiper {
 }
 
 .p-header {
-  padding: 64px var(--wingBlank) 16px;
+  padding: var(--wingBlank);
+}
+
+.p-list-title {
+  padding: 4px var(--wingBlank);
 }

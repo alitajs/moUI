@@ -2,8 +2,14 @@ import { App, EachPage, Version } from '../../app';
 
 const app = getApp<App>();
 
+interface ComponentsGroup {
+  title: string;
+  components: { name: string; suffix: string; folder: string }[];
+}
+
 interface Data {
   UIUserSetting: MP.UI.UserSetting;
+  components: ComponentsGroup[];
   disableOnSwiper?: boolean;
   swiperIndex: 0 | 1;
   tabIndex: 0 | 1;
@@ -11,8 +17,20 @@ interface Data {
   versionMark: string;
 }
 
+const components: Data['components'] = [
+  {
+    title: '通用',
+    components: [
+      { name: '按钮', suffix: 'Button', folder: 'button' },
+      { name: '图表', suffix: 'Icon', folder: 'icon' },
+      { name: '排版', suffix: 'Typography', folder: 'typography' },
+    ],
+  },
+];
+
 const initialData: Data = {
   UIUserSetting: app.ui.UserSetting,
+  components,
   swiperIndex: 0,
   tabIndex: 0,
   tabsMeta: [
