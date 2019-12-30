@@ -25,6 +25,7 @@
   <swiper
     bindanimationfinish="{{moui.onSwiperTrans}}"
     bindtransition="{{moui.onSwiperTrans}}"
+    current="{{swiperIndex}}"
     data-emit-swiperend="onChangeTab"
     duration="320">
     <swiper-item>

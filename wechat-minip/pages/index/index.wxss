@@ -4,6 +4,10 @@
   padding-bottom: 0;
 }
 
+.material .m-navbar-title {
+  padding-left: var(--wingBlank);
+}
+
 .m-list {
   margin-top: 32px;
 }

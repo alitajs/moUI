@@ -5,11 +5,13 @@ const app = getApp<App>();
 interface Data {
   UIUserSetting: MP.UI.UserSetting;
   disableOnSwiper?: boolean;
+  swiperIndex: 0 | 1;
   tabIndex: 0 | 1;
 }
 
 const initialData: Data = {
   UIUserSetting: app.ui.UserSetting,
+  swiperIndex: 0,
   tabIndex: 0,
 };
 
@@ -31,11 +33,12 @@ Page({
   },
   onChangeTab(event: WXML.TapEvent<{ pos: number }> | Comp.SwiperEndEvent) {
     if (event.type === 'tap') {
-      const { pos: change } = event.currentTarget.dataset;
-      if (change) this.mutant().update({ tabIndex: this.data.tabIndex + change });
+      const nextSwiperIndex = this.data.tabIndex + event.currentTarget.dataset.pos;
+      if (nextSwiperIndex !== this.data.swiperIndex)
+        this.mutant().update({ swiperIndex: nextSwiperIndex });
     } else if (event.type === 'swiperend') {
-      const { current: tabIndex } = event.detail;
-      this.mutant().update({ tabIndex, disableOnSwiper: true });
+      const { current } = event.detail;
+      this.mutant().update({ disableOnSwiper: true, swiperIndex: current, tabIndex: current });
     }
     this.mutant().commit();
   },
