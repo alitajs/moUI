@@ -5,5 +5,5 @@
       <text class="m-desc m-ellipsis">{{item}}</text>
     </view>
   </view>
-  <view style="height:168px;" wx:else=""/>
+  <view style="height:192px;" wx:else=""/>
 </block>

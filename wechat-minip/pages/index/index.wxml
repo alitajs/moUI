@@ -14,6 +14,7 @@
         <view class="m-navbar" />
         <include src="settings.wxml" wx:if="{{index}}" />
         <include src="components.wxml" wx:else="" />
+        <view class="p-tabbar-holder" />
       </scroll-view>
     </swiper-item>
   </swiper>

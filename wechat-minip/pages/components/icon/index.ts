@@ -30,7 +30,7 @@ Page({
     this.setData({ maskVisible: false });
   },
   onPageScroll(options: Page.IPageScrollOption) {
-    const page = Math.trunc(options.scrollTop / 168);
+    const page = Math.trunc(options.scrollTop / 192);
     if (this.data.navbarTitleVisible) {
       if (options.scrollTop < 64)
         this.mutant().update({ navbarTitleVisible: this.data.navbarTitleVisible = false });

@@ -21,8 +21,8 @@
 }
 
 .p-icons .p-icon {
-  height: 56px;
-  width: calc(25% - var(--cardBlank) / 2);
+  height: 64px;
+  width: calc(25vw - (var(--cardBlank) + var(--wingBlank)) / 2);
   box-sizing: border-box;
   padding: 4px;
   border-radius: var(--tRadius);
