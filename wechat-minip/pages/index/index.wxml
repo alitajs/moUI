@@ -1,23 +1,19 @@
 <!--index/index.wxml-->
-<view
-  change:data-disable-on-swiper="{{moui.removeEffectOfOnSwiperTrans}}"
-  class="m-page {{_.ui.wrapcls}}"
-  data-disable-on-swiper="{{disableOnSwiper}}"
-  data-emit-effect-removed="afterRemoveSwiperEffect"
-  style="{{_.ui.cssvar}}">
+<view change:data-disable-on-swiper="{{moui.removeEffectOfOnSwiperTrans}}"
+  class="m-page {{_.ui.wrapcls}}" data-disable-on-swiper="{{disableOnSwiper}}"
+  data-emit-effect-removed="afterRemoveSwiperEffect" style="{{_.ui.cssvar}}">
+
   <wxs src="../../styles/moui/index.wxs" module="moui" />
   <include src="navigator.wxml" />
-  <swiper
-    bindanimationfinish="{{moui.onSwiperTrans}}"
-    bindtransition="{{moui.onSwiperTrans}}"
-    current="{{swiperIndex}}"
-    data-emit-swiperend="onChangeTab"
-    duration="320">
-    <swiper-item wx:for="01" wx:key="*this">
-      <scroll-view bindscroll="{{index?'':'onScroll'}}" enable-flex="1" scroll-y="1">
+
+  <swiper bindanimationfinish="{{moui.onSwiperTrans}}" bindtransition="{{moui.onSwiperTrans}}"
+    current="{{swiperIndex}}" data-emit-swiperend="onChangeTab" duration="320">
+    <swiper-item wx:for="{{tabsMeta}}" wx:key="title">
+      <scroll-view bindscroll="{{index?'':'onScroll'}}" enable-flex="1"
+        scroll-top="{{item.scrollTop}}" scroll-with-animation="1" scroll-y="1">
         <view class="m-navbar" />
-        <include src="components.wxml" wx:if="{{index===0}}" />
-        <include src="settings.wxml" wx:elif="{{index===1}}" />
+        <include src="settings.wxml" wx:if="{{index}}" />
+        <include src="components.wxml" wx:else="" />
       </scroll-view>
     </swiper-item>
   </swiper>

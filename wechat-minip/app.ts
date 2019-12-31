@@ -16,8 +16,6 @@ export interface EachPageData {
   ui: UI.UISetting['PageData'];
 }
 
-export const enum WellKnownGlobalKey {}
-
 export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
   vars: Record<string, any>;
   data: { _: EachPageData } & T;
@@ -38,7 +36,6 @@ export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
 }
 
 export interface App {
-  global: Map<any, any>;
   pages: Page.PageInstance[];
   pagesMutant: BaseMutant<EachPage<{}>['data']>;
   eachPage: Omit<EachPage<any>, 'data'> & Pick<EachPage<{}>, 'data'>;
@@ -120,7 +117,6 @@ App<App>({
     wx.reLaunch({ url: '/pages/index/index' });
   },
   eachPage,
-  global: new Map(),
   pages: [],
   pagesMutant,
   ui,

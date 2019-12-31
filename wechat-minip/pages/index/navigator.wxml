@@ -1,16 +1,16 @@
 <!--index/navigator.wxml-->
 <block>
   <view class="m-navbar {{indexNavbarVisible?'':'m-onswiper'}}" data-pos="{{0-tabIndex}}">
-    <view class="m-navbar-body">
-      <view class="m-navbar-title m-onswiper" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}">
-        {{item[0]}}
-      </view>
+    <view bindlongpress="backTop" class="m-navbar-body">
+      <view class="m-navbar-title m-onswiper" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}"
+        wx:key="title">{{item.title}}</view>
     </view>
   </view>
   <view class="m-tabbar m-onswiper p-tabbar" data-grayscale="">
-    <view class="m-tab" bindtap="onChangeTab" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}">
-      <view data-icon="{{item[1]}}" />
-      <view>{{item[0]}}</view>
+    <view class="m-tab" bindtap="onChangeTab" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}"
+      wx:key="title">
+      <view data-icon="{{item.icon}}" />
+      <view>{{item.title}}</view>
     </view>
   </view>
 </block>

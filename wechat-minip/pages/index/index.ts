@@ -1,4 +1,4 @@
-import { App, EachPage, Version } from '../../app';
+import { App, EachPage, Version, dictHasDiff } from '../../app';
 
 const app = getApp<App>();
 
@@ -14,7 +14,7 @@ interface Data {
   indexNavbarVisible?: boolean;
   swiperIndex: 0 | 1;
   tabIndex: 0 | 1;
-  tabsMeta: [string, string][];
+  tabsMeta: { title: string; icon: string; scrollTop?: number }[];
   versionMark: string;
 }
 
@@ -30,13 +30,13 @@ const components: Data['components'] = [
 ];
 
 const initialData: Data = {
-  UIUserSetting: app.ui.UserSetting,
+  UIUserSetting: { ...app.ui.UserSetting },
   components,
   swiperIndex: 0,
   tabIndex: 0,
   tabsMeta: [
-    ['moUI', 'layout'],
-    ['设置', 'setting'],
+    { title: 'moUI', icon: 'layout' },
+    { title: '设置', icon: 'setting' },
   ],
   versionMark: Version.stringify(app.version, 'v'),
 };
@@ -44,6 +44,9 @@ const initialData: Data = {
 Page({
   ...(app.eachPage as EachPage<Data>),
   data: { ...app.eachPage.data, ...initialData },
+  backTop() {
+    this.setData({ [`tabsMeta[${this.data.tabIndex}].scrollTop`]: 0 });
+  },
   onLoad(query: Record<string, string>) {
     this.onLoadOne(query).commit();
     if (query.path) wx.navigateTo({ url: decodeURIComponent(query.path) });
@@ -66,7 +69,7 @@ Page({
       const nextTabIndex = event.detail.current;
       this.mutant().update({ disableOnSwiper: true });
       if (nextTabIndex === tabIndex) return this.mutant().commit();
-      this.setPageTitle(tabsMeta[nextTabIndex][0])
+      this.setPageTitle(tabsMeta[nextTabIndex].title)
         .update({ swiperIndex: nextTabIndex, tabIndex: nextTabIndex })
         .commit();
     }
@@ -75,8 +78,8 @@ Page({
     this.setData({ disableOnSwiper: false });
   },
   updateSettings() {
-    if (this.data.UIUserSetting === app.ui.UserSetting) return this.mutant();
-    return this.mutant().update({ UIUserSetting: app.ui.UserSetting });
+    if (!dictHasDiff(app.ui.UserSetting, this.data.UIUserSetting)) return this.mutant();
+    return this.mutant().update({ UIUserSetting: { ...app.ui.UserSetting } });
   },
   onScroll(event: WXML.ScrollEvent) {
     if (this.data.indexNavbarVisible) {
