@@ -1,12 +1,16 @@
-.m-mask {
+.m-mask,
+.m-mask-body {
   position: absolute;
-  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.m-mask {
+  z-index: 1;
   background-color: var(--black2);
-  transition: all ease-out var(--dur2), top linear 0s;
+  transition: all ease-in-out var(--dur2), top linear 0s;
 }
 
 .m-mask[data-scope='page'] {
@@ -17,7 +21,7 @@
 .m-mask[data-visible='false'] {
   top: 100%;
   opacity: 0;
-  transition: all ease-in var(--dur2), top linear 0s var(--dur2);
+  transition: all ease-in-out var(--dur2), top linear 0s var(--dur2);
 }
 
 .m-page[data-covered='true'] .m-mask[data-scope='page'] {
@@ -34,4 +38,17 @@
 
 .m-cover-page .m-mask[data-scope='page'] {
   position: absolute;
+}
+
+.m-mask .m-mask-body {
+  transition: transform cubic-bezier(0.22, 0.61, 0.36, 1) var(--dur2);
+}
+
+.m-mask .m-mask-body {
+  transform-origin: calc(var(--touchClientX) * 1px) calc(var(--touchClientY) * 1px);
+}
+
+.m-mask[data-visible='false'] .m-mask-body {
+  transform: scale(0);
+  transition: transform cubic-bezier(0.55, 0.06, 0.68, 0.19) var(--dur2);
 }

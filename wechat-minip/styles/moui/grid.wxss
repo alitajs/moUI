@@ -20,7 +20,8 @@
   flex-wrap: wrap;
 }
 
-.m-prefix, .m-suffix {
+.m-prefix,
+.m-suffix {
   transition: all ease-in-out var(--dur2);
 }
 

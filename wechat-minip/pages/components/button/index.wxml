@@ -9,7 +9,7 @@
   </template>
 
   <view class="m-cols m-flex-center g-header">
-    <view class="m-h3">按钮</view>
+    <view class="m-h3">{{_.title}}</view>
     <view class="m-desc">Button</view>
   </view>
 

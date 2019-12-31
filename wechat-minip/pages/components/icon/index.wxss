@@ -1,1 +1,47 @@
 /* pages/components/icon/index.wxss */
+
+.p-icons {
+  margin: 8px -4px -4px;
+  justify-content: space-between;
+}
+
+.p-icons .p-icon.m-hover-bg,
+.p-icons .p-icon.m-hover-bg .m-desc {
+  color: var(--pColor);
+}
+
+.p-icon {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: var(--fs2);
+  transition: all ease-in-out var(--dur2);
+  font-family: Consolas, monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.p-icons .p-icon {
+  height: 56px;
+  width: calc(25% - var(--cardBlank) / 2);
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: var(--tRadius);
+  font-size: var(--fs4);
+  color: var(--lightB1);
+}
+
+.p-icons .p-icon .m-desc {
+  font-size: var(--fs0);
+  max-width: calc(100% - 8px);
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-mask .p-icon {
+  width: 256px;
+  height: 128px;
+}
+
+.m-mask .p-icon:before {
+  color: var(--lightB1);
+  font-size: var(--fs8);
+}
