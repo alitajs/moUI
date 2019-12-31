@@ -1,8 +1,25 @@
 /* pages/components/icon/index.wxss */
 
 .p-icons {
-  margin: 8px -4px -4px;
+  margin: 0 -4px;
   justify-content: space-between;
+}
+
+.p-icons:first-child {
+  margin-top: 8px;
+}
+
+.p-icons [data-icon]:before {
+  display: var(--display, none);
+}
+
+.p-icons[data-pos='0'],
+.p-icons[data-pos='1'],
+.p-icons[data-pos='2'],
+.p-icons[data-pos='3'],
+.p-icons[data-pos='4'],
+.p-icons[data-pos='-1'] {
+  --display: flex;
 }
 
 .p-icon {
