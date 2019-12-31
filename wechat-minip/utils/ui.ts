@@ -20,8 +20,8 @@ export class UISetting {
   public Env: Env = new Env(Const.DefaultSystemInfo);
   public SystemInfo: GlobalSystemInfo = { ...Const.DefaultSystemInfo };
   public PageData = {
-    cssvar: this.deviceSettingToCSSVar(this.DeviceSetting),
-    wrapcls: this.userSettingToCls(),
+    ...this.applyDeviceSetting(),
+    ...this.applyUserSetting(),
   };
 
   private loadBatteryInfoTask?: ReturnType<typeof setTimeout>;
@@ -41,9 +41,9 @@ export class UISetting {
       this.loadBatteryInfoTask = setTimeout(this.loadBatteryInfo, 30000);
     wx.getBatteryInfo({
       success: battery => {
-        const prev = this.isAnimationDisabled();
+        const prev = this.isAnimationEnabled();
         this.SystemInfo.battery = battery;
-        const next = this.isAnimationDisabled();
+        const next = this.isAnimationEnabled();
         if (next !== prev) this.forceUpdateUserSetting();
       },
       complete: () => (this.loadBatteryInfoTask = undefined),
@@ -75,7 +75,7 @@ export class UISetting {
   }
 
   public onDeviceSettingUpdate(value: MP.UI.DeviceSetting) {
-    this.PageData.cssvar = this.deviceSettingToCSSVar(value);
+    Object.assign(this.PageData, this.applyDeviceSetting(value));
     this.App?.pagesMutant.update({ '_.ui': { ...this.PageData } }).commit();
     this.saveCache();
   }
@@ -86,7 +86,7 @@ export class UISetting {
 
   public onUserSettingUpdate(value: MP.UI.UserSetting) {
     this.updateNativeContainerStyle();
-    this.PageData.wrapcls = this.userSettingToCls(value);
+    Object.assign(this.PageData, this.applyUserSetting(value));
     this.App?.pagesMutant.update({ '_.ui': { ...this.PageData } }).commit();
     this.saveCache();
   }
@@ -114,6 +114,29 @@ export class UISetting {
       frontColor: isDarkMode ? '#ffffff' : '#000000',
       backgroundColor: isDarkMode ? '#000000' : '#ffffff',
     });
+  }
+
+  private applyDeviceSetting(
+    DeviceSetting: MP.UI.DeviceSetting = this.DeviceSetting,
+    px: Record<string, boolean> = Const.DefaultPxCssvar,
+  ) {
+    const cssvar = (Object.keys(DeviceSetting) as (keyof MP.UI.DeviceSetting)[])
+      .filter(key => DeviceSetting[key] !== undefined)
+      .map(key => `--${key}: ${DeviceSetting[key]}${px[key] ? 'px' : ''};`)
+      .join('');
+    return { cssvar };
+  }
+
+  private applyUserSetting(UserSetting: MP.UI.UserSetting = this.UserSetting) {
+    const dark = this.isDarkMode();
+    const ios = UserSetting.os === 'ios';
+    const animation = this.isAnimationEnabled();
+    const wrapcls = dictValues({
+      ...UserSetting,
+      mode: dark ? 'dark' : 'light',
+      animation: animation ? '' : 'without-animation',
+    }).join(' ');
+    return { animation, dark, ios, wrapcls };
   }
 
   private loadCache() {
@@ -171,21 +194,11 @@ export class UISetting {
     });
   }
 
-  private deviceSettingToCSSVar<T extends string>(
-    cssvar: Record<T, unknown>,
-    px: Record<string, boolean> = Const.DefaultPxCssvar,
-  ): string {
-    return (Object.keys(cssvar) as T[])
-      .filter(key => cssvar[key] !== undefined)
-      .map(key => `--${key}: ${cssvar[key]}${px[key] ? 'px' : ''};`)
-      .join('');
-  }
-
-  private isAnimationDisabled({ animation }: Partial<MP.UI.UserSetting> = this.UserSetting) {
-    if (typeof animation === 'boolean') return !animation;
-    if (!this.SystemInfo.battery) return false;
-    if (this.SystemInfo.battery.isCharging) return false;
-    return parseInt(this.SystemInfo.battery.level) <= 20;
+  private isAnimationEnabled({ animation }: Partial<MP.UI.UserSetting> = this.UserSetting) {
+    if (typeof animation === 'boolean') return animation;
+    if (!this.SystemInfo.battery) return true;
+    if (this.SystemInfo.battery.isCharging) return true;
+    return parseInt(this.SystemInfo.battery.level) > 20;
   }
 
   private isDarkMode(UserSetting: Partial<MP.UI.UserSetting> = this.UserSetting) {
@@ -193,13 +206,5 @@ export class UISetting {
     if (UserSetting.mode === 'dark') return true;
     const hours = new Date().getHours();
     return hours >= 19 || hours <= 6;
-  }
-
-  private userSettingToCls(UserSetting: MP.UI.UserSetting = this.UserSetting) {
-    return dictValues({
-      ...UserSetting,
-      mode: this.isDarkMode() ? 'dark' : 'light',
-      animation: this.isAnimationDisabled(UserSetting) ? 'without-animation' : '',
-    }).join(' ');
   }
 }

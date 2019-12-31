@@ -10,7 +10,7 @@
     current="{{swiperIndex}}" data-emit-swiperend="onChangeTab" duration="320">
     <swiper-item wx:for="{{tabsMeta}}" wx:key="title">
       <scroll-view bindscroll="{{index?'':'onScroll'}}" enable-back-to-top="1" enable-flex="1"
-        scroll-top="{{item.scrollTop}}" scroll-with-animation="1" scroll-y="1">
+        scroll-top="{{item.scrollTop}}" scroll-with-animation="{{_.ui.animation}}" scroll-y="1">
         <view class="m-navbar" />
         <include src="settings.wxml" wx:if="{{index}}" />
         <include src="components.wxml" wx:else="" />
