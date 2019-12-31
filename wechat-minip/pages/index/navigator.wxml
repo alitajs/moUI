@@ -3,12 +3,12 @@
   <view class="m-navbar {{indexNavbarVisible?'':'m-onswiper'}}" data-pos="{{0-tabIndex}}">
     <view bindlongpress="backTop" class="m-navbar-body">
       <view class="m-navbar-title m-onswiper" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}"
-        wx:key="title">{{item.title}}</view>
+        wx:key="folder">{{item.title}}</view>
     </view>
   </view>
   <view class="m-tabbar m-onswiper p-tabbar" data-grayscale="">
     <view class="m-tab" bindtap="onChangeTab" data-pos="{{index-tabIndex}}" wx:for="{{tabsMeta}}"
-      wx:key="title">
+      wx:key="folder">
       <view data-icon="{{item.icon}}" />
       <view>{{item.title}}</view>
     </view>

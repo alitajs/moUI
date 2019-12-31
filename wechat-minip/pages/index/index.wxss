@@ -13,6 +13,10 @@
   margin-bottom: 32px;
 }
 
+.m-list:last-child {
+  margin-bottom: 80px;
+}
+
 .m-navbar.m-onswiper {
   --percent: calc(var(--swiperX, 0) / var(--screenWidth));
   transition: var(--swiperX, all) ease-in-out var(--dur2);
@@ -79,5 +83,5 @@ scroll-view {
 }
 
 .p-list-title {
-  padding: 4px var(--wingBlank);
+  margin: 8px var(--wingBlank);
 }

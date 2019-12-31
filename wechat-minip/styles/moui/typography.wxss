@@ -1,6 +1,7 @@
 .m-desc {
   color: var(--gray5);
   font-size: var(--fs1);
+  line-height: var(--lh1);
 }
 
 .m-ellipsis {
@@ -50,4 +51,5 @@ text,
 .m-text {
   color: var(--lightB1);
   font-size: var(--fs2);
+  line-height: var(--lh2);
 }

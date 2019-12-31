@@ -27,6 +27,22 @@ const components: Data['components'] = [
       { name: '排版', suffix: 'Typography', folder: 'typography' },
     ],
   },
+  {
+    title: '数据展示',
+    components: [
+      { name: '头像', suffix: 'Avatar', folder: 'avatar' },
+      { name: '徽标数', suffix: 'Badge', folder: 'badge' },
+      { name: '列表', suffix: 'List', folder: 'list' },
+      { name: '标签', suffix: 'Tag', folder: 'tag' },
+    ],
+  },
+  {
+    title: '数据录入',
+    components: [
+      { name: '搜索栏', suffix: 'SearchBar', folder: 'searchbar' },
+      { name: '开关', suffix: 'Switch', folder: 'switch' },
+    ],
+  },
 ];
 
 const initialData: Data = {

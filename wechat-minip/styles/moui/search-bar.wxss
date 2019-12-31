@@ -20,7 +20,7 @@
 .m-search-bar[data-icon]:before,
 .m-search-bar > input[data-icon]:before {
   position: absolute;
-  color: gray;
+  color: var(--gray5);
   font-size: 20px;
   font-weight: 500;
 }
