@@ -5,21 +5,8 @@
   justify-content: space-between;
 }
 
-.p-icons:first-child {
-  margin-top: 8px;
-}
-
-.p-icons [data-icon]:before {
-  display: var(--display, none);
-}
-
-.p-icons[data-pos='0'],
-.p-icons[data-pos='1'],
-.p-icons[data-pos='2'],
-.p-icons[data-pos='3'],
-.p-icons[data-pos='4'],
-.p-icons[data-pos='-1'] {
-  --display: flex;
+.m-card-body .m-desc:first-child {
+  margin-bottom: 8px;
 }
 
 .p-icon {
