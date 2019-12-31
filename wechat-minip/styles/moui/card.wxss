@@ -8,7 +8,7 @@
 }
 
 .dark .m-card {
-  background-color: var(--white6);
+  background-color: var(--gray8);
 }
 
 .m-card-footer {
