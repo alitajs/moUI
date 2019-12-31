@@ -5,7 +5,7 @@
   justify-content: space-between;
 }
 
-.m-card-body .m-desc:first-child {
+.m-card-body > .m-desc:first-child {
   margin-bottom: 8px;
 }
 
