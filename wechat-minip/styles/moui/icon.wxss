@@ -1,5 +1,12 @@
 @import 'iconfont.wxss';
 
+@font-face {
+  font-family: 'iconfont';
+  src: url('https://at.alicdn.com/t/font_915540_ifxotkrl3el.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_915540_ifxotkrl3el.woff?t=1569735220920') format('woff'),
+    url('https://at.alicdn.com/t/font_915540_ifxotkrl3el.svg?t=1569735220920#iconfont') format('svg');
+}
+
 [data-icon]:before {
   color: currentColor;
   font-style: normal;

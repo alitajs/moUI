@@ -16,9 +16,9 @@
 1. Clone 项目到本地，进入 `wechat-minip` 目录，执行命令安装依赖：
 
 ```bash
-yarn install
+cd wechat-minip && yarn install
 # or
-npm install
+cd wechat-minip && npm install
 ```
 
 2. 在 `wechat-minip` 目录下编译：

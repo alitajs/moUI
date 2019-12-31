@@ -10,10 +10,7 @@
 
   <view class="m-card">
     <view class="m-card-body m-cols">
-      <view class="m-desc">
-        内置 Ant Design Components 3.x 的全量图标，调用 wx.loadFontFace() 载入，
-        Android 下需要在每次 onShow 时重新载入
-      </view>
+      <view class="m-desc">内置 Ant Design Components 3.x 的全量图标</view>
       <view class="m-rows m-flex-wrap p-icons">
         <include src="icons.wxml" />
       </view>
