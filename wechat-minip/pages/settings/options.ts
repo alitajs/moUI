@@ -57,8 +57,8 @@ const forms: { [K in OptionsFor]: OptionForm<K> } = {
     setValue: animation => app.ui.UserSetting.update({ animation }),
     options: [
       { name: '仅低电量时', value: 'auto' },
-      { name: '永不', value: false },
-      { name: '总是', value: true },
+      { name: '永不', value: true },
+      { name: '总是', value: false },
     ],
   },
 };

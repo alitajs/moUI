@@ -26,7 +26,7 @@
         url="/pages/settings/options?for=animation">
         <view class="m-flex">禁用动画</view>
         <view class="m-suffix" data-icon="caret-right">
-          {{animation==='auto'?'仅低电量时':animation?'总是':'永不'}}
+          {{animation==='auto'?'仅低电量时':animation?'永不':'总是'}}
         </view>
       </navigator>
     </view>

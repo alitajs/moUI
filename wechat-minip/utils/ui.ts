@@ -182,7 +182,7 @@ export class UISetting {
   }
 
   private isAnimationDisabled({ animation }: Partial<MP.UI.UserSetting> = this.UserSetting) {
-    if (typeof animation === 'boolean') return animation;
+    if (typeof animation === 'boolean') return !animation;
     if (!this.SystemInfo.battery) return false;
     if (this.SystemInfo.battery.isCharging) return false;
     return parseInt(this.SystemInfo.battery.level) <= 20;
