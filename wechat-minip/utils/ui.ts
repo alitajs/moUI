@@ -124,7 +124,7 @@ export class UISetting {
       .filter(key => DeviceSetting[key] !== undefined)
       .map(key => `--${key}: ${DeviceSetting[key]}${px[key] ? 'px' : ''};`)
       .join('');
-    return { cssvar };
+    return { cssvar, ...DeviceSetting };
   }
 
   private applyUserSetting(UserSetting: MP.UI.UserSetting = this.UserSetting) {

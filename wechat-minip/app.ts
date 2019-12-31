@@ -58,7 +58,7 @@ const eachPage = {
   vars: {},
   data: { _: { from: '返回', title: 'moUI', ui: ui.PageData } },
   backTop() {
-    wx.pageScrollTo({ scrollTop: 0 });
+    wx.pageScrollTo({ scrollTop: 0, duration: ui.PageData.animation ? 320 : 0 });
   },
   mutant() {
     return (this.vars.__mutant = this.vars.__mutant || new DataMutant(this));

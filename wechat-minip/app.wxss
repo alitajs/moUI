@@ -31,6 +31,10 @@ page {
 }
 
 .g-header {
+  padding: var(--wingBlank) 0;
+}
+
+.m-page > .g-header {
   padding: var(--wingBlank);
 }
 
