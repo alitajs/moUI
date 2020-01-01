@@ -1,4 +1,4 @@
-<!--components/icon/index.wxml-->
+<!--pages/components/icon/index.wxml-->
 <view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}{{cssvar}}">
   <wxs module="moui" src="../../../styles/moui/index.wxs" />
   <include src="../../../components/utils/normal-navbar.wxml" />

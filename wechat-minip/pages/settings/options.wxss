@@ -1,3 +1,5 @@
+/* pages/settings/options.wxss */
+
 .m-list {
   margin-top: 32px;
 }

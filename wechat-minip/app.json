@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/components/avatar/index",
+    "pages/components/badge/index",
     "pages/components/button/index",
     "pages/components/icon/index",
     "pages/components/typography/index",

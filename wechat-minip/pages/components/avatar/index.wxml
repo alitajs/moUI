@@ -1,0 +1,15 @@
+<!--pages/components/avatar/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Avatar</view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols g-child-margin">
+    </view>
+    <!-- <view class="m-card-footer m-desc">012</view> -->
+  </view>
+</view>

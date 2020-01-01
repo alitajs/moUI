@@ -1,7 +1,5 @@
-/**
- * filename: app.wxss
- * location: @/
- */
+/* app.wxss */
+
 @import 'styles/moui/index.wxss';
 @import 'components/index.wxss';
 

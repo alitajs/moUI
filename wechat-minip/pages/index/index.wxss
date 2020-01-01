@@ -1,3 +1,5 @@
+/* pages/index/index.wxss */
+
 .m-page {
   width: 100vw;
   height: 100vh;
@@ -19,7 +21,7 @@
 
 .m-navbar.m-onswiper {
   --percent: calc(var(--swiperX, 0) / var(--screenWidth));
-  transition-property: var(--swiperX, all);
+  transition: var(--swiperX, all) ease-in-out var(--dur2);
 }
 
 .m-navbar.m-onswiper[data-pos='0'] {
