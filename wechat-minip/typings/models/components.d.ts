@@ -1,4 +1,5 @@
 declare namespace Comp {
+  type AvatarShape = 'square' | 'circle';
   type AvatarSize = 'default' | 'large' | 'small';
   type ButtonShape = 'block' | 'circle' | 'default' | 'round';
   type ButtonSize = 'default' | 'large' | 'small' | 'tiny';

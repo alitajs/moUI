@@ -1,0 +1,5 @@
+/* pages/components/avatar/index.wxss */
+
+.m-avatar {
+  align-self: center;
+}

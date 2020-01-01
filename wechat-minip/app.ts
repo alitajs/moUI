@@ -36,6 +36,7 @@ export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
 }
 
 export interface App {
+  cdn: string;
   pages: Page.PageInstance[];
   pagesMutant: BaseMutant<EachPage<{}>['data']>;
   eachPage: Omit<EachPage<any>, 'data'> & Pick<EachPage<{}>, 'data'>;
@@ -116,9 +117,10 @@ App<App>({
   reLaunch() {
     wx.reLaunch({ url: '/pages/index/index' });
   },
+  ui,
   eachPage,
   pages: [],
   pagesMutant,
-  ui,
+  cdn: 'https://cdn.imhele.com',
   version: { major: 2, minor: 0, patch: 0 },
 });
