@@ -42,13 +42,13 @@ const imageAvatars: Avatar[] = [
 const cards: CardBody[] = [
   {
     id: 0,
-    text: '三种大小、两种形状可选',
+    text: '三种大小、两种形状可选，覆盖 --avatarSize 变量可统一控制头像大小、字号与行高',
     rows: [{ instances: textAvatars }, { shape: 'square', instances: textAvatars }],
   },
   {
     id: 1,
     text:
-      '图片类头像，可直接为 <image /> 设置 m-avatar 样式类，也可将 <image /> 或 <open-data /> 与文字包裹在内，图像不显示时默认展示文字',
+      '图片类头像，可直接为 <image /> 设置 m-avatar 样式类，也可将 <image />（或 <open-data />）与文字包裹在内，图像不显示时默认展示文字',
     rows: [{ instances: imageAvatars }, { shape: 'square', instances: imageAvatars }],
   },
 ];

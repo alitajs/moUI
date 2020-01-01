@@ -41,7 +41,7 @@
         <view class="m-badge-text" style="--badgeColor:var(--pColor);">32</view>
       </view>
     </view>
-    <view class="m-card-footer m-desc">不包裹 m-badge 以独立使用，可以覆盖 --badgeColor 变量全局替换颜色</view>
+    <view class="m-card-footer m-desc">不包裹 m-badge 以独立使用，覆盖 --badgeColor 变量以统一控制颜色</view>
   </view>
 
   <view bindtap="setVisible" class="m-card" hover-class="m-hover-scale">
