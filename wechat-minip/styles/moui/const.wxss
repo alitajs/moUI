@@ -100,9 +100,10 @@ page {
   --lh7: 54px;
   --lh8: 64px;
   --lh9: 76px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+  --fontFamily: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--fontFamily);
 }
 
 /** DURATION */

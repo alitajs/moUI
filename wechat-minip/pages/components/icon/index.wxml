@@ -19,7 +19,7 @@
     data-visible="{{maskVisible}}">
     <view class="m-mask-body m-flex-center">
       <view class="m-card">
-        <view class="m-card-body m-desc p-icon" data-icon="{{maskIcon}}">{{maskIcon}}</view>
+        <view class="m-card-body m-desc m-monospace p-icon" data-icon="{{maskIcon}}">{{maskIcon}}</view>
       </view>
     </view>
   </view>

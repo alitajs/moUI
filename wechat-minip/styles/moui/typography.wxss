@@ -53,3 +53,8 @@ text,
   font-size: var(--fs2);
   line-height: var(--lh2);
 }
+
+.m-monospace,
+[data-monospace]:not([data-monospace='false']) {
+  font-family: Consolas, monospace, var(--fontFamily);
+}

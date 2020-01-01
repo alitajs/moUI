@@ -16,8 +16,6 @@
   font-size: var(--fs2);
   line-height: var(--lh2);
   transition: all ease-in-out var(--dur2);
-  font-family: Consolas, monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .p-icons .p-icon {
