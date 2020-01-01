@@ -2,6 +2,24 @@
 <view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
   <include src="../../../components/utils/normal-navbar.wxml" />
 
+  <template name="badges">
+    <view class="m-rows g-child-margin">
+      <view class="m-button m-badge" hover-class="m-hover-opacity">
+        按钮
+        <view class="m-badge-dot" data-visible="{{visible}}" />
+      </view>
+      <view class="m-avatar m-badge" data-shape="square">
+        <view class="m-badge-dot" data-visible="{{visible}}" />
+      </view>
+      <view class="m-avatar m-badge" data-shape="square">
+        <view class="m-badge-text" data-visible="{{visible}}">4</view>
+      </view>
+      <view class="m-avatar m-badge">
+        <view class="m-badge-text" data-visible="{{visible}}">16</view>
+      </view>
+    </view>
+  </template>
+
   <view class="m-cols m-flex-center g-header">
     <view class="m-h3">{{_.title}}</view>
     <view class="m-desc">Badge</view>
@@ -9,7 +27,27 @@
 
   <view class="m-card">
     <view class="m-card-body m-cols g-child-margin">
+      <template data="{{visible:true}}" is="badges" />
     </view>
-    <!-- <view class="m-card-footer m-desc">012</view> -->
+    <view class="m-card-footer m-desc">配合其他组件一起使用</view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-rows g-child-margin">
+        <view class="m-badge-dot" />
+        <view class="m-badge-text">4</view>
+        <view class="m-badge-text">16</view>
+        <view class="m-badge-text" style="--badgeColor:var(--pColor);">32</view>
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">不包裹 m-badge 以独立使用，可以覆盖 --badgeColor 变量全局替换颜色</view>
+  </view>
+
+  <view bindtap="setVisible" class="m-card" hover-class="m-hover-scale">
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{visible:badgeVisible}}" is="badges" />
+    </view>
+    <view class="m-card-footer m-desc">点击卡片切换显示与隐藏状态</view>
   </view>
 </view>

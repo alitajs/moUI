@@ -5,7 +5,6 @@
   border-radius: calc(var(--avatarSize) / 2);
   background-color: var(--gray3);
   justify-content: center;
-  overflow: hidden;
   transition: all ease-in-out var(--dur2);
   font-weight: 600;
   color: var(--lightW0);
@@ -43,6 +42,8 @@
   height: 100%;
   top: 0;
   left: 0;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 .m-avatar[data-shape='square'] {
