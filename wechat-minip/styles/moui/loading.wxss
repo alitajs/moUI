@@ -47,6 +47,13 @@
   filter: var(--disabledFilter);
 }
 
+.dark .m-loading,
+.dark .m-disabled,
+.dark [data-loading='true'],
+.dark [data-disabled='true'] {
+  --disabledFilter: var(--brightness7) var(--grayscale2);
+}
+
 .m-loading-holder[data-loading] {
   height: 0;
   align-items: center;
