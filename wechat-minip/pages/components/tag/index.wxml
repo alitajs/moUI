@@ -1,5 +1,6 @@
 <!--pages/components/tag/index.wxml-->
 <view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <import src="../button/index.wxml" />
   <include src="../../../components/utils/normal-navbar.wxml" />
 
   <template name="size">
@@ -14,10 +15,8 @@
   </template>
 
   <template name="tags">
-    <view class="m-card-body m-cols g-child-margin">
-      <view class="m-tags" data-mode="{{mode}}" wx:for="01" wx:for-index="c" wx:key="*this">
-        <view class="m-tag" data-checked="{{!!c}}" wx:for="0123456" wx:key="*this">标签 {{item}}</view>
-      </view>
+    <view class="m-tags" data-mode="{{mode}}" data-size="{{size}}" wx:for="01" wx:for-index="c" wx:key="*this">
+      <view class="m-tag" data-checked="{{!!c}}" wx:for="0123456" wx:key="*this">标签 {{item}}</view>
     </view>
   </template>
 
@@ -28,7 +27,9 @@
 
   <view class="m-card">
     <template is="size" />
-    <view class="m-card-footer m-desc">三种大小、普通与填充两种展现形式</view>
+    <view class="m-card-footer m-desc">
+      三种大小、普通与填充两种展现形式，深色主题下仍为白色文字以区分 round 形状的按钮
+    </view>
   </view>
 
   <view class="m-card">
@@ -37,12 +38,19 @@
   </view>
 
   <view class="m-card">
-    <template data="{{mode:'inline'}}" is="tags" />
-    <view class="m-card-footer m-desc">单行滚动模式，配合 scroll-view 使用时需要手动覆盖 overflow-x</view>
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{size:tagSize}}" is="tags" />
+      <view class="m-button-group" data-size="small">
+        <template data="{{...item,index,onTap:'onChangeSize',type:item.value===tagSize?'primary':''}}" is="button" wx:for="{{tagSizeMap}}" wx:key="value" />
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">m-tags 包裹多个标签，可统一配置大小，默认自动换行</view>
   </view>
 
   <view class="m-card">
-    <template is="tags" />
-    <view class="m-card-footer m-desc">默认多行模式，超过一行内容时自动换行</view>
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{mode:'inline'}}" is="tags" />
+    </view>
+    <view class="m-card-footer m-desc">单行滚动模式，配合 scroll-view 使用时需要手动覆盖 overflow-x</view>
   </view>
 </view>
