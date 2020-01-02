@@ -4,7 +4,7 @@
 
   <view class="m-cols m-flex-center g-header">
     <view class="m-h3">{{_.title}}</view>
-    <view class="m-desc">Button</view>
+    <view class="m-desc">Typography</view>
   </view>
 
   <view class="m-card">
