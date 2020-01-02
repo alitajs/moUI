@@ -39,7 +39,7 @@
         <view class="m-navbar-title">示例</view>
       </view>
     </view>
-    <view class="m-flex-center g-header">
+    <view class="m-mask m-flex-center g-header" data-type="opaque">
       <view class="m-text" style="text-align:center;">
         从叠加页导航栏向下滑动超过半屏后关闭叠加页，启用动画时，叠加页会跟随手势改变位置
       </view>
