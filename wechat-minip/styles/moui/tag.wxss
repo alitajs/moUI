@@ -78,10 +78,6 @@
   border-radius: calc(var(--tagHeight) / 2 + var(--tagBorderWidth));
 }
 
-.ios .m-tags[data-mode='inline'] {
-  padding-right: var(--tagBorderWidth);
-}
-
 .m-tags[data-mode='inline']::-webkit-scrollbar {
   display: none;
   color: transparent;
@@ -102,7 +98,7 @@
   margin: calc(0px - var(--tagBorderWidth)) 0;
   margin-right: -8px;
   padding: 0 8px 0 4px;
-  font-size: calc(var(--tagHeight) / 3 + 4px);
+  font-size: calc(var(--tagHeight) / 3 + 6px);
   font-weight: 900;
   line-height: calc(var(--tagHeight) + var(--tagBorderWidth) * 2);
 }

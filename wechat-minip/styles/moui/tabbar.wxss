@@ -4,7 +4,6 @@
   border-style: solid;
   border-color: var(--gray2);
   border-bottom-width: 1px;
-  background-color: var(--lightW1);
   flex-direction: row;
   align-items: center;
   transition: all ease-in-out var(--dur4);
@@ -16,7 +15,6 @@
 
 .m-tabbar .m-tab {
   position: relative;
-  overflow: hidden;
   flex: 1;
   height: var(--tabbarHeight);
   padding-bottom: 1px;

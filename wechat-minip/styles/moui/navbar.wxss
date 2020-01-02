@@ -202,6 +202,7 @@
 .m-navbar[data-mode~='tabbar'] .m-tabbar {
   z-index: 9;
   border-bottom-width: 0;
+  background-color: var(--lightW1);
 }
 
 .android.material .m-navbar[data-mode~='tabbar'] .m-tabbar {

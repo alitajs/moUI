@@ -205,6 +205,6 @@ export class UISetting {
     if (UserSetting.mode === 'light') return false;
     if (UserSetting.mode === 'dark') return true;
     const hours = new Date().getHours();
-    return hours >= 19 || hours <= 6;
+    return hours >= 18 || hours <= 6;
   }
 }

@@ -28,6 +28,10 @@ const components: Data['components'] = [
     ],
   },
   {
+    title: '导航',
+    components: [{ name: '标签栏', suffix: 'TabBar', folder: 'tabbar' }],
+  },
+  {
     title: '数据展示',
     components: [
       { name: '头像', suffix: 'Avatar', folder: 'avatar' },
