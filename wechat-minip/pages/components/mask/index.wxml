@@ -1,4 +1,4 @@
-<!--pages/components/badge/index.wxml-->
+<!--pages/components/mask/index.wxml-->
 <view bindtap="setVisible" class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
   <include src="../../../components/utils/normal-navbar.wxml" />
 
@@ -40,7 +40,7 @@
     <template data="{{type:'opaque',visible:visibleMaskMark==='c'}}" is="mask" />
   </view>
 
-  <view class="m-card" style="position:relative;">
+  <view class="m-card">
     <view class="m-card-body m-cols g-child-margin">
       <template data="{{mark:'d',text:'默认蒙层'}}" is="button" />
       <template data="{{mark:'e',text:'透明蒙层'}}" is="button" />
