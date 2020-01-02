@@ -4,6 +4,7 @@
     "pages/components/avatar/index",
     "pages/components/badge/index",
     "pages/components/button/index",
+    "pages/components/coverpage/index",
     "pages/components/icon/index",
     "pages/components/loading/index",
     "pages/components/mask/index",

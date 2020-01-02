@@ -29,7 +29,10 @@ const components: Data['components'] = [
   },
   {
     title: '导航',
-    components: [{ name: '标签栏', suffix: 'TabBar', folder: 'tabbar' }],
+    components: [
+      { name: '叠加页', suffix: 'CoverPage', folder: 'coverpage' },
+      { name: '标签栏', suffix: 'TabBar', folder: 'tabbar' },
+    ],
   },
   {
     title: '数据展示',

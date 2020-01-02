@@ -1,7 +1,7 @@
 /* pages/settings/options.wxss */
 
 .m-list {
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 .m-suffix[data-visible='false'] {

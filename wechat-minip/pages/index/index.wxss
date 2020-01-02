@@ -12,7 +12,7 @@
 
 .m-navbar,
 .m-list {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .m-navbar.m-onswiper .m-navbar-body {

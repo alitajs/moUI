@@ -1,0 +1,46 @@
+<!--pages/components/coverpage/index.wxml-->
+<view class="m-pages" data-dark="{{pageVisible}}" style="{{_.ui.cssvar}}">
+  <wxs module="moui" src="../../../styles/moui/index.wxs" />
+  <view change:data-covered="{{moui.removeEffectOfOnTouchMove}}"
+    class="m-page {{_.ui.wrapcls}} m-ontouchmovey" data-covered="{{pageVisible}}"
+    data-wrapper=".m-pages">
+
+    <view class="m-navbar" data-title-visible="{{pageVisible||navbarTitleVisible}}">
+      <view bindlongpress="backTop" class="m-navbar-body">
+        <navigator class="m-navbar-back" hover-class="m-hover-opacity" open-type="navigateBack">
+          {{_.from}}
+        </navigator>
+        <view class="m-navbar-title">{{_.title}}</view>
+      </view>
+    </view>
+
+    <view class="m-cols m-flex-center g-header">
+      <view class="m-h3">{{_.title}}</view>
+      <view class="m-desc">CoverPage</view>
+    </view>
+
+    <view class="m-card">
+      <view class="m-card-body m-cols">
+        <view bindtap="setVisible" class="m-button" hover-class="m-hover-opacity">显示叠加页</view>
+      </view>
+      <view class="m-card-footer m-desc">
+        叠加页通常用于再同一页面完成复杂的操作逻辑，或使得一些功能的入口更浅，例如登录、搜索等
+      </view>
+    </view>
+  </view>
+
+  <view catchtouchmove="noop" class="m-page m-cover-page m-ontouchmovey {{_.ui.wrapcls}}"
+    data-visible="{{pageVisible}}">
+    <view class="m-navbar">
+      <view bindtouchend="{{moui.onTouchMove}}" bindtouchmove="{{moui.onTouchMove}}"
+        class="m-navbar-body" data-emit-effect-removed="noop" data-emit-move-y="setVisible"
+        data-wrapper=".m-pages">
+        <view bindtap="setVisible" class="m-navbar-back" hover-class="m-hover-opacity">返回</view>
+        <view class="m-navbar-title">示例</view>
+      </view>
+    </view>
+    <view class="m-flex-center m-text g-header" style="text-align:center;">
+      从叠加页导航栏向下滑动超过半屏后关闭叠加页，启用动画时，叠加页会跟随手势改变位置
+    </view>
+  </view>
+</view>
