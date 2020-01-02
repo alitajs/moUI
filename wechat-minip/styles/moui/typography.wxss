@@ -18,6 +18,7 @@
   flex: 1;
   color: var(--lightB1);
   font-weight: 600;
+  transition: all ease-in-out var(--dur2);
 }
 
 .m-h1 {
@@ -48,13 +49,21 @@
 }
 
 text,
-.m-text {
+.m-text,
+.m-href,
+navigator:not([class]) {
   color: var(--lightB1);
   font-size: var(--fs2);
   line-height: var(--lh2);
+  transition: all ease-in-out var(--dur2);
 }
 
 .m-monospace,
 [data-monospace]:not([data-monospace='false']) {
   font-family: Consolas, monospace, var(--fontFamily);
+}
+
+.m-href,
+navigator:not([class]) {
+  color: var(--pColor);
 }
