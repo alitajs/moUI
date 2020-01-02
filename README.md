@@ -2,14 +2,14 @@
 
 🍕 面向现代浏览器的 CSS 样式库。
 
-## 特性
+## ✨ 特性
 
 - 原生 CSS 编写
 - 深浅色主题与风格定制
 - 按需载入国际化文案
 - 多框架支持 (**help wanted!**)
 
-## 本地预览
+## 🎨 本地预览
 
 ### 微信小程序
 
@@ -34,3 +34,11 @@ npm run compile
 > 如果开发者工具提示“不属于项目成员”，删除 `wechat-minip/project.config.json` 中的 `appid` 项再以游客身份重新导入项目。
 
 ![import wechat mini-program project](https://user-images.githubusercontent.com/32428655/71554841-94818f80-2a5f-11ea-9340-f0e2252611bc.png)
+
+
+
+## 💡 如何贡献
+
+### 注意事项
+
+- 新特性尽可能不要直接修改原样式类，而是在其后追加覆盖，否则可能会影响到组件之间样式的联动效果。
