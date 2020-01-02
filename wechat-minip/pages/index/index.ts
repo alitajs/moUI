@@ -49,7 +49,10 @@ const components: Data['components'] = [
   },
   {
     title: '反馈',
-    components: [{ name: '蒙层', suffix: 'Mask', folder: 'mask' }],
+    components: [
+      { name: '加载态', suffix: 'Loading', folder: 'loading' },
+      { name: '蒙层', suffix: 'Mask', folder: 'mask' },
+    ],
   },
 ];
 
