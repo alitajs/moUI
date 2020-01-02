@@ -31,6 +31,7 @@ const components: Data['components'] = [
     title: '导航',
     components: [
       { name: '叠加页', suffix: 'CoverPage', folder: 'coverpage' },
+      { name: '导航栏', suffix: 'NavBar', folder: 'navbar' },
       { name: '标签栏', suffix: 'TabBar', folder: 'tabbar' },
     ],
   },
