@@ -15,32 +15,28 @@
   margin-bottom: 32px;
 }
 
-.m-navbar {
-  transition: all ease-in-out var(--dur2);
-}
-
-.m-navbar.m-onswiper {
+.m-navbar.m-onswiper .m-navbar-body {
   --percent: calc(var(--swiperX, 0) / var(--screenWidth));
   transition: var(--swiperX, all) ease-in-out var(--dur2);
 }
 
-.m-navbar.m-onswiper[data-pos='0'] {
+.m-navbar.m-onswiper[data-pos='0'] .m-navbar-body {
   opacity: 0;
 }
 
-.prev .m-navbar.m-onswiper[data-pos='0'] {
+.prev .m-navbar.m-onswiper[data-pos='0'] .m-navbar-body {
   opacity: calc(0 - var(--percent));
 }
 
-.prev .m-navbar.m-onswiper[data-pos='-1'] {
+.prev .m-navbar.m-onswiper[data-pos='-1'] .m-navbar-body {
   opacity: calc(1 + var(--percent));
 }
 
-.next .m-navbar.m-onswiper[data-pos='0'] {
+.next .m-navbar.m-onswiper[data-pos='0'] .m-navbar-body {
   opacity: var(--percent);
 }
 
-.next .m-navbar.m-onswiper[data-pos='1'] {
+.next .m-navbar.m-onswiper[data-pos='1'] .m-navbar-body {
   opacity: calc(1 - var(--percent));
 }
 
