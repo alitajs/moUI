@@ -51,3 +51,7 @@ page {
 .g-child-margin.m-cols > view:last-child {
   margin-bottom: 0;
 }
+
+.g-child-margin.m-rows {
+  align-items: center;
+}

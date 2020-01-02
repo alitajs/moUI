@@ -1,0 +1,48 @@
+<!--pages/components/tag/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <template name="size">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-rows g-child-margin" wx:for="01" wx:for-index="c" wx:key="*this">
+        <view class="m-tag" data-checked="{{!!c}}" data-size="{{item}}" wx:for="{{['default','small','tiny']}}" wx:key="*this">
+          {{item}}
+          <view data-icon="{{icon}}" wx:if="{{icon}}" />
+        </view>
+      </view>
+    </view>
+  </template>
+
+  <template name="tags">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-tags" data-mode="{{mode}}" wx:for="01" wx:for-index="c" wx:key="*this">
+        <view class="m-tag" data-checked="{{!!c}}" wx:for="0123456" wx:key="*this">标签 {{item}}</view>
+      </view>
+    </view>
+  </template>
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Tag</view>
+  </view>
+
+  <view class="m-card">
+    <template is="size" />
+    <view class="m-card-footer m-desc">三种大小、普通与填充两种展现形式</view>
+  </view>
+
+  <view class="m-card">
+    <template data="{{icon:'close'}}" is="size" />
+    <view class="m-card-footer m-desc">嵌套图标子元素，配合填充样式可作为输入控件</view>
+  </view>
+
+  <view class="m-card">
+    <template data="{{mode:'inline'}}" is="tags" />
+    <view class="m-card-footer m-desc">单行滚动模式，配合 scroll-view 使用时需要手动覆盖 overflow-x</view>
+  </view>
+
+  <view class="m-card">
+    <template is="tags" />
+    <view class="m-card-footer m-desc">默认多行模式，超过一行内容时自动换行</view>
+  </view>
+</view>
