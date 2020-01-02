@@ -37,6 +37,7 @@
 
 .m-text,
 .m-href {
+  display: inline-block;
   color: var(--lightB1);
   font-size: var(--fs2);
   line-height: var(--lh2);
