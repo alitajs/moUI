@@ -65,4 +65,7 @@ Page({
   onLoad(query: Record<string, string>) {
     this.onLoadOne(query, '头像').commit();
   },
+  onPreview({ currentTarget: { dataset } }: WXML.TapEvent<{ src: string }>) {
+    wx.previewImage({ current: dataset.src, urls: [dataset.src] });
+  },
 });

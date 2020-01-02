@@ -5,8 +5,8 @@
   <template name="avatar">
     <view class="m-avatar" data-icon="{{icon}}" data-shape="{{shape}}" data-size="{{size}}">
       <block wx:if="{{!icon}}">{{text}}</block>
-      <image src="{{image}}" wx:if="{{image!==true}}" />
-      <open-data type="userAvatarUrl" wx:else="" />
+      <open-data type="userAvatarUrl" wx:if="{{image===true}}" />
+      <image bindtap="onPreview" data-src="{{image}}" src="{{image}}" wx:else="" />
     </view>
   </template>
 
