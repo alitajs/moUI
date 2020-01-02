@@ -126,7 +126,7 @@
   content: '\e857';
   font-size: 24px;
   font-weight: 900;
-  transform: scaleX(0.85);
+  transform: scaleX(0.84);
 }
 
 .android .m-navbar-back:before {

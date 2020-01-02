@@ -15,9 +15,9 @@
 }
 
 .m-tag::-webkit-scrollbar {
-  width:0;
-  height:0;
-  color:transparent;
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 
 .m-tag:first-child {
@@ -78,6 +78,10 @@
   border-radius: calc(var(--tagHeight) / 2 + var(--tagBorderWidth));
 }
 
+.ios .m-tags[data-mode='inline'] {
+  padding-right: var(--tagBorderWidth);
+}
+
 .m-tags[data-mode='inline']::-webkit-scrollbar {
   display: none;
   color: transparent;
@@ -98,10 +102,9 @@
   margin: calc(0px - var(--tagBorderWidth)) 0;
   margin-right: -8px;
   padding: 0 8px 0 4px;
-  font-size: var(--fs1);
+  font-size: calc(var(--tagHeight) / 3 + 4px);
   font-weight: 900;
   line-height: calc(var(--tagHeight) + var(--tagBorderWidth) * 2);
-  transform: scale(0.85);
 }
 
 .android .m-tag [data-icon]:last-child {

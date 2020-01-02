@@ -12,7 +12,7 @@
 
 .m-navbar,
 .m-list {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .m-navbar.m-onswiper .m-navbar-body {
@@ -81,7 +81,7 @@ scroll-view {
 }
 
 .p-list-title {
-  margin: 8px var(--wingBlank);
+  margin: 0 var(--wingBlank) 8px;
 }
 
 .p-tabbar-holder {
