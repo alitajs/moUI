@@ -12,7 +12,7 @@
         hover-class="m-hover-bg"
         url="/pages/components/{{item.folder}}/index"
         wx:for="{{group.components}}"
-        wx:key="name">
+        wx:key="folder">
         <view class="m-flex">{{item.name}}</view>
         <view class="m-suffix m-desc" data-icon="caret-right">{{item.suffix}}</view>
       </navigator>
