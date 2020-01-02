@@ -1,16 +1,3 @@
-.m-desc {
-  color: var(--gray5);
-  font-size: var(--fs1);
-  line-height: var(--lh1);
-}
-
-.m-ellipsis {
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .m-h1,
 .m-h2,
 .m-h3,
@@ -48,14 +35,22 @@
   font-weight: 500;
 }
 
-text,
 .m-text,
-.m-href,
-navigator:not([class]) {
+.m-href {
   color: var(--lightB1);
   font-size: var(--fs2);
   line-height: var(--lh2);
   transition: all ease-in-out var(--dur2);
+}
+
+.m-desc {
+  color: var(--gray5);
+  font-size: var(--fs1);
+  line-height: var(--lh1);
+}
+
+.m-href {
+  color: var(--pColor);
 }
 
 .m-monospace,
@@ -63,7 +58,14 @@ navigator:not([class]) {
   font-family: Consolas, monospace, var(--fontFamily);
 }
 
-.m-href,
+.m-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 navigator:not([class]) {
   color: var(--pColor);
+  transition: all ease-in-out var(--dur2);
 }
