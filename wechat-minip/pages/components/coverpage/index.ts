@@ -21,7 +21,7 @@ Page({
   },
   setVisible() {
     const nextPageVisible = !this.data.pageVisible;
-    app.ui.updateNativeContainerStyle(nextPageVisible ? { mode: 'dark' } : {});
+    app.ui.updateNativeContainerStyle(nextPageVisible ? { mode: 'dark' } : undefined);
     this.setData({ pageVisible: nextPageVisible });
   },
 });
