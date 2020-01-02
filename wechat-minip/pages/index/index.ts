@@ -47,6 +47,10 @@ const components: Data['components'] = [
       { name: '开关', suffix: 'Switch', folder: 'switch' },
     ],
   },
+  {
+    title: '反馈',
+    components: [{ name: '蒙层', suffix: 'Mask', folder: 'mask' }],
+  },
 ];
 
 const initialData: Data = {

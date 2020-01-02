@@ -1,0 +1,56 @@
+<!--pages/components/badge/index.wxml-->
+<view bindtap="setVisible" class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <template name="button">
+    <view catchtap="setVisible" class="m-button" data-mark="{{mark}}"
+      hover-class="m-hover-opacity">{{text}}</view>
+  </template>
+  <template name="mask">
+    <view catchtap="{{g?'setVisible':'noop'}}" catchtouchmove="noop" class="m-mask m-flex-center"
+      data-scope="{{g?'page':''}}" data-type="{{type}}" data-visible="{{visible}}">
+      <view class="m-desc" wx:if="{{type==='opaque'}}">当前处于{{_.ui.dark?'深':'浅'}}色主题</view>
+    </view>
+  </template>
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Mask</view>
+  </view>
+
+  <view class="m-card" style="position:relative;">
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{mark:'a',text:'显示蒙层'}}" is="button" />
+    </view>
+    <view class="m-card-footer m-desc">
+      基本使用，为当前脱离文档流的组件添加蒙层，使用 catchtouchmove 与 catchtap 阻止事件冒泡，点击蒙层外任意处即可关闭蒙层
+    </view>
+    <template data="{{visible:visibleMaskMark==='a'}}" is="mask" />
+  </view>
+
+  <view class="m-card" style="position:relative;">
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{mark:'b',text:'透明蒙层'}}" is="button" />
+      <template data="{{mark:'c',text:'不透明蒙层'}}" is="button" />
+    </view>
+    <view class="m-card-footer m-desc">
+      除默认的半透明暗色蒙层外，还支持透明蒙层与不透明蒙层，不透明蒙层的颜色默认随深浅色主题自动切换
+    </view>
+    <template data="{{type:'transparent',visible:visibleMaskMark==='b'}}" is="mask" />
+    <template data="{{type:'opaque',visible:visibleMaskMark==='c'}}" is="mask" />
+  </view>
+
+  <view class="m-card" style="position:relative;">
+    <view class="m-card-body m-cols g-child-margin">
+      <template data="{{mark:'d',text:'默认蒙层'}}" is="button" />
+      <template data="{{mark:'e',text:'透明蒙层'}}" is="button" />
+      <template data="{{mark:'f',text:'不透明蒙层'}}" is="button" />
+    </view>
+    <view class="m-card-footer m-desc">
+      全局蒙层，定位方式在普通页面下为 fixed ，支持 m-cover-page，点击蒙层以关闭
+    </view>
+    <template data="{{g:1,visible:visibleMaskMark==='d'}}" is="mask" />
+    <template data="{{g:1,type:'transparent',visible:visibleMaskMark==='e'}}" is="mask" />
+    <template data="{{g:1,type:'opaque',visible:visibleMaskMark==='f'}}" is="mask" />
+  </view>
+</view>
