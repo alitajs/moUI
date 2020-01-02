@@ -1,6 +1,5 @@
 <!--pages/components/tabbar/index.wxml-->
 <view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
-  <wxs module="moui" src="../../../styles/moui/index.wxs" />
   <include src="../../../components/utils/normal-navbar.wxml" />
 
   <view class="m-cols m-flex-center g-header">
