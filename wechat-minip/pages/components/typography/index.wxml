@@ -18,7 +18,7 @@
       <view class="m-text">
         支持内嵌
         <view class="m-href" hover-class="m-hover-opacity">链接样式</view>
-        的文案
+        的文案，与 ghost-href 类型按钮的区别是可点击热区更小
       </view>
       <text class="m-desc">描述性文本文字，经常配合其他组件一起使用</text>
       <text class="m-text m-monospace">FontFamily: Monospace</text>

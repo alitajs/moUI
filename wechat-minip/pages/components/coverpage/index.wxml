@@ -20,7 +20,7 @@
     </view>
 
     <view class="m-card">
-      <view class="m-card-body m-cols">
+      <view class="m-card-body m-cols g-child-margin">
         <view bindtap="setVisible" class="m-button" hover-class="m-hover-opacity">显示叠加页</view>
       </view>
       <view class="m-card-footer m-desc">

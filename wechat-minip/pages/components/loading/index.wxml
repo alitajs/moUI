@@ -8,21 +8,21 @@
   </view>
 
   <view bindtap="setLoading" class="m-card" data-for="a" hover-class="m-hover-scale">
-    <view class="m-card-body m-cols">
+    <view class="m-card-body m-cols g-child-margin">
       <view data-loading="{{!loadingState.a}}" />
     </view>
     <view class="m-card-footer m-desc">单独使用，仅占一个图标位，点击卡片切换加载态</view>
   </view>
 
   <view bindtap="setLoading" class="m-card" data-for="b" hover-class="m-hover-scale">
-    <view class="m-card-body m-cols">
+    <view class="m-card-body m-cols g-child-margin">
       <view class="m-loading-holder" data-loading="{{!loadingState.b}}" />
     </view>
     <view class="m-card-footer m-desc">有固定高度的加载态，通常作为其他类块级元素的占位符，点击卡片切换加载态</view>
   </view>
 
   <view bindtap="setLoading" class="m-card" data-for="c" hover-class="m-hover-scale">
-    <view class="m-card-body m-cols">
+    <view class="m-card-body m-cols g-child-margin">
       <view class="m-loading-holder m-loading-hint" data-loading="{{!loadingState.c}}" />
     </view>
     <view class="m-card-footer m-desc">
@@ -31,7 +31,7 @@
   </view>
 
   <view bindtap="setLoading" class="m-card" data-for="d" hover-class="m-hover-scale">
-    <view class="m-card-body m-cols">
+    <view class="m-card-body m-cols g-child-margin">
       <view class="m-rows g-child-margin">
         <view class="m-button" data-loading="{{!loadingState.d}}">按钮</view>
         <view class="m-tag" data-checked="true" data-loading="{{!loadingState.d}}">标签</view>
