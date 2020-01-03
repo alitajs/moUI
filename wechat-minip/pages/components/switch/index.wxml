@@ -27,35 +27,21 @@
   <view class="m-card">
     <view class="m-card-body m-cols g-child-margin">
       <view class="m-rows g-child-margin">
-        <view class="hig">
-          <label class="m-switch" data-loading="{{switchLoading}}" id="wrapper-c">
-            <template data="{{mock:true,disabled:switchLoading,key:'',id:'c'}}" is="wrapped-switch" />
-          </label>
-        </view>
-        <view class="material">
-          <label class="m-switch" data-loading="{{switchLoading}}" id="wrapper-d">
-            <template data="{{mock:true,disabled:switchLoading,key:'',id:'d'}}" is="wrapped-switch" />
-          </label>
-        </view>
+        <label class="m-switch" data-loading="{{switchLoading}}" id="wrapper-d">
+          <template data="{{mock:true,disabled:switchLoading,key:'',id:'d'}}" is="wrapped-switch" />
+        </label>
         <view bindtap="setLoading" class="m-switch" data-checked="{{switchLoading}}" />
       </view>
     </view>
-    <view class="m-card-footer m-desc">加载态与风格，第三个开关可对加载状态进行控制</view>
+    <view class="m-card-footer m-desc">加载态，第三个开关可对加载状态进行控制</view>
   </view>
 
   <view class="m-card">
     <view class="m-card-body m-cols g-child-margin">
       <view class="m-rows g-child-margin">
-        <view class="hig">
-          <label class="m-switch" data-icon="check" id="wrapper-e">
-            <template data="{{mock:true,key:'',id:'e'}}" is="wrapped-switch" />
-          </label>
-        </view>
-        <view class="material">
-          <label class="m-switch" data-icon="check" id="wrapper-f">
-            <template data="{{mock:true,key:'',id:'f'}}" is="wrapped-switch" />
-          </label>
-        </view>
+        <label class="m-switch" data-icon="check" id="wrapper-f">
+          <template data="{{mock:true,key:'',id:'f'}}" is="wrapped-switch" />
+        </label>
       </view>
     </view>
     <view class="m-card-footer m-desc">配合图标</view>
