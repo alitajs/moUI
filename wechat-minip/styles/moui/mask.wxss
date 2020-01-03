@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  border-radius: inherit;
 }
 
 .m-mask {
@@ -16,6 +17,7 @@
 .m-mask[data-scope='page'] {
   position: fixed;
   z-index: 19;
+  border-radius: 0;
 }
 
 .m-mask[data-visible='false'] {
@@ -24,8 +26,8 @@
   transition: all ease-in-out var(--dur2), top linear 0s var(--dur2);
 }
 
-.m-page[data-covered='true'] .m-mask[data-scope='page'] {
-  border-radius: var(--mRadius);
+.m-page[data-covered='true'] > .m-mask[data-scope='page'] {
+  border-radius: inherit;
 }
 
 .m-mask[data-type='opaque'] {
