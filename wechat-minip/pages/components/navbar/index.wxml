@@ -1,0 +1,24 @@
+<!--pages/components/navbar/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Navbar</view>
+  </view>
+
+  <view class="m-list">
+    <view class="m-list-item">
+      <view class="m-flex">显示本页导航栏标题</view>
+      <view bindtap="setNavbarTitle" class="m-suffix m-switch" data-checked="{{navbarTitleVisible}}"/>
+    </view>
+    <navigator
+      class="m-list-item"
+      hover-class="m-hover-bg"
+      url="/pages/components/navbar/navbar?for={{item[0]}}"
+      wx:for="{{[['basic','基本'],['menu','菜单图标'],['avatar','头像'],['mini-avatar','小型头像'],['tabbar','包裹标签栏']]}}">
+      <view class="m-flex">{{item[1]}}</view>
+      <view class="m-suffix" data-icon="caret-right" />
+    </navigator>
+  </view>
+</view>

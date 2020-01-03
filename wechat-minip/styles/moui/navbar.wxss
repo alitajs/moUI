@@ -265,8 +265,9 @@
 
 .hig .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab[data-icon]:before,
 .hig .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab [data-icon]:before {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
 }
 
 .material .m-navbar[data-mode~='tabbar'] .m-tabbar .m-tab [data-icon]:before {

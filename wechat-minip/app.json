@@ -9,6 +9,8 @@
     "pages/components/list/index",
     "pages/components/loading/index",
     "pages/components/mask/index",
+    "pages/components/navbar/index",
+    "pages/components/navbar/navbar",
     "pages/components/searchbar/index",
     "pages/components/switch/index",
     "pages/components/tabbar/index",
