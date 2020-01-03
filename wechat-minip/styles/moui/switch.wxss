@@ -2,6 +2,7 @@
   position: relative;
   height: 32px;
   width: 52px;
+  transition: all ease-in-out var(--dur2);
 }
 
 .m-switch:after {
@@ -88,14 +89,13 @@ label.m-switch switch {
 }
 
 .m-switch[data-loading]:before {
-  background-size: 0;
+  background-size: 80%;
   background-position: 50%;
-  transition: all ease-in-out var(--dur2),
-    background-size cubic-bezier(0.68, -0.55, 0.27, 1.55) var(--dur2);
+  transition: all ease-in-out var(--dur2);
 }
 
-.m-switch[data-loading='true']:before {
-  background-size: 80%;
+.m-switch:not([data-loading='true']):before {
+  background-image: none;
 }
 
 .m-switch[data-icon]:before {
