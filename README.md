@@ -2,14 +2,6 @@
 
 🍕 面向现代浏览器的 CSS 样式库。
 
-<table><tr>
-  <td><img src="https://user-images.githubusercontent.com/32428655/71712349-c5870900-2e3f-11ea-8e36-17b878c1af98.png" width="180" /></td>
-  <td><img src="https://user-images.githubusercontent.com/32428655/71712340-c3bd4580-2e3f-11ea-8d69-d2e28b472812.png" width="180" /></td>
-  <td><img src="https://user-images.githubusercontent.com/32428655/71712335-c324af00-2e3f-11ea-9c04-97ebf77a65ae.png" width="180" /></td>
-  <td><img src="https://user-images.githubusercontent.com/32428655/71712348-c5870900-2e3f-11ea-9131-97696b1faa35.png" width="180" /></td>
-  <td><img src="https://user-images.githubusercontent.com/32428655/71712343-c455dc00-2e3f-11ea-9a12-91b021378071.png" width="180" /></td>
-</tr></table>
-
 ## ✨ 特性
 
 - 原生 CSS 编写
@@ -20,6 +12,14 @@
 ## 🎨 本地预览
 
 ### 微信小程序
+
+<table><tr>
+  <td><img src="https://user-images.githubusercontent.com/32428655/71712349-c5870900-2e3f-11ea-8e36-17b878c1af98.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/71712340-c3bd4580-2e3f-11ea-8d69-d2e28b472812.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/71712335-c324af00-2e3f-11ea-9c04-97ebf77a65ae.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/71712348-c5870900-2e3f-11ea-9131-97696b1faa35.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/71712343-c455dc00-2e3f-11ea-9a12-91b021378071.png" width="180" /></td>
+</tr></table>
 
 1. Clone 项目到本地，进入 `wechat-minip` 目录，执行命令安装依赖：
 
