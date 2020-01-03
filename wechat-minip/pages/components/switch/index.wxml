@@ -33,7 +33,7 @@
         <view bindtap="setLoading" class="m-switch" data-checked="{{switchLoading}}" />
       </view>
     </view>
-    <view class="m-card-footer m-desc">加载态，第三个开关可对加载状态进行控制</view>
+    <view class="m-card-footer m-desc">加载态，第二个开关可对加载状态进行控制</view>
   </view>
 
   <view class="m-card">
