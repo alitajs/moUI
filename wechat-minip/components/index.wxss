@@ -1,0 +1,3 @@
+/* components/index.wxss */
+
+@import './form/wrapped.wxss';

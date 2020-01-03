@@ -36,19 +36,23 @@ page {
   padding: var(--wingBlank);
 }
 
-.g-child-margin:not(.m-cols) > view {
+.g-child-margin:not(.m-cols) > view,
+.g-child-margin:not(.m-cols) > label {
   margin-right: var(--margin, 8px);
 }
 
-.g-child-margin:not(.m-cols) > view:last-child {
+.g-child-margin:not(.m-cols) > view:last-child,
+.g-child-margin:not(.m-cols) > label:last-child {
   margin-right: 0;
 }
 
-.g-child-margin.m-cols > view {
+.g-child-margin.m-cols > view,
+.g-child-margin.m-cols > label {
   margin-bottom: var(--margin, 12px);
 }
 
-.g-child-margin.m-cols > view:last-child {
+.g-child-margin.m-cols > view:last-child,
+.g-child-margin.m-cols > label:last-child {
   margin-bottom: 0;
 }
 

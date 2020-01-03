@@ -1,0 +1,15 @@
+/* components/form/wrapped.wxss */
+
+.c-wrapped-input-tags[data-input-visible] > .m-flex-center {
+  height: 24px;
+  overflow: hidden;
+  transition: all ease-in-out var(--dur2);
+}
+
+.c-wrapped-input-tags[data-input-visible='false'] > .m-tags {
+  margin: 0 0 calc(var(--tagHeight) / -3);
+}
+
+.c-wrapped-input-tags[data-input-visible='false'] > .m-flex-center {
+  height: 0;
+}

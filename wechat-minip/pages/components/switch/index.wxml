@@ -1,0 +1,45 @@
+<!--pages/components/switch/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <import src="../../../components/form/wrapped.wxml" />
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Switch</view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-rows g-child-margin">
+        <label class="m-switch" id="wrapper-a">
+          <template data="{{mock:true,key:'',id:'a'}}" is="wrapped-switch" />
+        </label>
+        <label class="m-switch" id="wrapper-b">
+          <template data="{{mock:true,key:'',id:'b',value:true}}" is="wrapped-switch" />
+        </label>
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">
+      基本使用，大部分情况下 CSS 渲染性能比微信提供的 switch 标签更好，非受控模式可借助 label 来做状态转发
+    </view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-rows g-child-margin">
+        <view class="hig">
+          <label class="m-switch" data-loading="{{switchLoading}}" id="wrapper-c">
+            <template data="{{mock:true,disabled:switchLoading,key:'',id:'c'}}" is="wrapped-switch" />
+          </label>
+        </view>
+        <view class="material">
+          <label class="m-switch" data-loading="{{switchLoading}}" id="wrapper-d">
+            <template data="{{mock:true,disabled:switchLoading,key:'',id:'d'}}" is="wrapped-switch" />
+          </label>
+        </view>
+        <view bindtap="setLoading" class="m-switch" data-checked="{{switchLoading}}" />
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">加载态，第三个开关可对加载状态进行控制</view>
+  </view>
+</view>

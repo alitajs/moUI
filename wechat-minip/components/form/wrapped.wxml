@@ -1,0 +1,100 @@
+<!--components/form/wrapped.wxml-->
+<block>
+  <wxs module="moui" src="../../styles/moui/index.wxs" />
+  <template name="wrapped-input">
+    <input
+      adjust-position="{{adjustPosition!==false}}"
+      bindblur="{{onBlur}}"
+      bindconfirm="{{onConfirm}}"
+      bindfocus="{{onFocus}}"
+      bindinput="{{onChange}}"
+      bindkeyboardheightchange="{{onKeyboardHeightChange}}"
+      class="{{class}}"
+      confirm-hold="{{confirmHold}}"
+      confirm-type="{{confirmType}}"
+      cursor="{{cursor}}"
+      cursor-spacing="{{cursorSpacing}}"
+      data-form="{{key}}"
+      data-item="{{id}}"
+      disabled="{{disabled}}"
+      focus="{{focus}}"
+      hidden="{{hidden}}"
+      hold-keyboard="{{holdKeyboard}}"
+      id="{{key}}{{id}}"
+      maxlength="{{maxLength===undefined?-1:maxLength}}"
+      name="{{id}}"
+      password="{{password}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="m-input-placeholder {{placeholderClass}}"
+      placeholder-style="{{placeholderStyle}}"
+      selection-end="{{selection&&selection[1]}}"
+      selection-start="{{selection&&selection[0]}}"
+      type="{{uiType}}"
+      value="{{value}}" />
+  </template>
+  <template name="wrapped-switch">
+    <switch
+      bindchange="{{mock?moui.onSwitchChange:onChange}}"
+      change:checked="{{mock?moui.onSetSwitchChecked:''}}"
+      checked="{{value}}"
+      class="{{class}}"
+      color="{{color}}"
+      data-emit="{{onChange}}"
+      data-form="{{key}}"
+      data-item="{{id}}"
+      data-wrapper="#wrapper-{{key}}{{id}}"
+      disabled="{{disabled}}"
+      hidden="{{hidden||mock}}"
+      id="{{key}}{{id}}"
+      name="{{id}}"
+      type="checkbox" />
+  </template>
+  <template name="wrapped-input-tags">
+    <checkbox-group
+      bindchange="{{onChange}}"
+      class="m-flex m-cols c-wrapped-input-tags {{class}}"
+      data-form="{{key}}"
+      data-input-visible="{{!hideInput}}"
+      data-item="{{id}}"
+      id="{{key}}{{id}}"
+      name="{{id}}">
+      <view class="m-tags" data-inline="{{inline}}" data-size="{{size||'small'}}">
+        <label class="m-tag" data-checked="{{value&&value[item]}}" wx:for="{{tags}}">
+          <text selectable="{{selectable!==false}}" space="{{space!==false}}">{{item}}</text>
+          <checkbox checked="{{value&&value[item]}}" disabled="{{disabled}}" hidden="true" value="{{item}}" />
+        </label>
+      </view>
+      <view class="m-flex-center">
+        <input
+          bindinput="{{onInputChange}}"
+          cursor-spacing="{{cursorSpacing}}"
+          data-form="{{key}}"
+          data-item="{{id}}"
+          disabled="{{hideInput||disabled}}"
+          focus="{{focus}}"
+          hold-keyboard="true"
+          maxlength="{{maxLength===undefined?-1:maxLength}}"
+          placeholder="{{placeholder}}"
+          placeholder-class="m-input-placeholder"
+          type="{{inputUiType}}"
+          value="{{inputValue}}" />
+        <view
+          catchtap="{{onTapAdd}}"
+          class="m-button"
+          data-form="{{key}}"
+          data-icon="plus"
+          data-item="{{id}}"
+          data-shape="round"
+          data-size="tiny"
+          data-type="primary"
+          hover-class="m-hover-opacity"
+          style="margin-left: 8px;" />
+      </view>
+    </checkbox-group>
+  </template>
+  <template name="wrapped-tags">
+    <view class="m-tags {{class}}" data-inline="{{inline}}" data-size="{{size}}">
+      <view class="m-tag" data-checked="{{value[item]}}" wx:for="{{tags}}" wx:key="*this">{{item}}</view>
+    </view>
+  </template>
+</block>
