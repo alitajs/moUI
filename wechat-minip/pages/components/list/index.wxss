@@ -1,0 +1,9 @@
+/* pages/components/list/index.wxss */
+
+.m-list {
+  margin-bottom: 32px;
+}
+
+.p-list-title {
+  margin: 0 var(--wingBlank) 8px;
+}

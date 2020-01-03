@@ -1,0 +1,67 @@
+<!--pages/components/list/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <import src="../../../components/form/wrapped.wxml" />
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">List</view>
+  </view>
+
+  <view class="m-desc p-list-title">基本使用</view>
+  <view class="m-list">
+    <view class="m-list-item" wx:for="一二三" wx:key="*this">列表项{{item}}</view>
+  </view>
+
+  <view class="m-desc p-list-title">带图标与后缀文字，可用作导航</view>
+  <view class="m-list">
+    <view class="m-list-item" wx:for="一二三" wx:key="*this">
+      <view class="m-flex">列表项{{item}}</view>
+      <view class="m-suffix m-desc" data-icon="caret-right">说明文字</view>
+    </view>
+  </view>
+
+  <view class="m-desc p-list-title">带前缀的列表项，支持使用图标</view>
+  <view class="m-list" data-prefix="">
+    <view class="m-list-item" wx:for="一二" wx:key="*this">
+      <view class="m-prefix">A</view>
+      列表项{{item}}
+    </view>
+  </view>
+
+  <view class="m-desc p-list-title">带填充式前缀的列表项，可覆盖 --prefixFill 变量提供 background 属性值</view>
+  <view class="m-list" data-prefix="fill square">
+    <view class="m-list-item" data-icon="setting" wx:for="一二" wx:key="*this">列表项{{item}}</view>
+  </view>
+
+  <view class="m-desc p-list-title">带填充式圆形前缀的列表项</view>
+  <view class="m-list" data-prefix="fill circle">
+    <view class="m-list-item" data-icon="message" wx:for="一二" wx:key="*this">列表项{{item}}</view>
+  </view>
+
+  <view class="m-desc p-list-title">支持三种大小</view>
+  <view class="m-list" data-size="middle" data-prefix="fill circle">
+    <view class="m-list-item" data-icon="message">列表项</view>
+  </view>
+  <view class="m-list" data-size="large" data-prefix="fill circle">
+    <view class="m-list-item" data-icon="message">列表项</view>
+  </view>
+
+  <view class="m-desc p-list-title">配合其他组件</view>
+  <view class="m-list">
+    <view class="m-list-item">
+      <view class="m-flex">列表项一</view>
+      <label class="m-suffix m-switch" id="wrapper-">
+        <template data="{{mock:true,key:'',id:''}}" is="wrapped-switch" />
+      </label>
+    </view>
+    <view class="m-list-item">
+      <view class="m-flex">列表项二</view>
+      <view class="m-suffix m-button" data-size="small" data-shape="round" hover-class="m-hover-opacity">按钮</view>
+    </view>
+    <view class="m-list-item">
+      <view class="m-flex">列表项三</view>
+      <view class="m-suffix m-badge-text">99+</view>
+    </view>
+  </view>
+</view>

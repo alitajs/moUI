@@ -79,7 +79,7 @@
   color: var(--lightW1);
   border-radius: var(--sRadius);
   overflow: hidden;
-  background-color: var(--prefixFill, var(--lightB7));
+  background: var(--prefixFill, var(--lightB7));
 }
 
 .m-list[data-prefix~='square'] .m-list-item .m-prefix,
@@ -119,8 +119,11 @@
 .m-list .m-suffix {
   margin: 0 var(--listWingBlank) 0 8px;
   white-space: nowrap;
-  color: var(--gray5);
   align-items: center;
+}
+
+.m-list .m-suffix[class="m-suffix"] {
+  color: var(--gray5);
 }
 
 .m-list-item .m-suffix[data-icon] {

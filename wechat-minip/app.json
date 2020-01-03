@@ -6,6 +6,7 @@
     "pages/components/button/index",
     "pages/components/coverpage/index",
     "pages/components/icon/index",
+    "pages/components/list/index",
     "pages/components/loading/index",
     "pages/components/mask/index",
     "pages/components/searchbar/index",
