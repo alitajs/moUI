@@ -44,10 +44,13 @@
     <view class="m-card-footer m-desc">不包裹 m-badge 以独立使用，覆盖 --badgeColor 变量以统一控制颜色</view>
   </view>
 
-  <view bindtap="setVisible" class="m-card" hover-class="m-hover-scale">
+  <view class="m-card">
     <view class="m-card-body m-cols g-child-margin">
+      <view class="m-rows g-child-margin">
+        <view bindtap="setVisible" class="m-switch" data-checked="{{badgeVisible}}" />
+      </view>
       <template data="{{visible:badgeVisible}}" is="badges" />
     </view>
-    <view class="m-card-footer m-desc">点击卡片切换显示与隐藏状态</view>
+    <view class="m-card-footer m-desc">点击开关切换显示与隐藏状态</view>
   </view>
 </view>

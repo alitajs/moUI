@@ -7,32 +7,38 @@
     <view class="m-desc">Loading</view>
   </view>
 
-  <view bindtap="setLoading" class="m-card" data-for="a" hover-class="m-hover-scale">
+  <view class="m-card">
     <view class="m-card-body m-cols g-child-margin">
-      <view data-loading="{{!loadingState.a}}" />
+      <view class="m-rows g-child-margin">
+        <view bindtap="setLoading" class="m-switch" data-checked="{{!loadingState.a}}" data-for="a" />
+        <view data-loading="{{!loadingState.a}}" />
+      </view>
     </view>
-    <view class="m-card-footer m-desc">单独使用，仅占一个图标位，点击卡片切换加载态</view>
+    <view class="m-card-footer m-desc">单独使用，仅占一个图标位，点击开关切换加载态</view>
   </view>
 
-  <view bindtap="setLoading" class="m-card" data-for="b" hover-class="m-hover-scale">
-    <view class="m-card-body m-cols g-child-margin">
+  <view class="m-card">
+    <view class="m-card-body m-cols">
+      <view bindtap="setLoading" class="m-switch" data-checked="{{!loadingState.b}}" data-for="b" />
       <view class="m-loading-holder" data-loading="{{!loadingState.b}}" />
     </view>
-    <view class="m-card-footer m-desc">有固定高度的加载态，通常作为其他类块级元素的占位符，点击卡片切换加载态</view>
+    <view class="m-card-footer m-desc">有固定高度的加载态，通常作为其他类块级元素的占位符，点击开关切换加载态</view>
   </view>
 
-  <view bindtap="setLoading" class="m-card" data-for="c" hover-class="m-hover-scale">
-    <view class="m-card-body m-cols g-child-margin">
+  <view class="m-card">
+    <view class="m-card-body m-cols">
+      <view bindtap="setLoading" class="m-switch" data-checked="{{!loadingState.c}}" data-for="c" />
       <view class="m-loading-holder m-loading-hint" data-loading="{{!loadingState.c}}" />
     </view>
     <view class="m-card-footer m-desc">
-      添加 m-loading-hint 以展现加载完毕提示，通常出现在无限滚动加载列表的尾部，点击卡片以预览
+      添加 m-loading-hint 以展现加载完毕提示，通常出现在无限滚动加载列表的尾部，点击开关以预览
     </view>
   </view>
 
-  <view bindtap="setLoading" class="m-card" data-for="d" hover-class="m-hover-scale">
+  <view class="m-card">
     <view class="m-card-body m-cols g-child-margin">
       <view class="m-rows g-child-margin">
+        <view bindtap="setLoading" class="m-switch" data-checked="{{!loadingState.d}}" data-for="d" />
         <view class="m-button" data-loading="{{!loadingState.d}}">按钮</view>
         <view class="m-tag" data-checked="true" data-loading="{{!loadingState.d}}">标签</view>
       </view>

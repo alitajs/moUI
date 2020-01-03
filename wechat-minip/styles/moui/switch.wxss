@@ -36,23 +36,28 @@
 }
 
 .m-switch:before {
-  content: ' ';
   position: absolute;
   z-index: 1;
   top: 2px;
   left: 2px;
   height: 28px;
   width: 28px;
+  line-height: 28px;
   border-radius: 14px;
   background-color: var(--white0);
   box-shadow: 0 0 4px var(--black5);
   transition: all ease-in-out var(--dur2);
 }
 
+.m-switch:not([data-icon]):before {
+  content: ' ';
+}
+
 .material .m-switch:before {
   top: 4px;
   width: 24px;
   height: 24px;
+  line-height: 24px;
 }
 
 .m-switch-checked:before,
@@ -91,4 +96,21 @@ label.m-switch switch {
 
 .m-switch[data-loading='true']:before {
   background-size: 80%;
+}
+
+.m-switch[data-icon]:before {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--pColor);
+}
+
+.material .m-switch[data-icon]:before {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.material .m-switch.m-switch-checked[data-icon]:before,
+.material .m-switch[data-icon][data-checked='true']:before {
+  color: var(--lightW0);
 }
