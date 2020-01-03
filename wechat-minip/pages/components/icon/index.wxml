@@ -1,0 +1,26 @@
+<!--pages/components/icon/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}{{cssvar}}">
+  <wxs module="moui" src="../../../styles/moui/index.wxs" />
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Icon</view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols">
+      <view class="m-desc">内置 Ant Design Components 3.x 的 601 个图标，点击图标可放大预览</view>
+      <include src="icons.wxml" />
+    </view>
+  </view>
+
+  <view catchtap="hidePreview" catchtouchmove="noop" class="m-mask" data-scope="page"
+    data-visible="{{maskVisible}}">
+    <view class="m-mask-body m-flex-center">
+      <view class="m-card">
+        <view class="m-card-body m-desc m-monospace p-icon" data-icon="{{maskIcon}}">{{maskIcon}}</view>
+      </view>
+    </view>
+  </view>
+</view>

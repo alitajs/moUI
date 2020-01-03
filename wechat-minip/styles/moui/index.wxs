@@ -1,4 +1,5 @@
 mergeModule(module, require('form.wxs'));
+mergeModule(module, require('mask.wxs'));
 mergeModule(module, require('onswiper.wxs'));
 mergeModule(module, require('ontouch.wxs'));
 mergeModule(module, require('utils.wxs'));

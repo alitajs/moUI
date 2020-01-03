@@ -1,0 +1,26 @@
+<!--pages/components/avatar/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <template name="avatar">
+    <view class="m-avatar" data-icon="{{icon}}" data-shape="{{shape}}" data-size="{{size}}">
+      <block wx:if="{{!icon}}">{{text}}</block>
+      <open-data type="userAvatarUrl" wx:if="{{image===true}}" />
+      <image bindtap="onPreview" data-src="{{image}}" src="{{image}}" wx:else="" />
+    </view>
+  </template>
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Avatar</view>
+  </view>
+
+  <view class="m-card" wx:for="{{cards}}" wx:for-item="c" wx:key="id">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-rows g-child-margin" wx:for-item="r" wx:for="{{c.rows}}">
+        <template data="{{...c,...r,...item}}" is="avatar" wx:for="{{r.instances}}" />
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">{{c.text}}</view>
+  </view>
+</view>

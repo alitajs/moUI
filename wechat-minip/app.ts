@@ -1,4 +1,12 @@
-import { BaseMutant, DataMutant, UI, Version, createTask, truncate } from './utils/index';
+import {
+  BaseMutant,
+  DataMutant,
+  UI,
+  Version,
+  createTask,
+  querystring,
+  truncate,
+} from './utils/index';
 
 export * from './utils/index';
 
@@ -8,39 +16,38 @@ export interface EachPageData {
   ui: UI.UISetting['PageData'];
 }
 
-export const enum WellKnownGlobalKey {}
-
 export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
   vars: Record<string, any>;
   data: { _: EachPageData } & T;
   backTop: () => void;
-  consolelog: Console['log'];
   mutant: () => DataMutant<EachPageData & T>;
   noop: () => void;
   onLoadOne: (
-    page: EachPage,
     query?: Partial<Record<string, string>>,
     title?: string,
   ) => DataMutant<EachPageData & T>;
-  onShowOne: (page: EachPage) => DataMutant<EachPageData & T>;
-  onUnloadOne: (page: EachPage) => DataMutant<EachPageData & T>;
-  setPageTitle: (page: EachPage, title: string) => DataMutant<EachPageData & T>;
+  onShareAppMessage: (options?: Page.IShareAppMessageOption) => Page.ICustomShareContent;
+  onShow: () => void;
+  onShowOne: () => DataMutant<EachPageData & T>;
+  onUnload: () => void;
+  onUnloadOne: () => DataMutant<EachPageData & T>;
+  setPageTitle: (title: string) => DataMutant<EachPageData & T>;
   toast: (title: string, duration?: number, mask?: boolean) => void;
 }
 
 export interface App {
-  global: Map<any, any>;
+  cdn: string;
   pages: Page.PageInstance[];
   pagesMutant: BaseMutant<EachPage<{}>['data']>;
-  eachPage: EachPage<any>;
+  eachPage: Omit<EachPage<any>, 'data'> & Pick<EachPage<{}>, 'data'>;
   reLaunch: () => void;
   ui: UI.UISetting;
+  version: MP.Version;
 }
 
 export const AppLaunchTaskRef = createTask<App.AppInstance<App> & App>();
-
-const ui = new UI.UISetting();
-const AppRef = {
+export const ui = new UI.UISetting();
+export const AppRef = {
   value: null as (App.AppInstance<App> & App) | null,
   get: () => AppRef.value ?? getApp<App>(),
 };
@@ -51,38 +58,55 @@ const eachPage = {
   ...({} as Pick<EachPage<{}>, 'setData' | 'route'>),
   vars: {},
   data: { _: { from: '返回', title: 'moUI', ui: ui.PageData } },
-  consolelog: console.log,
-  backTop: () => wx.pageScrollTo({ scrollTop: 0 }),
+  backTop() {
+    wx.pageScrollTo({ scrollTop: 0, duration: ui.PageData.animation ? 320 : 0 });
+  },
   mutant() {
-    const page: any = this;
-    return (page.__mutant = page.__mutant || new DataMutant(page));
+    return (this.vars.__mutant = this.vars.__mutant || new DataMutant(this));
   },
-  noop: () => {},
-  onLoadOne: (page, _query = {}, title = 'moUI') => {
+  noop() {},
+  onLoadOne(_query = {}, title = 'moUI') {
     const pages = AppRef.get().pages;
-    const from = pages[pages.length - 1]?.data?._?.title ?? '返回';
-    pages.push(page);
-    return page.setPageTitle(page, title).update({ '_.from': truncate(from, 8) });
+    const from = pages[pages.length - 1]?.data._.title ?? '返回';
+    pages.push(this);
+    return this.setPageTitle(title).update({ '_.from': truncate(from, 8) });
   },
-  onShowOne: page => {
+  onShareAppMessage(options) {
+    const from = options && options.from;
+    const query = querystring({ path: `/${this.route}`, from });
+    return {
+      title: this.data._.title || 'moUI',
+      path: `/pages/index/index?${query}`,
+    };
+  },
+  onShow() {
+    this.onShowOne().commit();
+  },
+  onShowOne() {
     AppRef.get().ui.loadIconfont();
     AppRef.get().ui.forceUpdateUserSetting();
-    return page.mutant();
+    return this.mutant();
   },
-  onUnloadOne: page => {
-    const index = AppRef.get().pages.indexOf(page);
+  onUnload() {
+    this.onUnloadOne().commit();
+  },
+  onUnloadOne() {
+    const index = AppRef.get().pages.indexOf(this);
     if (index > -1) AppRef.get().pages.splice(index, 1);
-    return page.mutant();
+    return this.mutant();
   },
-  setPageTitle: (page, title) => page.mutant().update({ '_.title': truncate(title, 14) }),
-  toast: (title, duration = 1.5, mask) =>
-    wx.showToast({ icon: 'none', mask, title, duration: duration * 1000 }),
+  setPageTitle(title) {
+    return this.mutant().update({ '_.title': truncate(title, 14) });
+  },
+  toast(title, duration = 1.5, mask) {
+    wx.showToast({ icon: 'none', mask, title, duration: duration * 1000 });
+  },
 } as EachPage<{}>;
 
 App<App>({
   onLaunch() {
     this.ui.App = AppRef.value = this;
-    Version.applyMPVersion({ major: 1, minor: 0, patch: 0 }, {}).then(() => {
+    Version.applyMPVersion(this.version, {}).then(() => {
       AppLaunchTaskRef.resolve((AppLaunchTaskRef.result = this));
     });
   },
@@ -93,9 +117,10 @@ App<App>({
   reLaunch() {
     wx.reLaunch({ url: '/pages/index/index' });
   },
+  ui,
   eachPage,
-  global: new Map(),
   pages: [],
   pagesMutant,
-  ui,
+  cdn: 'https://cdn.imhele.com',
+  version: { major: 2, minor: 0, patch: 0 },
 });

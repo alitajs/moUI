@@ -1,0 +1,21 @@
+<!--index/components.wxml-->
+<block>
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h2">moUI</view>
+    <view class="m-desc">🍕 面向现代浏览器的 CSS 样式库</view>
+  </view>
+  <block wx:for="{{components}}" wx:for-item="group" wx:key="title">
+    <view class="m-desc p-list-title">{{group.title}}</view>
+    <view class="m-list">
+      <navigator
+        class="m-list-item"
+        hover-class="m-hover-bg"
+        url="/pages/components/{{item.folder}}/index"
+        wx:for="{{group.components}}"
+        wx:key="folder">
+        <view class="m-flex">{{item.name}}</view>
+        <view class="m-suffix m-desc" data-icon="caret-right">{{item.suffix}}</view>
+      </navigator>
+    </view>
+  </block>
+</block>

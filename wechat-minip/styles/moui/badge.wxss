@@ -30,6 +30,10 @@
   transition: all cubic-bezier(0.68, -0.55, 0.27, 1.55) var(--dur2);
 }
 
+.android .m-badge-text {
+  font-weight: 500;
+}
+
 .m-badge .m-badge-text {
   position: absolute;
   z-index: 1;

@@ -10,8 +10,6 @@
 # production
 /coverage
 *.js
-sitemap*.json
-!preload.js
 
 # misc
 .DS_Store

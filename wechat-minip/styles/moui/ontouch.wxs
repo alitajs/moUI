@@ -1,4 +1,4 @@
-function onScroll(event, instance) {
+function setScrollCoordinate(event, instance) {
   if (event.type !== 'scroll') return;
   var dataset = event.currentTarget.dataset;
   var globalState = instance.getState();
@@ -115,8 +115,8 @@ function removeEffectOfOnTouchMove(_next, _prev, instance, currentInstance) {
 }
 
 module.exports = {
-  KEYS: ['onScroll', 'onScrollEmit', 'onTouchMove', 'removeEffectOfOnTouchMove'],
-  onScroll: onScroll,
+  KEYS: ['setScrollCoordinate', 'onScrollEmit', 'onTouchMove', 'removeEffectOfOnTouchMove'],
+  setScrollCoordinate: setScrollCoordinate,
   onScrollEmit: onScrollEmit,
   onTouchMove: onTouchMove,
   removeEffectOfOnTouchMove: removeEffectOfOnTouchMove,

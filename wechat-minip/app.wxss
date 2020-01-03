@@ -1,12 +1,9 @@
-/**
- * filename: app.wxss
- * location: @/
- */
+/* app.wxss */
+
 @import 'styles/moui/index.wxss';
 @import 'components/index.wxss';
 
 page {
-  --badgeColor: var(--pColor5);
   --navbarColor: rgba(240, 240, 240, 0.98);
   --pageColor: #f0f0f0;
 }
@@ -29,4 +26,36 @@ page {
 .dark {
   --pageColor: #000000;
   --navbarColor: rgba(32, 32, 32, 0.98);
+}
+
+.g-header {
+  padding: var(--wingBlank) 0;
+}
+
+.m-page > .g-header {
+  padding: var(--wingBlank);
+}
+
+.g-child-margin:not(.m-cols) > view,
+.g-child-margin:not(.m-cols) > label {
+  margin-right: var(--margin, 8px);
+}
+
+.g-child-margin:not(.m-cols) > view:last-child,
+.g-child-margin:not(.m-cols) > label:last-child {
+  margin-right: 0;
+}
+
+.g-child-margin.m-cols > view,
+.g-child-margin.m-cols > label {
+  margin-bottom: var(--margin, 12px);
+}
+
+.g-child-margin.m-cols > view:last-child,
+.g-child-margin.m-cols > label:last-child {
+  margin-bottom: 0;
+}
+
+.g-child-margin.m-rows {
+  align-items: center;
 }

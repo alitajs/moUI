@@ -1,11 +1,12 @@
 .m-search-bar {
-  display: block;
+  position: relative;
+  flex: 1;
   height: 36px;
-  margin: 8px var(--wingBlank);
-  background-color: rgba(245, 245, 245, 0.9);
   box-sizing: border-box;
-  border-radius: var(--sRadius);
   padding: 0 12px;
+  border-radius: var(--sRadius);
+  align-items: center;
+  background-color: rgba(245, 245, 245, 0.9);
   transition: all ease-in-out var(--dur2);
 }
 
@@ -20,14 +21,13 @@
 .m-search-bar[data-icon]:before,
 .m-search-bar > input[data-icon]:before {
   position: absolute;
-  color: gray;
+  color: var(--gray5);
   font-size: 20px;
   font-weight: 500;
 }
 
 .m-search-bar[data-icon]:before {
-  margin-left: -26px;
-  margin-top: 6px;
+  left: 8px;
 }
 
 .m-search-bar > input {
@@ -41,5 +41,5 @@
 }
 
 .m-search-bar > input[data-icon]:before {
-  right: 24px;
+  right: 8px;
 }

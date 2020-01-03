@@ -1,0 +1,26 @@
+<!--pages/components/searchbar/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">SearchBar</view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-search-bar" hover-class="m-hover-opacity" />
+      <view class="m-search-bar" data-icon="search" hover-class="m-hover-opacity" />
+      <view class="m-search-bar" data-icon="search">
+        <input />
+        <view class="m-button" data-type="ghost-href" hover-class="m-hover-opacity">搜索</view>
+      </view>
+      <view class="m-search-bar" data-icon="search" hover-class="m-hover-opacity">
+        <input data-icon="close-circle-fill" />
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">
+      单独使用，可以配合 input 一起使用，或者仅作为一个响应元素以唤起搜索模块，例如跳转到单独的搜索页等，上方示例只有最后两个搜索框包裹了 input
+    </view>
+  </view>
+</view>

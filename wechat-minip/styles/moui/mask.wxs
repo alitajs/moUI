@@ -1,0 +1,25 @@
+function setTouchCoordinate(event, instance) {
+  if (!event.touches || !event.touches.length) return;
+  var dataset = event.currentTarget.dataset;
+  var globalState = instance.getState();
+  var components = (globalState.components = globalState.components || {});
+  var wrapper = dataset.wrapper || '.m-page';
+  wrapper = dataset.disablecachewrapper
+    ? instance.selectComponent(wrapper)
+    : (components[wrapper] = components[wrapper] || instance.selectComponent(wrapper));
+  var touch = event.touches[0];
+  wrapper.setStyle({
+    '--touchForce': touch.force,
+    '--touchPageX': touch.pageX,
+    '--touchPageY': touch.pageY,
+    '--touchClientX': touch.clientX,
+    '--touchClientY': touch.clientY,
+  });
+  var eventType = 'emit' + event.type[0].toUpperCase() + event.type.slice(1);
+  if (dataset[eventType]) instance.callMethod(dataset[eventType], event);
+}
+
+module.exports = {
+  KEYS: ['setTouchCoordinate'],
+  setTouchCoordinate: setTouchCoordinate,
+};

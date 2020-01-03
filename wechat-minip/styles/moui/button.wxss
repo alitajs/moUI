@@ -46,43 +46,6 @@ button,
   transition: all ease-in-out var(--dur2);
 }
 
-.m-button[data-type='primary'],
-.m-button-group[data-type='primary'] .m-button {
-  background-color: var(--pColor);
-  color: var(--lightW0);
-}
-
-.m-button[data-type='danger'],
-.m-button-group[data-type='danger'] .m-button {
-  background-color: var(--dangerColor);
-  color: var(--lightW0);
-}
-
-.m-button[data-type^='ghost'],
-.m-button-group[data-type^='ghost'] .m-button {
-  background-color: transparent;
-}
-
-.m-button[data-type='ghost-href'],
-.m-button-group[data-type='ghost-href'] .m-button {
-  padding: 0;
-  font-weight: 400;
-}
-
-.m-button[data-type='ghost-primary'],
-.m-button-group[data-type='ghost-primary'] .m-button {
-  border: 1px solid;
-  color: var(--pColor);
-  border-color: var(--pColor);
-}
-
-.m-button[data-type='ghost-danger'],
-.m-button-group[data-type='ghost-danger'] .m-button {
-  border: 1px solid;
-  color: var(--dangerColor);
-  border-color: var(--dangerColor);
-}
-
 .m-button[data-size='tiny'],
 .m-button-group[data-size='tiny'] .m-button {
   --buttonHeight: 22px;
@@ -100,6 +63,45 @@ button,
   --buttonHeight: 48px;
   --buttonRadius: var(--sRadius);
   font-size: calc(var(--fs2) + 1px);
+}
+
+.m-button[data-type='primary'],
+.m-button-group[data-type='primary'] .m-button {
+  background-color: var(--pColor);
+  color: var(--lightW0);
+}
+
+.m-button[data-type='danger'],
+.m-button-group[data-type='danger'] .m-button {
+  background-color: var(--dangerColor);
+  color: var(--lightW0);
+}
+
+.m-button[data-type^='ghost'],
+.m-button-group[data-type^='ghost'] .m-button {
+  background-color: transparent;
+  line-height: calc(var(--buttonHeight) - 2px);
+}
+
+.m-button[data-type='ghost-href'],
+.m-button-group[data-type='ghost-href'] .m-button {
+  padding: 0;
+  font-weight: 400;
+  line-height: var(--buttonHeight);
+}
+
+.m-button[data-type='ghost-primary'],
+.m-button-group[data-type='ghost-primary'] .m-button {
+  border: 1px solid;
+  color: var(--pColor);
+  border-color: var(--pColor);
+}
+
+.m-button[data-type='ghost-danger'],
+.m-button-group[data-type='ghost-danger'] .m-button {
+  border: 1px solid;
+  color: var(--dangerColor);
+  border-color: var(--dangerColor);
 }
 
 .m-button[data-shape='circle'] {
@@ -145,7 +147,8 @@ button,
 }
 
 .m-button-group:not([data-type^='ghost']) .m-button:last-child,
-.m-button-group[data-type^='ghost'] .m-button:last-child[data-type]:not([data-type^='ghost']) {
+.m-button-group[data-type^='ghost']
+  .m-button:last-child[data-type]:not([data-type='']):not([data-type^='ghost']) {
   border-right-width: 0px;
 }
 
@@ -172,4 +175,22 @@ button,
   bottom: 0;
   z-index: 2;
   opacity: 0;
+}
+
+.m-button.m-loading[data-shape='block']:before,
+.m-button[data-shape='block'][data-loading]:before {
+  display: inline-block;
+  margin-bottom: -0.24em;
+}
+
+.m-button.m-loading[data-shape='circle'],
+.m-button[data-shape='circle'][data-loading='true'] {
+  color: transparent;
+  font-size: 12px;
+}
+
+.m-button.m-loading[data-shape='circle']:before,
+.m-button[data-shape='circle'][data-loading]:before {
+  position: absolute;
+  margin-right: 0;
 }

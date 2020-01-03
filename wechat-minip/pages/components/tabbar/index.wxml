@@ -1,0 +1,31 @@
+<!--pages/components/tabbar/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">TabBar</view>
+  </view>
+
+  <view class="m-card">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-tabbar">
+        <view bindtap="onTapTabbar" class="m-tab" data-pos="{{index-currentTab}}"
+          hover-class="m-hover-bg" wx:for="012" wx:key="*this">标签栏 {{item}}</view>
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">基础使用方式</view>
+  </view>
+
+  <view class="m-card m-ontouch">
+    <view class="m-card-body m-cols g-child-margin">
+      <view class="m-tabbar" data-grayscale="">
+        <view bindtap="onTapTabbar" class="m-tab" data-pos="{{index-currentTab}}"
+          hover-class="m-hover-bg" wx:for="012" wx:key="*this">标签栏 {{item}}</view>
+      </view>
+    </view>
+    <view class="m-card-footer m-desc">
+      声明使用 grayscale 效果代替颜色替换，以配合 swiper 等手势跟踪（需开启动画），可在首页预览效果
+    </view>
+  </view>
+</view>

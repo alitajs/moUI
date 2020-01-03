@@ -1,0 +1,33 @@
+<!--pages/components/button/index.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <include src="../../../components/utils/normal-navbar.wxml" />
+
+  <template name="button">
+    <view bindtap="{{loading?'':(onTap||'onTap')}}" class="m-button" data-card="{{id}}"
+      data-index="{{index}}" data-loading="{{loading}}" data-row="{{ri}}" data-shape="{{shape}}"
+      data-size="{{size}}" data-type="{{type||''}}" hover-class="m-hover-opacity">{{text}}</view>
+  </template>
+
+  <view class="m-cols m-flex-center g-header">
+    <view class="m-h3">{{_.title}}</view>
+    <view class="m-desc">Button</view>
+  </view>
+
+  <view class="m-card" wx:for="{{cards}}" wx:for-item="c" wx:key="id">
+    <view class="m-card-body m-cols g-child-margin">
+      <block wx:for-index="ri" wx:for-item="r" wx:for="{{c.rows}}">
+        <block wx:if="{{!r.wrap}}">
+          <template data="{{index,ri,...c,...r,...item}}" is="button" wx:for="{{r.instances}}" />
+        </block>
+        <view class="m-flex g-child-margin" wx:elif="{{r.wrap===true}}">
+          <template data="{{index,ri,...c,...r,...item}}" is="button" wx:for="{{r.instances}}" />
+        </view>
+        <view class="m-button-group" data-shape="{{r.wrap.shape}}" data-size="{{r.wrap.size}}"
+          data-type="{{r.wrap.type}}" wx:else="">
+          <template data="{{index,ri,...c,...r,...item}}" is="button" wx:for="{{r.instances}}" />
+        </view>
+      </block>
+    </view>
+    <view class="m-card-footer m-desc">{{c.text}}</view>
+  </view>
+</view>

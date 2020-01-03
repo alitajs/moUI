@@ -57,8 +57,8 @@ const forms: { [K in OptionsFor]: OptionForm<K> } = {
     setValue: animation => app.ui.UserSetting.update({ animation }),
     options: [
       { name: '仅低电量时', value: 'auto' },
-      { name: '永不', value: false },
-      { name: '总是', value: true },
+      { name: '永不', value: true },
+      { name: '总是', value: false },
     ],
   },
 };
@@ -73,18 +73,11 @@ Page({
   ...app.eachPage,
   data: { ...app.eachPage.data, ...initialData },
   onLoad(query: { for?: OptionsFor } = {}) {
-    this.onLoadOne(this, query);
+    this.onLoadOne(query);
     if (!query.for) return navQueryNotFound();
-    this.setPageTitle(this, forms[query.for].name).update({
-      ...forms[query.for],
-      value: forms[query.for].getValue(),
-    }).commit();
-  },
-  onShow() {
-    this.onShowOne(this);
-  },
-  onUnload() {
-    this.onUnloadOne(this);
+    this.setPageTitle(forms[query.for].name)
+      .update({ ...forms[query.for], value: forms[query.for].getValue() })
+      .commit();
   },
   onSelect(event: any) {
     const { dataset = {} } = event.currentTarget;

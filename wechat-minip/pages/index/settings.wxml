@@ -1,5 +1,5 @@
-<!--settings/index.wxml-->
-<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+<!--index/settings.wxml-->
+<block>
   <template name="UIUserSetting">
     <view class="m-list">
       <navigator
@@ -26,17 +26,20 @@
         url="/pages/settings/options?for=animation">
         <view class="m-flex">禁用动画</view>
         <view class="m-suffix" data-icon="caret-right">
-          {{animation==='auto'?'仅低电量时':animation?'总是':'永不'}}
+          {{animation==='auto'?'仅低电量时':animation?'永不':'总是'}}
         </view>
       </navigator>
     </view>
   </template>
-  <include src="../../components/utils/normal-navbar.wxml" />
   <template data="{{...UIUserSetting}}" is="UIUserSetting" />
   <view class="m-list">
+    <view class="m-list-item">
+      <view class="m-flex">版本号</view>
+      <view class="m-suffix">{{versionMark}}</view>
+    </view>
     <navigator class="m-list-item" hover-class="m-hover-bg" url="/pages/settings/about">
       <view class="m-flex">关于</view>
       <view class="m-suffix" data-icon="caret-right" />
     </navigator>
   </view>
-</view>
+</block>

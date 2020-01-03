@@ -1,6 +1,62 @@
+.m-h1,
+.m-h2,
+.m-h3,
+.m-h4 {
+  flex: 1;
+  color: var(--lightB1);
+  font-weight: 600;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-h1 {
+  font-size: var(--fs6);
+  line-height: var(--lh6);
+}
+
+.m-h2 {
+  font-size: var(--fs5);
+  line-height: var(--lh5);
+}
+
+.m-h3 {
+  font-size: var(--fs4);
+  line-height: var(--lh4);
+}
+
+.m-h4 {
+  font-size: var(--fs3);
+  line-height: var(--lh3);
+}
+
+.android .m-h1,
+.android .m-h2,
+.android .m-h3,
+.android .m-h4 {
+  font-weight: 500;
+}
+
+.m-text,
+.m-href {
+  display: inline-block;
+  color: var(--lightB1);
+  font-size: var(--fs2);
+  line-height: var(--lh2);
+  transition: all ease-in-out var(--dur2);
+}
+
 .m-desc {
   color: var(--gray5);
   font-size: var(--fs1);
+  line-height: var(--lh1);
+}
+
+.m-href {
+  color: var(--pColor);
+}
+
+.m-monospace,
+[data-monospace]:not([data-monospace='false']) {
+  font-family: Consolas, monospace, var(--fontFamily);
 }
 
 .m-ellipsis {
@@ -8,4 +64,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+navigator:not([class]) {
+  color: var(--pColor);
+  transition: all ease-in-out var(--dur2);
 }

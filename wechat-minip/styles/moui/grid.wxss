@@ -16,7 +16,12 @@
   justify-content: center;
 }
 
-.m-prefix, .m-suffix {
+.m-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.m-prefix,
+.m-suffix {
   transition: all ease-in-out var(--dur2);
 }
 

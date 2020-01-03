@@ -1,0 +1,48 @@
+/* pages/components/icon/index.wxss */
+
+.p-icons {
+  margin: 0 -4px;
+  justify-content: space-between;
+}
+
+.m-card-body > .m-desc:first-child {
+  margin-bottom: 8px;
+}
+
+.p-icon {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: var(--fs2);
+  line-height: var(--lh2);
+  transition: all ease-in-out var(--dur2);
+}
+
+.p-icons .p-icon {
+  height: 64px;
+  width: calc(25vw - (var(--cardBlank) + var(--wingBlank)) / 2);
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: var(--tRadius);
+  font-size: var(--fs4);
+  line-height: var(--lh4);
+  color: var(--lightB1);
+}
+
+.p-icons .p-icon .m-desc {
+  font-size: var(--fs0);
+  line-height: var(--lh0);
+  max-width: calc(100% - 8px);
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-mask .p-icon {
+  width: 256px;
+  height: 128px;
+}
+
+.m-mask .p-icon:before {
+  color: var(--lightB1);
+  font-size: var(--fs8);
+  line-height: var(--lh8);
+}

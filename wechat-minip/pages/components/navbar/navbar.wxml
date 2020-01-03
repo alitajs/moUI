@@ -1,0 +1,32 @@
+<!--pages/components/navbar/navbar.wxml-->
+<view class="m-page {{_.ui.wrapcls}}" style="{{_.ui.cssvar}}">
+  <import src="../../../components/utils/menu-navbar.wxml" />
+  <include src="../../../components/utils/normal-navbar.wxml" wx:if="{{for==='basic'}}" />
+  <template data="{{..._,icon:'plus'}}" is="menu-navbar" wx:elif="{{for==='menu'}}" />
+  <view class="m-navbar"
+    data-mode="avatar {{for==='mini-avatar'?'mini':''}} {{for==='tabbar'?'tabbar':''}}" wx:else="">
+    <view class="m-navbar-body">
+      <view class="m-navbar-title">{{_.title}}</view>
+      <view class="m-avatar">
+        <open-data type="userAvatarUrl" />
+      </view>
+    </view>
+    <view class="m-tabbar" data-grayscale="" wx:if="{{for==='tabbar'}}">
+      <view class="m-tab" bindtap="onChangeTab" data-icon="message" data-pos="{{0-currentTab}}">
+        标签一
+      </view>
+      <view class="m-tab" bindtap="onChangeTab" data-icon="bell" data-pos="{{1-currentTab}}">
+        标签二
+      </view>
+    </view>
+  </view>
+
+  <view class="m-list" style="margin-top:32px;">
+    <view bindtap="switchTheme" class="m-list-item" hover-class="m-hover-opacity">
+      <view class="m-href">切换主题</view>
+    </view>
+    <navigator class="m-list-item" hover-class="m-hover-opacity" open-type="navigateBack">
+      <view class="m-href">返回</view>
+    </navigator>
+  </view>
+</view>

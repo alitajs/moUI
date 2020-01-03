@@ -49,7 +49,7 @@ export const DefaultUIDeviceSetting: MP.UI.DeviceSetting = {
 };
 
 export const UIInternalSetting: MP.UI.InternalSetting = {
-  IconfontUrl: 'https://at.alicdn.com/t/font_915540_ifxotkrl3el.ttf',
+  IconfontUrl: false,
   NativeContainerBGColor: { light: '#f0f0f0', dark: '#000000' },
   NativeContainerBGText: { light: 'dark', dark: 'light' },
 };

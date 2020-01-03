@@ -1,13 +1,14 @@
 .m-card {
   box-sizing: border-box;
   flex-direction: column;
-  margin: 8px var(--wingBlank);
+  margin: 12px var(--wingBlank);
   border-radius: var(--sRadius);
   background-color: var(--white0);
+  transition: all ease-in-out var(--dur2);
 }
 
 .dark .m-card {
-  background-color: var(--white6);
+  background-color: var(--gray8);
 }
 
 .m-card-footer {
@@ -15,10 +16,12 @@
   box-sizing: border-box;
 }
 
+.m-card-footer.m-desc {
+  padding: 0 var(--cardBlank) var(--cardBlank);
+}
+
 .m-card-footer .m-desc {
-  margin: 0 var(--cardBlank);
-  line-height: 24px;
-  font-size: var(--fs0);
+  padding: 0 var(--cardBlank);
 }
 
 .m-card-footer .m-button {

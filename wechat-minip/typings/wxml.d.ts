@@ -112,8 +112,14 @@ declare namespace WXML {
     type: 'keyboardheightchange';
   }
 
+  interface SwiperChangeDetail {
+    current: number;
+    currentItemId: string;
+    source: 'autoplay' | 'touch' | '';
+  }
+
   interface SwiperChangeEvent<T = Record<string, unknown>, U = T>
-    extends BaseEvent<T, U, { current: number; source: 'autoplay' | 'touch' | '' }> {
+    extends BaseEvent<T, U, SwiperChangeDetail> {
     target: Element<U>;
     type: 'change';
   }
@@ -122,5 +128,19 @@ declare namespace WXML {
     extends BaseEvent<T, U, { value: boolean }> {
     target: Element<U>;
     type: 'change';
+  }
+
+  interface ScrollDetail {
+    deltaX: number;
+    deltaY: number;
+    scrollHeight: number;
+    scrollLeft: number;
+    scrollTop: number;
+    scrollWidth: number;
+  }
+
+  interface ScrollEvent<T = Record<string, unknown>, U = T> extends BaseEvent<T, U, ScrollDetail> {
+    target: Element<U>;
+    type: 'scroll';
   }
 }

@@ -3,19 +3,26 @@
   height: var(--avatarSize);
   width: var(--avatarSize);
   border-radius: calc(var(--avatarSize) / 2);
-  background-color: var(--pColor);
+  background-color: var(--gray3);
   justify-content: center;
-  overflow: hidden;
   transition: all ease-in-out var(--dur2);
+  font-weight: 600;
+  color: var(--lightW0);
+  line-height: var(--avatarSize);
+  font-size: calc(var(--avatarSize) / 2);
 }
 
+.dark .m-avatar {
+  background-color: var(--gray6);
+}
 
-.m-avatar[data-icon],
-.m-avatar [data-icon]:only-child {
-  color: var(--lightW1);
-  font-size: calc(24px + (var(--avatarSize) - 40px) / 2);
-  line-height: var(--avatarSize);
-  font-weight: 600;
+.android .m-avatar {
+  font-weight: 500;
+}
+
+.m-avatar[data-icon]:before,
+.m-avatar [data-icon]:only-child:before {
+  font-size: calc(4px + var(--avatarSize) / 2);
 }
 
 .m-avatar-large,
@@ -28,12 +35,15 @@
   --avatarSize: 32px;
 }
 
-.m-avatar > image {
+.m-avatar > image,
+.m-avatar > open-data[type='userAvatarUrl'] {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 .m-avatar[data-shape='square'] {

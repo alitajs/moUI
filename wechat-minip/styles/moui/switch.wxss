@@ -2,9 +2,10 @@
   position: relative;
   height: 32px;
   width: 52px;
+  transition: all ease-in-out var(--dur2);
 }
 
-.m-switch:before {
+.m-switch:after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -16,51 +17,57 @@
   transition: all ease-in-out var(--dur2);
 }
 
-.material .m-switch:before {
+.material .m-switch:after {
   top: 8px;
   left: 6px;
   width: 40px;
   height: 16px;
 }
 
-.m-switch-checked:before,
-.m-switch[data-checked='true']:before,
-.dark .m-switch[data-checked='true']:before {
+.m-switch-checked:after,
+.m-switch[data-checked='true']:after,
+.dark .m-switch[data-checked='true']:after {
   background-color: var(--pColor);
 }
 
-.material .m-switch-checked:before,
-.material .m-switch[data-checked='true']:before,
-.material .m-switch[data-checked='true']:before {
+.material .m-switch-checked:after,
+.material .m-switch[data-checked='true']:after,
+.material .m-switch[data-checked='true']:after {
   background-color: var(--pColor2);
 }
 
-.m-switch:after {
-  content: ' ';
+.m-switch:before {
   position: absolute;
+  z-index: 1;
   top: 2px;
   left: 2px;
   height: 28px;
   width: 28px;
+  line-height: 28px;
   border-radius: 14px;
   background-color: var(--white0);
   box-shadow: 0 0 4px var(--black5);
   transition: all ease-in-out var(--dur2);
 }
 
-.material .m-switch:after {
+.m-switch:not([data-icon]):before {
+  content: ' ';
+}
+
+.material .m-switch:before {
   top: 4px;
   width: 24px;
   height: 24px;
+  line-height: 24px;
 }
 
-.m-switch-checked:after,
-.m-switch[data-checked='true']:after {
+.m-switch-checked:before,
+.m-switch[data-checked='true']:before {
   left: 22px;
 }
 
-.material .m-switch-checked:after,
-.material .m-switch[data-checked='true']:after {
+.material .m-switch-checked:before,
+.material .m-switch[data-checked='true']:before {
   left: 26px;
   background-color: var(--pColor);
   box-shadow: 0 0 3px var(--pColor6);
@@ -79,4 +86,31 @@
 
 label.m-switch switch {
   display: none;
+}
+
+.m-switch[data-loading]:before {
+  background-size: 80%;
+  background-position: 50%;
+  transition: all ease-in-out var(--dur2);
+}
+
+.m-switch:not([data-loading='true']):before {
+  background-image: none;
+}
+
+.m-switch[data-icon]:before {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--pColor);
+}
+
+.material .m-switch[data-icon]:before {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.material .m-switch.m-switch-checked[data-icon]:before,
+.material .m-switch[data-icon][data-checked='true']:before {
+  color: var(--lightW0);
 }

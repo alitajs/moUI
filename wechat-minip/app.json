@@ -1,8 +1,22 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/components/avatar/index",
+    "pages/components/badge/index",
+    "pages/components/button/index",
+    "pages/components/coverpage/index",
+    "pages/components/icon/index",
+    "pages/components/list/index",
+    "pages/components/loading/index",
+    "pages/components/mask/index",
+    "pages/components/navbar/index",
+    "pages/components/navbar/navbar",
+    "pages/components/searchbar/index",
+    "pages/components/switch/index",
+    "pages/components/tabbar/index",
+    "pages/components/tag/index",
+    "pages/components/typography/index",
     "pages/settings/about",
-    "pages/settings/index",
     "pages/settings/options"
   ],
   "window": {

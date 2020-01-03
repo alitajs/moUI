@@ -44,6 +44,7 @@ page {
   --gray5: #8c8c8c;
   --gray6: #595959;
   --gray7: #262626;
+  --gray8: #181818;
   /** opacity */
   --opa0: 0.85;
   --opa1: 0.65;
@@ -99,9 +100,10 @@ page {
   --lh7: 54px;
   --lh8: 64px;
   --lh9: 76px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+  --fontFamily: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--fontFamily);
 }
 
 /** DURATION */
@@ -124,6 +126,7 @@ page {
 
 /** FILTER */
 page {
+  --varHolder: ;
   --brightness9: brightness(1);
   --brightness8: brightness(var(--opa0));
   --brightness7: brightness(var(--opa1));
@@ -155,6 +158,7 @@ page {
   --dur5: 0s;
 }
 
+[data-disable-on-swiper='true'] .m-onswiper,
 .without-animation.m-onswiper,
 .without-animation .m-onswiper {
   --swiperX: 0;

@@ -1,3 +1,13 @@
+.m-pages {
+  background-color: var(--lightW0);
+  transition: background-color var(--dur2) var(--dur2);
+}
+
+.m-pages[data-dark='true'] {
+  background-color: var(--black0);
+  transition: background-color 0s;
+}
+
 /* view[class~='dark'],
 view[class~='light'], */
 .m-page {
@@ -22,6 +32,7 @@ view[class~='light'], */
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
+  flex-direction: column;
   border-radius: var(--sRadius);
   padding-bottom: calc(100vh - var(--coverPageHeight));
   transition: all ease-in-out var(--dur3), opacity linear 0s var(--dur3), background-color ease-in-out var(--dur2);
