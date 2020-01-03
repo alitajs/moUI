@@ -26,10 +26,6 @@
   transition: all ease-in-out var(--dur2), top linear 0s var(--dur2);
 }
 
-.m-page[data-covered='true'] > .m-mask[data-scope='page'] {
-  border-radius: inherit;
-}
-
 .m-mask[data-type='opaque'] {
   background-color: var(--lightW0);
 }

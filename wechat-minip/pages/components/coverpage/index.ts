@@ -4,8 +4,8 @@ import Common from '../common';
 const app = getApp<App>();
 
 interface Data {
-  pageVisible?: boolean;
   navbarTitleVisible: boolean;
+  pageVisible?: boolean;
 }
 
 const initialData: Data = {
