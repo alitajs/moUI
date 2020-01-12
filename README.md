@@ -13,13 +13,27 @@
 
 ### 微信小程序
 
-<table><tr>
+
+<table>
+<tr>
+  <td><img src="https://user-images.githubusercontent.com/32428655/72215268-040d7980-354c-11ea-98c1-83efaca51dd7.jpg" width="180" /></td>
+  <td colSpan="4">微信扫描小程序码在线预览</td>
+</tr>
+<tr>
   <td><img src="https://user-images.githubusercontent.com/32428655/71712349-c5870900-2e3f-11ea-8e36-17b878c1af98.png" width="180" /></td>
   <td><img src="https://user-images.githubusercontent.com/32428655/71712340-c3bd4580-2e3f-11ea-8d69-d2e28b472812.png" width="180" /></td>
   <td><img src="https://user-images.githubusercontent.com/32428655/71712335-c324af00-2e3f-11ea-9c04-97ebf77a65ae.png" width="180" /></td>
   <td><img src="https://user-images.githubusercontent.com/32428655/71712348-c5870900-2e3f-11ea-9131-97696b1faa35.png" width="180" /></td>
   <td><img src="https://user-images.githubusercontent.com/32428655/71712343-c455dc00-2e3f-11ea-9a12-91b021378071.png" width="180" /></td>
-</tr></table>
+</tr>
+<tr>
+  <td><img src="https://user-images.githubusercontent.com/32428655/72215550-b5151380-354e-11ea-8e53-c7d4e55e38b3.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/72215551-b5151380-354e-11ea-8c61-5839be74da7d.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/72215552-b5adaa00-354e-11ea-9a64-5cb9c7db196b.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/72215553-b6464080-354e-11ea-8cdd-92044ca92708.png" width="180" /></td>
+  <td><img src="https://user-images.githubusercontent.com/32428655/72215554-b6464080-354e-11ea-925b-1a663e0e95c6.png" width="180" /></td>
+</tr>
+</table>
 
 1. Clone 项目到本地，进入 `wechat-minip` 目录，执行命令安装依赖：
 
