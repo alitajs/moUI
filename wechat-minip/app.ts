@@ -17,6 +17,7 @@ export interface EachPageData {
 }
 
 export interface EachPage<T = any> extends Omit<Page.PageThis<T>, 'data'> {
+  query: Record<string, any>;
   vars: Record<string, any>;
   data: { _: EachPageData } & T;
   backTop: () => void;
@@ -65,7 +66,8 @@ const eachPage = {
     return (this.vars.__mutant = this.vars.__mutant || new DataMutant(this));
   },
   noop() {},
-  onLoadOne(_query = {}, title = 'moUI') {
+  onLoadOne(query = {}, title = 'moUI') {
+    this.query = query;
     const pages = AppRef.get().pages;
     const from = pages[pages.length - 1]?.data._.title ?? '返回';
     pages.push(this);
@@ -73,7 +75,7 @@ const eachPage = {
   },
   onShareAppMessage(options) {
     const from = options && options.from;
-    const query = querystring({ path: `/${this.route}`, from });
+    const query = querystring({ path: `/${this.route}?${querystring(this.query)}`, from });
     return {
       title: this.data._.title || 'moUI',
       path: `/pages/index/index?${query}`,
