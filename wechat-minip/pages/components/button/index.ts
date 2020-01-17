@@ -4,6 +4,7 @@ import Common from '../common';
 const app = getApp<App>();
 
 interface Button {
+  icon?: string;
   loading?: boolean;
   onTap?: string;
   shape?: Comp.ButtonShape;
@@ -39,6 +40,18 @@ const ghostButtons: Button[] = [
   { text: '文字', type: 'ghost-href' },
 ];
 
+const filledIconButtons: Button[] = [
+  { icon: 'search', text: '' },
+  { icon: 'heart', text: '', type: 'primary' },
+  { icon: 'delete', text: '', type: 'danger' },
+];
+
+const ghostIconButtons: Button[] = [
+  { icon: 'search', text: '', type: 'ghost-primary' },
+  { icon: 'heart', text: '', type: 'ghost-danger' },
+  { icon: 'delete', text: '', type: 'ghost-href' },
+];
+
 const sizeOptions: [Comp.ButtonSize, string][] = [
   ['large', '大型'],
   ['default', '中型'],
@@ -69,8 +82,8 @@ const cards: CardBody[] = [
     id: 1,
     text: '圆形按钮，推荐使用图标代替文字',
     rows: [
-      { wrap: true, shape: 'circle', instances: filledButtons },
-      { wrap: true, shape: 'circle', instances: ghostButtons },
+      { wrap: true, shape: 'circle', instances: filledIconButtons },
+      { wrap: true, shape: 'circle', instances: ghostIconButtons },
       sizeRadio,
     ],
   },

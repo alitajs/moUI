@@ -18,6 +18,11 @@ page {
   background-color: var(--navbarColor);
 }
 
+.dark .m-navbar[data-mode~='tabbar'] .m-navbar-body,
+.dark.m-cover-page .m-navbar[data-mode~='tabbar'] .m-navbar-body {
+  background-color: var(--lightW0);
+}
+
 .m-page,
 .dark.m-page {
   background-color: var(--pageColor);

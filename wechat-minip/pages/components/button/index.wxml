@@ -5,7 +5,10 @@
   <template name="button">
     <view bindtap="{{loading?'':(onTap||'onTap')}}" class="m-button" data-card="{{id}}"
       data-index="{{index}}" data-loading="{{loading}}" data-row="{{ri}}" data-shape="{{shape}}"
-      data-size="{{size}}" data-type="{{type||''}}" hover-class="m-hover-opacity">{{text}}</view>
+      data-size="{{size}}" data-type="{{type||''}}" hover-class="m-hover-opacity">
+        <text data-icon="{{icon}}" wx:if="{{icon}}" />
+        <text wx:if="{{text}}">{{text}}</text>
+      </view>
   </template>
 
   <view class="m-cols m-flex-center g-header">
